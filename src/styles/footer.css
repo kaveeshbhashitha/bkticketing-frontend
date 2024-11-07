@@ -1,0 +1,162 @@
+ /* Footer */
+.footer {
+    background-color: #0B1D3E; 
+    color: #ffffff;
+    padding: 40px;
+}
+
+.footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 2cm;
+}
+
+.intro-header{
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.footer .footer-column {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer .footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer .footer-column p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer .social-icons {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.footer .social-icons a {
+    width: 36px;
+    height: 36px;
+    background-color: #162a56;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer .payment-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer .payment-icons img {
+    width: 30px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.footer .links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .links ul li {
+    margin-bottom: 10px;
+}
+
+.footer .links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer .contact p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer .contact a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline;
+}
+
+.bottom-bar {
+    text-align: left;
+    padding: 20px;
+    font-size: 12px;
+    background-color: #06122e;
+    width:auto;
+    margin:0;
+    font-weight: 200;
+    color: white;
+}
+.logo{
+    font-size: 30px;
+    color: black;
+}
+.bk{
+    color: #1259f3;
+    font-weight: 700;
+}
+footer .ticket{
+    color: #ffffff;
+    font-weight: 700;
+}
+.lk{
+    color: #007bff;
+    font-size: 10px; 
+    vertical-align: super;
+    line-height: 1.5;
+    margin-top: 0.3em;
+}
+@media screen and (max-width: 900px) {
+    .footer .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .payment-icons, .footer-column{
+        margin-top: 10px;
+    }
+    .payment-icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .social-icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.footerheader{
+    background-color: #141b27;
+    padding: 30px 3cm 30px 3cm;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footerheader a{
+    color: rgb(136, 136, 136);
+    text-decoration: none;
+    font-size: 13px;
+}
+.rightcontent p{
+    color: rgb(136, 136, 136);
+    text-decoration: none;
+    font-size: 13px;
+}
