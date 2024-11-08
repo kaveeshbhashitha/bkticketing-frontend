@@ -5,7 +5,8 @@ import Dashboard from "./pages/admin/Dashboard";
 import AdminHome from "./pages/admin/AdminHome";
 import Login from "./pages/oauth/Login";
 import Register from "./pages/oauth/Register";
-import Payment from "./pages/admin/Payment";
+import AdminPayment from "./pages/admin/AdminPayment";
+import Payment from "./pages/payment/Payment";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
             <Route exact path="/adminHome" element={<AdminHome/>}/>
             <Route exact path="/login" element={<Login/>}/>
             <Route exact path="/register" element={<Register/>}/>
-            <Route exact path="/adminPayment" element={<Payment/>}/>
+            <Route exact path="/adminPayment" element={<AdminPayment/>}/>
+            <Route exact path="/payment" element={<Payment/>}/>
           </Routes> 
       </Router>
     </div>

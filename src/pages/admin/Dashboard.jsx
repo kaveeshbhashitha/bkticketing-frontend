@@ -121,7 +121,7 @@ export default function Dashboard() {
                             your profile.
                           </p>
 
-                          <a href="/" class="btn btn-sm btn-outline-primary">View Badges</a>
+                          <a href="/payment" class="btn btn-sm btn-outline-primary">View Badges</a>
                         </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">
