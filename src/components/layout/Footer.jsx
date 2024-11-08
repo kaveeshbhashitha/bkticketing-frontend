@@ -26,8 +26,8 @@ export default function Footer() {
                         <a href="/"><i className="fa-brands fa-whatsapp"></i></a>
                     </div>
                     <div className="payment-icons">
-                        <image src="Images/card.png" alt="Visa" />
-                        <image src="Images/mas.webp" alt="Mastercard" />
+                        <img src="Images/card.png" alt="Visa" />
+                        <img src="Images/mas.webp" alt="Mastercard" />
                     </div>
                 </div>
                 <div className="footer-column links">
