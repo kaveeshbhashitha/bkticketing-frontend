@@ -17,7 +17,7 @@ const Payment = () => {
         <div className='hr'></div>
             <div class="payment-layout">
                 <div class="paymentfinal">
-                    <img src="/Images/img1.jpg" alt="event image" className='event-image'/>
+                    <img src="/Images/img1.jpg" alt="event" className='event-image'/>
                     <div class="title">BALLAD OF THE WARRIORS</div>
                     <div class="organizer">ORGANIZED BY THE VETERANS OF SPECIAL FORCES</div>
                     <div class="date">Nov 09, 2024 06.30 PM IST</div>

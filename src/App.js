@@ -7,6 +7,8 @@ import Login from "./pages/oauth/Login";
 import Register from "./pages/oauth/Register";
 import AdminPayment from "./pages/admin/AdminPayment";
 import Payment from "./pages/payment/Payment";
+import AddEvent from "./pages/admin/AddEvent";
+import SeeEvents from "./pages/admin/SeeEvents";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route exact path="/register" element={<Register/>}/>
             <Route exact path="/adminPayment" element={<AdminPayment/>}/>
             <Route exact path="/payment" element={<Payment/>}/>
+            <Route exact path="/addEvent" element={<AddEvent/>}/>
+            <Route exact path="/seeEvent" element={<SeeEvents/>}/>
           </Routes> 
       </Router>
     </div>
