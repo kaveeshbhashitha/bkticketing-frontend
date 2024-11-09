@@ -9,6 +9,7 @@ import AdminPayment from "./pages/admin/AdminPayment";
 import Payment from "./pages/payment/Payment";
 import AddEvent from "./pages/admin/AddEvent";
 import SeeEvents from "./pages/admin/SeeEvents";
+import SelectTicket from "./pages/web/SelectTicket";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/payment" element={<Payment/>}/>
             <Route exact path="/addEvent" element={<AddEvent/>}/>
             <Route exact path="/seeEvent" element={<SeeEvents/>}/>
+            <Route exact path="/selectTicket/:eventId" element={<SelectTicket/>}/>
           </Routes> 
       </Router>
     </div>

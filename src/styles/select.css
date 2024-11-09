@@ -1,0 +1,100 @@
+.event-containers {
+    padding: 20px;
+    margin: 0 5cm;
+}
+
+.event-details {
+    display: flex;
+    width: 100%;
+}
+
+.left-column {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.select-image {
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.organizer, .date, .venue, .price {
+    font-size: 15px;
+    margin-bottom: 5px;
+    line-height: 25px;
+}
+.description{
+    font-size: 15px;
+    margin-bottom: 5px;
+    line-height: 25px;
+    color: #747474;
+}
+
+.right-column {
+    flex: 0.5;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.ticket-form h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.ticket-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.ticket-form input, .ticket-form textarea {
+    width: 500px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.ticket-form .submit-btn {
+    background-color: #135bf2;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.ticket-form .submit-btn:hover {
+    background-color: #0942bd;
+}
+.up{
+    margin-top: -20px;
+    font-size: 23px;
+}
+.green{
+    color: rgb(18, 163, 18);
+}
+.blue{
+    color: #135bf2;
+}
+.red{
+    color: #d20f0f;
+}
+.undeline{
+    text-decoration: underline;
+}
+.none{
+    display: none;
+}
