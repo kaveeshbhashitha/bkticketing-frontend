@@ -86,7 +86,7 @@ export default function AdminSideBar() {
             </li>
 
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/addGeneralEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-crown"></i>
                     <div data-i18n="Analytics">Events and Occations</div>
                 </NavLink>
