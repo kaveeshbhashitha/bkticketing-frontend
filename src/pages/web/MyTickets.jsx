@@ -5,6 +5,7 @@ import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/calendar.css';
 import MyReservation from '../../components/other/MyReservation';
 import useAuthCheck from '../../AuthCheck';
+import EventCalendar from '../../components/other/EventCalendar';
 
 export default function MyTickets() {
   useAuthCheck();
@@ -13,8 +14,8 @@ export default function MyTickets() {
     <div>
         <Header/>
             <div className='body-calender'>
-                <button className='btn btn-primary' onClick={() => setVisibleDiv(1)}><i class="fa-solid fa-list"></i><span className='gap'>My Reservation List</span></button>
-                <button className='btn btn-primary mx-2' onClick={() => setVisibleDiv(2)}><i class="fa-solid fa-calendar-days"></i><span className='gap'>My Reservation Schedule</span></button>
+                <button className={visibleDiv === 1 ? "btn btn-secondary" : "btn btn-primary"} onClick={() => setVisibleDiv(1)}><i class="fa-solid fa-list"></i><span className='gap'>My Reservation List</span></button>
+                <button className={visibleDiv === 2 ? "btn btn-secondary mx-2" : "btn btn-primary mx-2"} onClick={() => setVisibleDiv(2)}><i class="fa-solid fa-calendar-days"></i><span className='gap'>Monthly Schedule</span></button>
                 <div className='title-margin'>
                   <h2>My Tickets and Events</h2>
                 </div>
@@ -22,7 +23,7 @@ export default function MyTickets() {
                     <MyReservation/>
                 </div>
                 <div className={visibleDiv === 2 ? "visible" : "hidden"}>
-                    div2
+                    <EventCalendar/>
                 </div>
             </div>
         <Footer/>

@@ -48,3 +48,11 @@ table {
 .gap{
     margin-left: 10px;
 }
+
+.calendar-container{
+    margin-bottom: 20px;
+}
+
+.btn-secondary{
+    color: orange;
+}
