@@ -209,5 +209,83 @@
         margin: 10px 0 -50px 0;
       }
 }
-  
+
+.display-image{
+  height: auto;
+  width: 280px;
+  border-radius: 5px;
+  min-height: 230px;
+  max-height: 230px;
+}
+.image-container{
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+.textinimage{
+  margin: 120px 0;
+}
+.image-container{
+  line-height: 30px;
+}
+.textforimg{
+  padding: 8px;
+}
+.buytickets{
+  width: 100%;
+  height: auto;
+  padding: 8px 5px;
+  text-align: center;
+  background-color: #135bf2;
+  color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+.buytickets:hover{
+  background-color: #fd7e14;
+  color: white;
+  cursor: pointer;
+}
+
+.buybtn{
+  display: flex;
+  justify-content: center;
+}
+.textforimg span{
+  color: rgb(93, 93, 93);
+}
+
+.event-container{
+  margin: 1cm 3cm;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.image-box{
+  padding: 8px;
+  border: solid 0.1px rgb(229, 229, 229);
+  width: 100%;
+  max-width: 298px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.event-title{
+  margin: 30px 3cm 30px 3cm;
+  font-size: 30px;
+
+}
+.error-msg{
+  margin: 10px 3cm;
+}
+.event-title span{
+  color: #135bf2;
+}
+.rightgap{
+  margin-right: 5px;
+}
+.d-none{
+  display: none;
+}
   
