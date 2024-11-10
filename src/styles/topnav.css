@@ -1,0 +1,208 @@
+/* Importing Google font - Fira Sans */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+.logo{
+    font-size: 30px;
+    color: black;
+}
+.bk{
+    color: #1259f3;
+    font-weight: 700;
+}
+.ticket{
+    color: #4a4d4d;
+    font-weight: 700;
+}
+.lk{
+    color: #007bff;
+    font-size: 10px; 
+    vertical-align: super;
+    line-height: 1.5;
+    margin-top: 0.3em;
+}
+a{
+    text-decoration: none;
+}
+header {
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 20px;
+  }
+  
+  header .navbar {
+    max-width: 1280px;
+    margin: 0 3cm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar .menu-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+    margin-left: 20px;
+  }
+  
+  .navbar .menu-links li a {
+    color: black;
+    font-weight: 400;
+    text-decoration: none;
+    transition: 0.2s ease;
+    font-size: 16px;
+  }
+  
+  .navbar .menu-links .language-item a {
+    display: flex;
+    margin-left: 5px;
+    align-items: center;
+  }
+  
+  .navbar .menu-links .language-item span {
+    font-size: 1.3rem;
+  }
+  
+  .navbar .menu-links li a:hover {
+    color: #007bff;
+  }
+  
+.right{
+    right: 0;
+    float: right;
+    display: flex;
+    justify-content: end;
+}
+  
+  .navbar .menu-links .join-btn a:hover {
+    color: black;
+    border-color: transparent;
+    background: #007bff;
+  }
+
+  .navbar #hamburger-btn {
+    color: black;
+    cursor: pointer;
+    display: none;
+    font-size: 1.7rem;
+  }
+  
+  .navbar #close-menu-btn {
+    position: absolute;
+    display: none;
+    color: #000;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.7rem;
+  }
+  .flex{
+    display: flex;
+  }
+
+.signin{
+    margin: 0 5px;
+    padding: 10px 20px;
+    color: white;
+    background: #135bf2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-right: 2.5cm;
+}
+.signin span{
+    margin-left: 5px;
+}
+.register{
+    margin-top: 10px;
+    margin-right: 15px;
+}
+.signin:hover{
+    background-color: white;
+    color: #135bf2;
+    border: solid 1px #135bf2;
+    cursor: pointer;
+}
+
+.register:hover{
+    margin: 0 5px;
+    padding: 10px 20px;
+    color: white;
+    background: #135bf2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+  
+  @media screen and (max-width: 900px) {
+    body{
+      margin: 0;
+    }
+    header.show-mobile-menu::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      backdrop-filter: blur(5px);
+    }
+
+    .register, .signin{
+        display: none;
+    }
+  
+    .navbar .menu-links {
+      height: 100vh;
+      max-width: 300px;
+      width: 100%;
+      background: #fff;
+      position: fixed;
+      left: -300px;
+      top: 0;
+      display: block;
+      padding: 75px 40px 0;
+      transition: left 0.2s ease;
+    }
+  
+    header.show-mobile-menu .navbar .menu-links {
+      left: 0;
+    }
+  
+    .navbar .menu-links li {
+      margin-bottom: 30px;
+    }
+  
+    .navbar .menu-links li a {
+      color: #000;
+      font-size: 1.1rem;
+    }
+  
+    .navbar .menu-links .join-btn a {
+      padding: 0;
+    }
+  
+    .navbar .menu-links .join-btn a:hover {
+      color: #007bff;
+      background: none;
+    }
+  
+    .navbar :is(#close-menu-btn, #hamburger-btn) {
+      display: block;
+    }
+  }

@@ -1,0 +1,213 @@
+.container{
+    justify-content: space-between;
+    display: flex;
+    padding: 18px 0 18px 0;
+}
+/* a{
+    font-size: 20px;
+    font-weight: bold;
+} */
+.logo{
+    height: auto;
+    width: 170px;
+}
+.hr{
+    border-bottom: solid rgb(224, 224, 224) 0.1px;
+    width: 100%;
+}
+.continue{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    text-align: center;
+    width: 100%;
+    height: 50vh;
+}
+.devices{
+    width: 560px;
+    height: auto;
+    margin-top: 200px;
+}
+.next-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 350px;
+}
+
+.next-button:hover {
+    background-color: #b81d24;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.margin{
+    margin: 35px 180px 35px 180px;
+}
+.size{
+    font-size: 30px;
+}
+.boxes{
+    border: 0.1px solid rgba(136, 136, 136, 0.575);
+    padding: 5px;
+    border-radius: 10px;
+}
+.mid-gap{
+    margin-right: 5px;
+}
+.lgbox{
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+}
+.box1{
+    background-image: linear-gradient(to right, #32419d, #285fc8);
+}
+.box2{
+    background-image: linear-gradient(to right, #234d9c, #653bd9);
+}
+.box3{
+    background-image: linear-gradient(to right, #224c9c, #a039d3);
+}
+.box4{
+    background-image: linear-gradient(to right, #32419d, #d10f24);
+}
+.details{
+    padding: 20px 25px 20px 25px;
+}
+.topic{
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(104, 104, 104);
+}
+.gap{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.justify{
+    text-align: justify;
+}
+.link{
+    font-size: 13px;
+    text-decoration: none;
+}
+.para{
+    margin-top: -5px;
+    font-size: 13px;
+    color: rgb(104, 104, 104);
+}
+.boxes:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.payment-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1.7px solid #bdbdbd;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    max-width: 500px;
+    margin: auto;
+    position: relative;
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+}
+
+.button-content span {
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+.card-icons img {
+    margin-right: 10px;
+    width: 30px;
+    height: auto;
+}
+.icons{
+    display: flex;
+}
+
+.arrow-icon {
+    font-size: 20px;
+    color: #333;
+}
+
+.payment-button::after {
+    content: 'End-to-end encrypted 🔒';
+    font-size: 12px;
+    color: #333;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.payment-button::after::before {
+    content: '🔒';
+    margin-right: 5px;
+}
+
+.lock{
+    width: 500px;
+    height: auto;
+    margin-top: 200px;
+}
+.mt-2{
+    margin-bottom: 10px;
+}
+.payment-layout{
+    display: flex;
+    justify-content: center;
+
+}
+
+.paymentfinal{
+    padding: 10px;
+    margin: 25px 30px 25px 0;
+    width: auto;
+    max-width: 350px;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.organizer {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.date, .venue, .price {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.event-image{
+    width: 350px;
+    height: auto;
+    border-radius: 5px 5px 0 0;
+}
+.select-image{
+    width: 400px;
+    height: auto;
+}
+.gap-10{
+    margin-left: 130px;
+}
