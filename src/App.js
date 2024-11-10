@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/login" element={<Login/>}/>
             <Route exact path="/register" element={<Register/>}/>
             <Route exact path="/adminPayment" element={<AdminPayment/>}/>
-            <Route exact path="/payment" element={<Payment/>}/>
+            <Route exact path="/payment/:reservationId" element={<Payment/>}/>
             <Route exact path="/addEvent" element={<AddEvent/>}/>
             <Route exact path="/seeEvent" element={<SeeEvents/>}/>
             <Route exact path="/selectTicket/:eventId" element={<SelectTicket/>}/>
