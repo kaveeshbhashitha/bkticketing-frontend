@@ -115,13 +115,7 @@ export default function Dashboard() {
                     <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
-                          <p class="mb-4">
-                            You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                            your profile.
-                          </p>
-
-                          <a href="/payment" class="btn btn-sm btn-outline-primary">View Badges</a>
+                        <CongratulationsCard userId="67277f408f76ef5ba83777ad"/>
                         </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">
