@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../../styles/topnav.css';
 import Logo from './Logo';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function Header() {
@@ -41,11 +41,12 @@ export default function Header() {
                     <Logo/>
                 </a>
                 <ul className="menu-links">
-                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                     <li><a href="/">Theater</a></li>
                     <li><a href="/">Sports</a></li>
                     <li><a href="/">Other</a></li>
                     <li><a href="/">Deals</a></li>
+                    <li><a href="/myTickets">MyTickets</a></li>
                     <span id="close-menu-btn" className="material-symbols-outlined"><i className="fa fa-times" aria-hidden="true"></i></span>
                 </ul>
             </div>

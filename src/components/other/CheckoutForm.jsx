@@ -34,7 +34,7 @@ const CheckoutForm = ({ reservationId, userId, userEmail, amount }) => {
           amount,
         });
         console.log('Payment details saved successfully.');
-        navigate('/login');
+        navigate('/myTickets');
       } catch (error) {
         console.error('Error saving payment details:', error);
       }
