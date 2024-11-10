@@ -17,4 +17,34 @@
 }
 .btn:hover{
     cursor: pointer;
+    padding: 10px 17px;
+}
+.title-margin{
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: none;
+    text-align: left;
+  }
+  td{
+    color: rgb(83, 83, 83);
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+  }
+ 
+.gap{
+    margin-left: 10px;
 }
