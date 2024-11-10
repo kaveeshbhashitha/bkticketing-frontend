@@ -77,6 +77,9 @@ header {
   .navbar .menu-links li a:hover {
     color: #007bff;
   }
+  .active{
+    color: #007bff;
+  }
   
 .right{
     right: 0;
