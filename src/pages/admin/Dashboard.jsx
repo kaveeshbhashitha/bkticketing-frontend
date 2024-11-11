@@ -3,8 +3,6 @@ import AdminSideBar from '../../components/layout/AdminSideBar'
 import AdminHead from '../../components/layout/AdminHead'
 import FooterRest from '../../components/layout/FooterRest'
 import CongratulationsCard from '../../components/other/AddUserName'
-
-
 export default function Dashboard() {
   
   return (

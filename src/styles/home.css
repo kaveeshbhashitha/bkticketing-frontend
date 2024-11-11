@@ -1,13 +1,32 @@
-.search{
-    background: #135bf2;
-    color: white;
-    height: auto;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    padding: 50px 20px 30px 20px;
-    align-items: center;
+.search {
+  color: white;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  padding: 50px 20px 30px 20px;
+  align-items: center;
+  
+  /* Add animation for smooth color transition */
+  animation: colorTransition 10s infinite alternate;
 }
+
+/* Define the keyframes for the color animation */
+@keyframes colorTransition {
+  0% {
+      background-color: #135bf2;  /* Blue */
+  }
+  33% {
+      background-color: #003366;  /* Dark Blue */
+  }
+  66% {
+      background-color: #0e42b1;  /* Violet */
+  }
+  100% {
+      background-color:  #135bf2;  /* Light Blue (Deep Sky Blue) */
+  }
+}
+
  
   .hero-section .content {
     max-width: 1280px;
