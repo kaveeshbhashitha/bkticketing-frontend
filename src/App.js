@@ -13,6 +13,7 @@ import SelectTicket from "./pages/web/SelectTicket";
 import MyTickets from "./pages/web/MyTickets";
 import AdminLogin from "./pages/admin/AdminLogin";
 import Deals from "./pages/admin/Deals";
+import Other from "./pages/admin/Other";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route exact path="/myTickets" element={<MyTickets/>}/>
             <Route exact path="/adminLogin" element={<AdminLogin/>}/>
             <Route exact path="/Deals" element={<Deals/>}/>
+            <Route exact path="/Other" element={<Other/>}/>
           </Routes> 
       </Router>
     </div>

@@ -44,7 +44,7 @@ export default function Header() {
                     <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                     <li><a href="/">Theater</a></li>
                     <li><a href="/">Sports</a></li>
-                    <li><a href="/">Other</a></li>
+                    <li><NavLink to="/Other" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Other</NavLink></li>
                     <li><NavLink to="/Deals" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Deals</NavLink></li>
                     <li><a href="/myTickets">MyTickets</a></li>
                     <span id="close-menu-btn" className="material-symbols-outlined"><i className="fa fa-times" aria-hidden="true"></i></span>
