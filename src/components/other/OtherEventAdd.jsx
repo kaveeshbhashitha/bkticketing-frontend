@@ -96,11 +96,7 @@ export default function OtherEventAdd() {
                         <label class="form-label" for="phoneNumber">Event Type</label>
                         <select className="form-control" name="eventType" onChange={handleInputChange} required>
                                     <option value="">Select Event Type</option> {/* Placeholder option */}
-                                    <option value="All">All</option>
                                     <option value="Other">Other</option>
-                                    <option value="Sports">Sports</option>
-                                    <option value="Theater">Theater</option>
-                                    <option value="Deals">Deals</option>
                         </select>
                     </div>
 
