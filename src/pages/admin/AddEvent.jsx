@@ -5,6 +5,7 @@ import '../../styles/adminEvents.css';
 import GeneralEvent from '../../components/other/GeneralEventAdd';
 import AddMatch from '../../components/other/AddMatch';
 import OtherEvent from '../../components/other/OtherEventAdd';
+import TheaterAndMovieEventAdd from '../../components/other/TheaterAndMovie';
 
 export default function AddGeneralEvent() {
     const [visibleDiv, setVisibleDiv] = useState(1);
@@ -33,7 +34,9 @@ export default function AddGeneralEvent() {
                         <div className={visibleDiv === 3 ? "visible" : "hidden"}>
                             <OtherEvent/>
                         </div>
-                        <div className={visibleDiv === 4 ? "visible" : "hidden"}>Div 4</div>
+                        <div className={visibleDiv === 4 ? "visible" : "hidden"}>
+                            <TheaterAndMovieEventAdd/>
+                        </div>
 
                     </div>
                     <div class="content-backdrop fade"></div>
