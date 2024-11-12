@@ -27,6 +27,76 @@
   }
 }
 
+.search2 {
+  color: white;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  padding: 50px 20px 30px 20px;
+  align-items: center;
+  
+  /* Add animation for smooth color transition */
+  animation: colorTransition2 10s infinite alternate;
+}
+
+/* Define the keyframes for the color animation */
+@keyframes colorTransition2 {
+  0% {
+      background-color: #081434;  /* Blue */
+  }
+  33% {
+      background-color: #003366;  /* Dark Blue */
+  }
+  66% {
+      background-color: #081434  /* Violet */
+  }
+  100% {
+      background-color:  #135bf2;  /* Light Blue (Deep Sky Blue) */
+  }
+}
+
+
+.breadcrumb {
+  font-size: 16px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  
+}
+
+.deals-banner {
+  background-color: #051b35; /* dark blue background */
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: left;
+  padding: 20px;
+  margin-left: 2cm;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.filter-btn.active {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+
+
  
   .hero-section .content {
     max-width: 1280px;
@@ -34,6 +104,12 @@
     width: 100%;
   }
   
+  .content2 {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    
+  }
   .hero-section .content h2 {
     color: #fff;
     font-size: 37px;
@@ -140,6 +216,10 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-left: 20px;
+      }
+
+      .content2{
+        text-align: center;
       }
       
       .hero-section .content h2 {
@@ -307,4 +387,10 @@
 .d-none{
   display: none;
 }
-  
+hr {
+  border: none;          /* Remove default border */
+  height: 1px;           /* Set thickness of the line */
+  background-color:black;  /* Set the color you want */
+  margin: 20px 0;        /* Optional: Add space above and below */
+  opacity: 0.2;          /* Optional: Make it semi-transparent */
+}
