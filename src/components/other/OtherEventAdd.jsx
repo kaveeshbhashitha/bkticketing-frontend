@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-export default function GeneralEvent() {
+export default function OtherEventAdd() {
     const [eventData, setEventData] = useState({
         eventName: "",
         eventDate: "",
@@ -56,7 +56,7 @@ export default function GeneralEvent() {
     <div class="row">
         <div class="col-md-12">
         <div class="card mb-4">
-            <h5 class="card-header">Add General Event Details</h5>
+            <h5 class="card-header">Add Other Event Details</h5>
             {message && <div className='alert alert-success mx-2 d-flex justify-content-between'>{message} <i class="fas fa-check-circle pt-1"></i></div>}
             <hr class="my-0" />
             <div class="card-body">
