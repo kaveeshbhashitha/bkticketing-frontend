@@ -15,7 +15,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import Deals from "./pages/web/Deals";
 import Other from "./pages/web/Other";
 import OtherEventAdd from "./components/other/OtherEventAdd";
-import TheaterAndMovieEventAdd from "./components/other/TheaterAndMovie";
+import TheaterAndMovieEventAdd from "./components/other/TheaterAndMovieEventAdd";
 import Theater from "./pages/web/Theater";
 import Sports from "./pages/web/Sports";
 
