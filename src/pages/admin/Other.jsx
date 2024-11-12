@@ -4,6 +4,7 @@ import Header from '../../components/layout/Header'
 import Footer from '../../components/layout/Footer'
 import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/home.css';
+import '../../styles/other.css';
 import { Link } from 'react-router-dom';
 
 export default function Other() {
@@ -42,11 +43,19 @@ export default function Other() {
   
     
             {/* Filter Buttons */}
-            
-            <div className="filter-buttons">
-            <button className="filter-btn active">Events</button>
-            <button className="filter-btn">Movies</button>
-            </div>
+         <div class="content2">   
+         <div class="button-group">
+        <button class="button active">All</button>
+        <button class="button">Restaurants</button>
+        <button class="button">Attractions</button>
+        <button class="button">Transport</button>
+        <button class="button">Vouchers</button>
+        <button class="button">Hotel</button>
+        <button class="button">Family</button>
+        <button class="button">Children</button>
+        </div>
+        </div>
+
 
             <div className='event-title'>
                 What’s happening <span>this month</span>
