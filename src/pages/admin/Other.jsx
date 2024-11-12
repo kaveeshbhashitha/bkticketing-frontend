@@ -6,7 +6,7 @@ import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/home.css';
 import { Link } from 'react-router-dom';
 
-export default function Deals() {
+export default function Other() {
     const [generalEvents, setGeneralEvents] = useState([]);
     const [error, setError] = useState("");
 
@@ -31,12 +31,12 @@ export default function Deals() {
         <hr />
         <div className='content2'>
             <div className="breadcrumb">
-            <i className="fa fa-home" aria-hidden="true"></i>  <Link to="/">Home</Link> &gt; <span>Deals</span>
+            <i className="fa fa-home" aria-hidden="true"></i>  <Link to="/">Home</Link> &gt; <span>Other</span>
             </div></div>
 
             <div className="search2 hero-section">
                 <div class="content">
-                <h2>Deals</h2>
+                <h2>Other</h2>
                 </div>
             </div>
   
