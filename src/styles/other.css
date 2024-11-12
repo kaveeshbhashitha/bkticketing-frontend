@@ -1,0 +1,36 @@
+.button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  .button.active {
+    border: 1px solid #007bff;
+    color: #007bff;
+  }
+  
+  .button:hover {
+    background-color: #f0f0f0;
+  }
+
+  @media screen and (max-width: 900px) {
+    .button-group {
+        display: inline;
+        gap: 10px;
+        margin-left: 15px;
+      }
+
+
+  }
