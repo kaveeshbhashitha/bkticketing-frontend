@@ -12,13 +12,14 @@ export default function EventCalendar() {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/generalEvent/getAllEvents');
+        const response = await axios.get('http://localhost:8080/unifiedEvent/getAllUnifiedEvents');
 
         // Map data from backend to calendar format
         const calendarEvents = response.data.map((event) => ({
           title: event.eventName,
           start: new Date(event.eventDate),
-          end: new Date(event.eventDate), // End date can be the same for single-day events
+          end: new Date(event.eventDate),
+          type: event.eventType, // Pass event type for color assignment
         }));
 
         setEvents(calendarEvents);
@@ -30,6 +31,31 @@ export default function EventCalendar() {
     fetchEvents();
   }, []);
 
+  const getEventColor = (eventType) => {
+    if (eventType === 'theater') {
+      return '#FF6347'; 
+    } else if (eventType === 'sport') {
+      return '#4682B4'; 
+    } else if (eventType === 'generalEvent') {
+      return '#32CD32'; 
+    } else {
+      return '#808080'; 
+    }
+  };
+
+  // Customize event styling based on type
+  const eventStyleGetter = (event) => {
+    const backgroundColor = getEventColor(event.type);
+    return {
+      style: {
+        backgroundColor: backgroundColor,
+        color: 'white',
+        borderRadius: '5px',
+        border: 'none',
+      },
+    };
+  };
+
   return (
     <div style={{ height: '80vh' }}>
       <Calendar
@@ -40,11 +66,8 @@ export default function EventCalendar() {
         style={{ height: 500 }}
         titleAccessor="title"
         views={['month']}
+        eventPropGetter={eventStyleGetter} // Apply custom color styling
       />
     </div>
   );
 }
-
-
-
-
