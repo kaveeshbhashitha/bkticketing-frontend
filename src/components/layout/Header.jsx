@@ -43,7 +43,7 @@ export default function Header() {
                 <ul className="menu-links">
                     <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                     <li><NavLink to="/Theater" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Theater</NavLink></li>
-                    <li><a href="/">Sports</a></li>
+                    <li><NavLink to="/Sports" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Sports</NavLink></li>
                     <li><NavLink to="/Other" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Other</NavLink></li>
                     <li><NavLink to="/Deals" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Deals</NavLink></li>
                     <li><a href="/myTickets">MyTickets</a></li>
