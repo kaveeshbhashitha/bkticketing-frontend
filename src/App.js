@@ -16,6 +16,7 @@ import Deals from "./pages/web/Deals";
 import Other from "./pages/web/Other";
 import OtherEventAdd from "./components/other/OtherEventAdd";
 import TheaterAndMovieEventAdd from "./components/other/TheaterAndMovie";
+import Theater from "./pages/web/Theater";
 
 function App() {
   return (
@@ -37,7 +38,9 @@ function App() {
             <Route exact path="/Deals" element={<Deals/>}/>
             <Route exact path="/Other" element={<Other/>}/>
             <Route exact path="/OtherEvent" element={<OtherEventAdd/>}/>
-            <Route exact path="/Theater" element={<TheaterAndMovieEventAdd/>}/>
+            <Route exact path="/AddTheater" element={<TheaterAndMovieEventAdd/>}/>
+            <Route exact path="/Theater" element={<Theater/>}/>
+            
           </Routes> 
       </Router>
     </div>
