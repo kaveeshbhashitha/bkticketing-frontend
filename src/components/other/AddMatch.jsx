@@ -4,7 +4,7 @@ import axios from 'axios';
 export default function AddMatch() {
     const [eventData, setEventData] = useState({
         eventName: "",
-        eventDate: "",
+        matchDate: "",
         eventTime: "",
         eventVenue: "",
         eventOrganizer: "",
@@ -35,16 +35,16 @@ export default function AddMatch() {
             if (file) {
                 const formData = new FormData();
                 formData.append("file", file);
-                const uploadResponse = await axios.post("http://localhost:8080/generalEvent/uploadImage", formData, {
+                const uploadResponse = await axios.post("http://localhost:8080/sport/uploadImage", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 imagePath = uploadResponse.data; // Get the returned image path
             }
 
             // Step 2: Submit event data, including the image path
-            const response = await axios.post("http://localhost:8080/generalEvent/addEvent", {
+            const response = await axios.post("http://localhost:8080/sport/addSport", {
                 ...eventData,
-                eventImagePath: imagePath,
+                matchImagePath: imagePath,
             });
 
             setMessage("Event added successfully..!", response.status);
@@ -64,47 +64,47 @@ export default function AddMatch() {
             <form id="formAccountSettings" method="POST" onsubmit="return false">
                 <div class="row">
                     <div class="mb-3 col-md-6">
-                        <label for="state" class="form-label">Event Name</label>
+                        <label for="state" class="form-label">Match Name</label>
                         <input class="form-control" type="text" name="eventName" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="zipCode" class="form-label">Event Date</label>
-                        <input class="form-control" type="date" name="eventDate" onChange={handleInputChange} required />
+                        <label for="zipCode" class="form-label">Match Date</label>
+                        <input class="form-control" type="date" name="matchDate" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="firstName" class="form-label">Event Time</label>
-                        <input class="form-control" type="time" name="eventTime" onChange={handleInputChange} required />
+                        <label for="firstName" class="form-label">Match Time</label>
+                        <input class="form-control" type="time" name="matchTime" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="lastName" class="form-label">Event Venue</label>
-                        <input class="form-control" type="text" name="eventVenue" onChange={handleInputChange} required />
+                        <label for="lastName" class="form-label">Match Venue</label>
+                        <input class="form-control" type="text" name="matchVenue" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="email" class="form-label">Event Organizer</label>
-                        <input class="form-control" type="text" name="eventOrganizer" onChange={handleInputChange} required />
+                        <label for="email" class="form-label">Match Organizer</label>
+                        <input class="form-control" type="text" name="matchHost" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="organization" class="form-label">Description</label>
-                        <input class="form-control" name="description" onChange={handleInputChange} required />
+                        <label for="organization" class="form-label">Team One</label>
+                        <input class="form-control" name="teamOne" onChange={handleInputChange} required />
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="organization" class="form-label">Team Two</label>
+                        <input class="form-control" name="teamTwo" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
                         <label class="form-label" for="phoneNumber">Ticket Price</label>
                         <input class="form-control" type="number" name="oneTicketPrice" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="address" class="form-label">Event Type</label>
-                        <input class="form-control" type="text" name="eventType" onChange={handleInputChange} required />
-                    </div>
-                    <div class="mb-3 col-md-6">
-                        <label class="form-label" for="phoneNumber">Event For</label>
-                        <input class="form-control" type="text" name="eventIsFor"  onChange={handleInputChange} required />
+                        <label for="address" class="form-label">Match Type</label>
+                        <input class="form-control" type="text" name="matchType" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="address" class="form-label">Number of Tickets Available</label>
                         <input class="form-control" type="number" name="numOfTickets" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
-                        <label for="address" class="form-label">Event Image</label>
+                        <label for="address" class="form-label">Match Image</label>
                         <input class="form-control" type="file" onChange={handleFileChange} required />
                     </div>
                 </div>
