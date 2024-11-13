@@ -41,8 +41,6 @@ export default function AddGeneralEvent() {
                     </div>
                     <div class="content-backdrop fade"></div>
                 </div>
-
-                
             </div>
         </div>
       <FooterRest/>

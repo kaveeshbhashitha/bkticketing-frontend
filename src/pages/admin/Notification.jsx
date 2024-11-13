@@ -86,8 +86,6 @@ export default function Notification() {
                       </div>
                       <div class="content-backdrop fade"></div>
                   </div>
-  
-                  
               </div>
           </div>
       </div>

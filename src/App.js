@@ -21,6 +21,7 @@ import Sports from "./pages/web/Sports";
 import Customer from "./pages/admin/Customer";
 import Notification from "./pages/admin/Notification";
 import Schedule from "./pages/admin/Schedule";
+import Reservation from "./pages/admin/Reservation";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
             <Route exact path="/customer" element={<Customer/>}/>
             <Route exact path="/notification" element={<Notification/>}/>
             <Route exact path="/schedule" element={<Schedule/>}/>
+            <Route exact path="/reservation" element={<Reservation/>}/>
           </Routes> 
       </Router>
     </div>

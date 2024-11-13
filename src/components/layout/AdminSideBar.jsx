@@ -101,7 +101,7 @@ export default function AdminSideBar() {
 
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Actions</span></li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/reservation" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-detail"></i>
                     <div data-i18n="Analytics">Reservations</div>
                 </NavLink>
