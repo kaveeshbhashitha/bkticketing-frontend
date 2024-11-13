@@ -98,8 +98,6 @@ export default function GeneralEvent() {
                                     <option value="">Select Event Type</option> {/* Placeholder option */}
                                     <option value="All">All</option>
                                     <option value="Other">Other</option>
-                                    <option value="Sports">Sports</option>
-                                    <option value="Theater">Theater</option>
                                     <option value="Deals">Deals</option>
                         </select>
                     </div>
