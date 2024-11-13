@@ -20,6 +20,7 @@ import Theater from "./pages/web/Theater";
 import Sports from "./pages/web/Sports";
 import Customer from "./pages/admin/Customer";
 import Notification from "./pages/admin/Notification";
+import Schedule from "./pages/admin/Schedule";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
             <Route exact path="/Sports" element={<Sports/>}/>
             <Route exact path="/customer" element={<Customer/>}/>
             <Route exact path="/notification" element={<Notification/>}/>
+            <Route exact path="/schedule" element={<Schedule/>}/>
           </Routes> 
       </Router>
     </div>
