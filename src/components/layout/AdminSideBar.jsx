@@ -48,13 +48,13 @@ export default function AdminSideBar() {
               <span class="menu-header-text">Pages</span>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/customer" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-male gap-space"></i><i class="menu-icon tf-icons bx bx-female"></i>
                     <div data-i18n="Analytics">Customers</div>
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/notification" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-bell"></i>
                     <div data-i18n="Analytics">Notifications</div>
                 </NavLink>
