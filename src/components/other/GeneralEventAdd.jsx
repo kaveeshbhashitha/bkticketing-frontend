@@ -35,14 +35,14 @@ export default function GeneralEvent() {
             if (file) {
                 const formData = new FormData();
                 formData.append("file", file);
-                const uploadResponse = await axios.post("http://192.168.50.90:8080/generalEvent/uploadImage", formData, {
+                const uploadResponse = await axios.post("http://localhost:8080/generalEvent/uploadImage", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 imagePath = uploadResponse.data; // Get the returned image path
             }
 
             // Step 2: Submit event data, including the image path
-            const response = await axios.post("http://192.168.50.90:8080/generalEvent/addEvent", {
+            const response = await axios.post("http://localhost:8080/generalEvent/addEvent", {
                 ...eventData,
                 eventImagePath: imagePath,
             });
@@ -95,7 +95,7 @@ export default function GeneralEvent() {
                     <div class="mb-3 col-md-6">
                         <label class="form-label" for="phoneNumber">Event Type</label>
                         <select className="form-control" name="eventType" onChange={handleInputChange} required>
-                                    <option value="">Select Event Type</option> {/* Placeholder option */}
+                                    <option value="">Select Event Type</option> 
                                     <option value="All">All</option>
                                     <option value="Other">Other</option>
                                     <option value="Sports">Sports</option>
@@ -107,7 +107,7 @@ export default function GeneralEvent() {
                     <div class="mb-3 col-md-6">
                         <label class="form-label" for="phoneNumber">Event For</label>
                         <select className="form-control" name="eventIsFor" onChange={handleInputChange} required>
-                                    <option value="">Select Event For</option> {/* Placeholder option */}
+                                    <option value="">Select Event For</option> 
                                     <option value="Children">Children</option>
                                     <option value="Adults">Adults</option>
                                     <option value="teenagers">teenagers</option>
