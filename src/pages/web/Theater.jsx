@@ -6,24 +6,44 @@ import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/home.css';
 import { Link } from 'react-router-dom';
 
-export default function Theater() {
-    const [generalEvents, setGeneralEvents] = useState([]);
+export default function Other() {
+    const [Theater, setSportsEvents] = useState([]);
     const [error, setError] = useState("");
 
+
+
     useEffect(() => {
-        // Fetch event data from backend
-        axios.get("http://localhost:8080/generalEvent/getEventByType/Theater")
-          .then(response => {
-            if (response.data && response.data.length > 0) {
-                setGeneralEvents(response.data);
-            } else {
-              setError("No events found to display.");
+        // URLs for general events and sports events
+
+        const sportEventUrls = [
+            "http://192.168.50.90:8080/theater/getAllTheater",
+            "http://localhost/theater/getAllTheater" // Second URL for sports events
+        ];
+
+        // Function to fetch data from a list of URLs
+        const fetchData = async (urls, setData) => {
+            for (let i = 0; i < urls.length; i++) {
+                try {
+                    const response = await axios.get(urls[i]);
+                    if (response.data && response.data.length > 0) {
+                        setData(response.data);
+                        setError(null); // Clear any previous error
+                        return; // Exit the loop if data is fetched successfully
+                    } else {
+                        setError("No events found to display.");
+                    }
+                } catch (err) {
+                    console.error(`Failed to fetch from ${urls[i]}, trying next if available...`);
+                }
             }
-          })
-          .catch(err => {
-            setError("Error fetching event data.");
-          });
-      }, []);
+            setError("Error fetching event data."); // Set error if all URLs fail
+        };
+
+        // Fetch general events and sports events
+        fetchData(sportEventUrls, setSportsEvents);
+
+    }, []);
+
 
   return (
     <div>
@@ -55,16 +75,16 @@ export default function Theater() {
             <div className='error-msg'>
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
-            {generalEvents.length > 0 ? (
+            {Theater.length > 0 ? (
             <div className='event-container'>
-                {generalEvents.map((event) => (
+                {Theater.map((event) => (
                 <div class="image-box">
                     <div className='image-container'>
-                        <img src={event.eventImagePath} alt="travel" className='display-image'/>
+                        <img src={event.theaterImagePath} alt="travel" className='display-image'/>
                         <div className='textforimg'>
                             <h4 className='mt-3'>{event.eventName}</h4>
-                            <span><i class="fa-regular fa-calendar rightgap"></i>{event.eventDate} • {event.eventTime} IST</span><br/>
-                            <span><i class="fa-solid fa-location-dot rightgap"></i>  At {event.eventVenue}</span><br/>
+                            <span><i class="fa-regular fa-calendar rightgap"></i>{event.theaterDate} • {event.theaterTime1} IST</span><br/>
+                            <span><i class="fa-solid fa-location-dot rightgap"></i>  At {event.theaterVenue}</span><br/>
                             <span>{event.oneTicketPrice}.00 LKR upwards</span>
                         </div>
                         <div className='buybtn'>

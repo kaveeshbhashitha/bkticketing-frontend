@@ -10,6 +10,8 @@ export default function Home() {
     const [generalEvents, setGeneralEvents] = useState([]);
     const [error, setError] = useState("");
     const [Sports, setSportsEvents] = useState([]);
+    const [Theater, setTheaterEvents] = useState([]);
+    
 
     useEffect(() => {
         // URLs for general events and sports events
@@ -22,6 +24,11 @@ export default function Home() {
             "http://localhost:8080/sport/getAllSport",
             "http://localhost/sport/getAllSport"
         ];
+
+        const TheaterEventUrls = [
+            "http://192.168.50.90:8080/theater/getAllTheater",
+            "http://localhost/theater/getAllTheater" // Second URL for sports events
+        ];        
 
         // Function to fetch data from a list of URLs
         const fetchData = async (urls, setData) => {
@@ -45,6 +52,7 @@ export default function Home() {
         // Fetch general events and sports events
         fetchData(generalEventUrls, setGeneralEvents);
         fetchData(sportEventUrls, setSportsEvents);
+        fetchData(TheaterEventUrls, setTheaterEvents);
 
     }, []);
 
@@ -107,6 +115,24 @@ export default function Home() {
                     </div>
                 </div>
                 ))}
+
+                {Theater.map((event) => (
+                <div class="image-box">
+                    <div className='image-container'>
+                        <img src={event.theaterImagePath} alt="travel" className='display-image'/>
+                        <div className='textforimg'>
+                            <h4 className='mt-3'>{event.eventName}</h4>
+                            <span><i class="fa-regular fa-calendar rightgap"></i>{event.theaterDate} • {event.theaterTime1} IST</span><br/>
+                            <span><i class="fa-solid fa-location-dot rightgap"></i>  At {event.theaterVenue}</span><br/>
+                            <span>{event.oneTicketPrice}.00 LKR upwards</span>
+                        </div>
+                        <div className='buybtn'>
+                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}>Buy Tickets</Link>
+                        </div>
+                    </div>
+                </div>
+                ))}
+
             </div>
             ) : (
                 <div className="d-none" role="alert">

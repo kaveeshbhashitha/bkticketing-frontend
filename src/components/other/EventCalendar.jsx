@@ -34,10 +34,12 @@ export default function EventCalendar() {
   const getEventColor = (eventType) => {
     if (eventType === 'theater') {
       return '#FF6347'; 
+
     } else if (eventType === 'sports') {
       return '#4682B4'; 
     } else if (eventType === 'generalEvent') {
       return '#61d53d'; 
+    } else if (eventType === 'generalEvent') {
     } else {
       return '#135bf2'; 
     }
