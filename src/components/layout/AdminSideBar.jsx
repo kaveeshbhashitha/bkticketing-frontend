@@ -48,19 +48,19 @@ export default function AdminSideBar() {
               <span class="menu-header-text">Pages</span>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/customer" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-male gap-space"></i><i class="menu-icon tf-icons bx bx-female"></i>
                     <div data-i18n="Analytics">Customers</div>
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/notification" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-bell"></i>
                     <div data-i18n="Analytics">Notifications</div>
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/Calender" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-calendar"></i>
                     <div data-i18n="Analytics">Schedules</div>
                 </NavLink>
@@ -101,7 +101,7 @@ export default function AdminSideBar() {
 
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Actions</span></li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/Reservation" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-detail"></i>
                     <div data-i18n="Analytics">Reservations</div>
                 </NavLink>
