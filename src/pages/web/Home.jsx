@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 export default function Home() {
     const [generalEvents, setGeneralEvents] = useState([]);
     const [error, setError] = useState("");
+    const [Sports, setSportsEvents] = useState([]);
+    const [errors, setsError] = useState("");
 
     useEffect(() => {
         // Fetch event data from backend
@@ -18,6 +20,17 @@ export default function Home() {
                 setGeneralEvents(response.data);
             } else {
               setError("No events found to display.");
+            }
+          })
+          .catch(err => {
+            setError("Error fetching event data.");
+          });
+          axios.get("http://localhost:8080/sport/getAllSport")
+          .then(response => {
+            if (response.data && response.data.length > 0) {
+                setSportsEvents(response.data);
+            } else {
+                setsError("No events found to display.");
             }
           })
           .catch(err => {
@@ -63,6 +76,35 @@ export default function Home() {
                         </div>
                         <div className='buybtn'>
                             <Link className='buytickets' to={`/selectTicket/${event.eventId}`}>Buy Tickets</Link>
+                        </div>
+                    </div>
+                </div>
+                ))}
+            </div>
+            ) : (
+                <div className="d-none" role="alert">
+                No events to display.
+                </div>
+            )}
+
+            <div className='error-msg'>
+                {errors && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
+            </div>
+
+            {Sports.length > 0 ? (
+            <div className='event-container'>
+                {Sports.map((event) => (
+                <div class="image-box">
+                    <div className='image-container'>
+                        <img src={event.matchImagePath} alt="travel" className='display-image'/>
+                        <div className='textforimg'>
+                            <h4 className='mt-3'>{event.eventName}</h4>
+                            <span><i class="fa-regular fa-calendar rightgap"></i>{event.matchDate} • {event.matchTime} IST</span><br/>
+                            <span><i class="fa-solid fa-location-dot rightgap"></i>  At {event.matchVenue}</span><br/>
+                            <span>{event.oneTicketPrice}.00 LKR upwards</span>
+                        </div>
+                        <div className='buybtn'>
+                            <Link className='buytickets' to={`/selectTicket/${event.matchtId}`}>Buy Tickets</Link>
                         </div>
                     </div>
                 </div>
