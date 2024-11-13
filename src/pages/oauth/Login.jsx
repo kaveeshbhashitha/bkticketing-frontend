@@ -81,7 +81,7 @@ export default function Login() {
 
               <p class="text-center">
                 <span>New on our platform?</span>
-                <a href="register">
+                <a href="/register" className='mx-2'>
                   <span>Create an account</span>
                 </a>
               </p>

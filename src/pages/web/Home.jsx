@@ -14,13 +14,13 @@ export default function Home() {
     useEffect(() => {
         // URLs for general events and sports events
         const generalEventUrls = [
-            "http://192.168.50.90:8080/generalEvent/getAllEvents",
-            "http://localhost/generalEvent/getAllEvents" // Second URL for general events
+            "http://localhost:8080/generalEvent/getAllEvents",
+            "http://localhost/generalEvent/getAllEvents"
         ];
 
         const sportEventUrls = [
-            "http://192.168.50.90:8080/sport/getAllSport",
-            "http://localhost/sport/getAllSport" // Second URL for sports events
+            "http://localhost:8080/sport/getAllSport",
+            "http://localhost/sport/getAllSport"
         ];
 
         // Function to fetch data from a list of URLs
@@ -73,7 +73,7 @@ export default function Home() {
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
             {generalEvents.length > 0 ? (
-            <div className='image-gallery'>
+            <div className='event-container'>
                 {generalEvents.map((event) => (
                 <div class="image-box">
                     <div className='image-container'>

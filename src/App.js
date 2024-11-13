@@ -18,6 +18,7 @@ import OtherEventAdd from "./components/other/OtherEventAdd";
 import TheaterAndMovieEventAdd from "./components/other/TheaterAndMovieEventAdd";
 import Theater from "./pages/web/Theater";
 import Sports from "./pages/web/Sports";
+import Customer from "./pages/admin/Customer";
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
             <Route exact path="/AddTheater" element={<TheaterAndMovieEventAdd/>}/>
             <Route exact path="/Theater" element={<Theater/>}/>
             <Route exact path="/Sports" element={<Sports/>}/>
-            
+            <Route exact path="/customer" element={<Customer/>}/>
           </Routes> 
       </Router>
     </div>
