@@ -4,19 +4,17 @@ import Header from '../../components/layout/Header'
 import Footer from '../../components/layout/Footer'
 import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/home.css';
+import '../../styles/other.css';
 import { Link } from 'react-router-dom';
 
-export default function Home() {
-    const [generalEvents, setGeneralEvents] = useState([]);
-    const [error, setError] = useState("");
+export default function Other() {
     const [Sports, setSportsEvents] = useState([]);
+    const [error, setError] = useState("");
+
+
 
     useEffect(() => {
         // URLs for general events and sports events
-        const generalEventUrls = [
-            "http://192.168.50.90:8080/generalEvent/getAllEvents",
-            "http://localhost/generalEvent/getAllEvents" // Second URL for general events
-        ];
 
         const sportEventUrls = [
             "http://192.168.50.90:8080/sport/getAllSport",
@@ -43,27 +41,41 @@ export default function Home() {
         };
 
         // Fetch general events and sports events
-        fetchData(generalEventUrls, setGeneralEvents);
         fetchData(sportEventUrls, setSportsEvents);
 
     }, []);
 
+
   return (
     <div>
         <Header />
-        {/* Search section start */}
-            <section class="search hero-section">
+        <hr />
+        <div className='content2'>
+            <div className="breadcrumb">
+            <i className="fa fa-home" aria-hidden="true"></i>  <Link to="/">Home</Link> &gt; <span>Sports</span>
+            </div></div>
+
+            <div className="search2 hero-section">
                 <div class="content">
-                    <h2>Let’s Book Your Ticket</h2>
-                    <p>Discover your favorite entertainment right here</p>
-                    <div class="search-bar">
-                        <i class="fa fa-search" aria-hidden="true"></i> 
-                        <input type="text" placeholder="Search by Artist, Event or Venue" />
-                        <button type="submit">Search</button>
-                    </div>
+                <h2>Sports</h2>
                 </div>
-            </section>
-            {/* Search section end */}
+            </div>
+  
+    
+            {/* Filter Buttons */}
+         <div class="content2">   
+         <div class="button-group">
+        <button class="button active">All</button>
+        <button class="button">Restaurants</button>
+        <button class="button">Attractions</button>
+        <button class="button">Transport</button>
+        <button class="button">Vouchers</button>
+        <button class="button">Hotel</button>
+        <button class="button">Family</button>
+        <button class="button">Children</button>
+        </div>
+        </div>
+
 
             <div className='event-title'>
                 What’s happening <span>this month</span>
@@ -72,25 +84,9 @@ export default function Home() {
             <div className='error-msg'>
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
-            {generalEvents.length > 0 ? (
-            <div className='image-gallery'>
-                {generalEvents.map((event) => (
-                <div class="image-box">
-                    <div className='image-container'>
-                    <img src={event.eventImagePath} alt="travel" className='display-image'/>
-                        <div className='textforimg'>
-                            <h4 className='mt-3'>{event.eventName}</h4>
-                            <span><i class="fa-regular fa-calendar rightgap"></i>{event.eventDate} • {event.eventTime} IST</span><br/>
-                            <span><i class="fa-solid fa-location-dot rightgap"></i>  At {event.eventVenue}</span><br/>
-                            <span>{event.oneTicketPrice}.00 LKR upwards</span>
-                        </div>
-                        <div className='buybtn'>
-                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}>Buy Tickets</Link>
-                        </div>
-                    </div>
-                </div>
-                ))}
-
+            
+            {Sports.length > 0 ? (
+            <div className='event-container'>
                 {Sports.map((event) => (
                 <div class="image-box">
                     <div className='image-container'>
@@ -113,10 +109,6 @@ export default function Home() {
                 No events to display.
                 </div>
             )}
-
-            <div className='error-msg'>
-                {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
-            </div>
 
             <div class="midsection">
                 <div class="content-info">

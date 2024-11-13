@@ -6,13 +6,13 @@ import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/home.css';
 import { Link } from 'react-router-dom';
 
-export default function Deals() {
+export default function Theater() {
     const [generalEvents, setGeneralEvents] = useState([]);
     const [error, setError] = useState("");
 
     useEffect(() => {
         // Fetch event data from backend
-        axios.get("http://localhost:8080/generalEvent/getAllEvents")
+        axios.get("http://localhost:8080/generalEvent/getEventByType/Theater")
           .then(response => {
             if (response.data && response.data.length > 0) {
                 setGeneralEvents(response.data);
@@ -31,12 +31,12 @@ export default function Deals() {
         <hr />
         <div className='content2'>
             <div className="breadcrumb">
-            <i className="fa fa-home" aria-hidden="true"></i>  <Link to="/">Home</Link> &gt; <span>Deals</span>
+            <i className="fa fa-home" aria-hidden="true"></i>  <Link to="/">Home</Link> &gt; <span>Theater</span>
             </div></div>
 
             <div className="search2 hero-section">
                 <div class="content">
-                <h2>Deals</h2>
+                <h2>Theater</h2>
                 </div>
             </div>
   
