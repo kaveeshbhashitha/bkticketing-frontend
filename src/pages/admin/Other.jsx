@@ -44,17 +44,17 @@ export default function Other() {
     
             {/* Filter Buttons */}
          <div class="content2">   
-         <div class="button-group">
-        <button class="button active">All</button>
-        <button class="button">Restaurants</button>
-        <button class="button">Attractions</button>
-        <button class="button">Transport</button>
-        <button class="button">Vouchers</button>
-        <button class="button">Hotel</button>
-        <button class="button">Family</button>
-        <button class="button">Children</button>
-        </div>
-        </div>
+            <div class="button-group">
+                <button class="button active">All</button>
+                <button class="button">Restaurants</button>
+                <button class="button">Attractions</button>
+                <button class="button">Transport</button>
+                <button class="button">Vouchers</button>
+                <button class="button">Hotel</button>
+                <button class="button">Family</button>
+                <button class="button">Children</button>
+                </div>
+            </div>
 
 
             <div className='event-title'>
