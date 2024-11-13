@@ -8,23 +8,43 @@ import '../../styles/other.css';
 import { Link } from 'react-router-dom';
 
 export default function Other() {
-    const [Sports, setGeneralEvents] = useState([]);
+    const [Sports, setSportsEvents] = useState([]);
     const [error, setError] = useState("");
 
+
+
     useEffect(() => {
-        // Fetch event data from backend
-        axios.get("http://localhost:8080/sport/getAllSport")
-          .then(response => {
-            if (response.data && response.data.length > 0) {
-                setGeneralEvents(response.data);
-            } else {
-              setError("No events found to display.");
+        // URLs for general events and sports events
+
+        const sportEventUrls = [
+            "http://192.168.50.90:8080/sport/getAllSport",
+            "http://localhost/sport/getAllSport" // Second URL for sports events
+        ];
+
+        // Function to fetch data from a list of URLs
+        const fetchData = async (urls, setData) => {
+            for (let i = 0; i < urls.length; i++) {
+                try {
+                    const response = await axios.get(urls[i]);
+                    if (response.data && response.data.length > 0) {
+                        setData(response.data);
+                        setError(null); // Clear any previous error
+                        return; // Exit the loop if data is fetched successfully
+                    } else {
+                        setError("No events found to display.");
+                    }
+                } catch (err) {
+                    console.error(`Failed to fetch from ${urls[i]}, trying next if available...`);
+                }
             }
-          })
-          .catch(err => {
-            setError("Error fetching event data.");
-          });
-      }, []);
+            setError("Error fetching event data."); // Set error if all URLs fail
+        };
+
+        // Fetch general events and sports events
+        fetchData(sportEventUrls, setSportsEvents);
+
+    }, []);
+
 
   return (
     <div>
