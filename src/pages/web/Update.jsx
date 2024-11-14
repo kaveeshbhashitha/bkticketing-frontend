@@ -72,7 +72,7 @@ export default function Update() {
             <input class="form-control" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
             <input class="form-control" type="date" name="matchDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
             <input class="form-control" type="time" name="matchTime" value={event.eventTime} onChange={handleChange} placeholder="Event Time" />
-            <input class="form-control" type="text" name="matchVenue" value={event.eventVenue} onChange={handleChange} placeholder="Venue" />
+            <input class="form-control" type="text" name="matchVenue" value={event.matchVenue} onChange={handleChange} placeholder="Venue" />
             <input class="form-control" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
            <br /> <button class="buytickets1" onClick={() => updateEvent(event, type)}>Save</button>
             <button class="buytickets" onClick={() => setEditingEvent(null)}>Cancel</button>
@@ -84,8 +84,9 @@ export default function Update() {
         <div className="mb-3 col-md-6">
             <input class="form-control" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
             <input class="form-control" type="date" name="theaterDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
-            <input class="form-control" type="time" name="theaterTime1" value={event.eventTime} onChange={handleChange} placeholder="Event Time" />
-            <input class="form-control" type="text" name="theaterVenue" value={event.eventVenue} onChange={handleChange} placeholder="Venue" />
+            <input class="form-control" type="time" name="theaterTime1" value={event.eventTime1} onChange={handleChange} placeholder="Event Time1" />
+            <input class="form-control" type="time" name="theaterTime2" value={event.eventTime2} onChange={handleChange} placeholder="Event Time2" />
+            <input class="form-control" type="text" name="theaterVenue" value={event.theaterVenue} onChange={handleChange} placeholder="Venue" />
             <input class="form-control" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
            <br /> <button class="buytickets1" onClick={() => updateEvent(event, type)}>Save</button>
             <button class="buytickets" onClick={() => setEditingEvent(null)}>Cancel</button>
@@ -153,7 +154,8 @@ export default function Update() {
                                 <img src={event.theaterImagePath} alt="theater" className="display-image" />
                                 <div className="textforimg">
                                     <h4>{event.eventName}</h4>
-                                    <span>{event.theaterDate} • {event.theaterTime} IST</span><br />
+                                    <span>{event.theaterDate} • {event.theaterTime1} IST</span><br />
+                                    <span>{event.theaterDate} • {event.theaterTime2} IST</span><br />
                                     <span>At {event.theaterVenue}</span><br />
                                     <span>{event.oneTicketPrice}.00 LKR upwards</span>
                                 </div>
