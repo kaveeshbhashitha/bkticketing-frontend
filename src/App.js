@@ -24,6 +24,7 @@ import Calender from "./components/other/EventCalendar";
 import MyReservation from "./components/other/MyReservation";
 import Delete from "./pages/web/Delete";
 import DeleteEvent from "./pages/admin/DeleteEvent";
+import Update from "./pages/web/Update";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
             <Route exact path="/Reservation" element={<MyReservation/>}/>
             <Route exact path="/Delete" element={<Delete/>}/>
             <Route exact path="/DeleteEvent" element={<DeleteEvent/>}/>
+            <Route exact path="/Update" element={<Update/>}/>
           </Routes> 
       </Router>
     </div>

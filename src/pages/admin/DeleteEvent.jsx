@@ -3,6 +3,7 @@ import AdminSideBar from '../../components/layout/AdminSideBar';
 import FooterRest from '../../components/layout/FooterRest';
 import '../../styles/adminEvents.css';
 import Delete from '../web/Delete';
+import Update from '../web/Update';
 
 export default function DeleteEvent() {
     const [visibleDiv, setVisibleDiv] = useState(1);
@@ -18,6 +19,10 @@ export default function DeleteEvent() {
                         <div className="button-container mb-4">
                             <button className='btn btn-primary' onClick={() => setVisibleDiv(1)}>Update Event</button>
                             <button className='btn btn-primary mx-2' onClick={() => setVisibleDiv(2)}>Delete Event</button>
+                        </div>
+
+                        <div className={visibleDiv === 1 ? "visible" : "hidden"}>
+                            <Update/>
                         </div>
 
                         <div className={visibleDiv === 2 ? "visible" : "hidden"}>
