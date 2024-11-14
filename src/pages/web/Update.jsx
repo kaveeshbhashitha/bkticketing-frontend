@@ -67,6 +67,31 @@ export default function Update() {
         </div>
     );
 
+    const renderEventForm1 = (event, type) => (
+        <div className="mb-3 col-md-6">
+            <input class="form-control" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
+            <input class="form-control" type="date" name="matchDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
+            <input class="form-control" type="time" name="matchTime" value={event.eventTime} onChange={handleChange} placeholder="Event Time" />
+            <input class="form-control" type="text" name="matchVenue" value={event.eventVenue} onChange={handleChange} placeholder="Venue" />
+            <input class="form-control" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
+           <br /> <button class="buytickets1" onClick={() => updateEvent(event, type)}>Save</button>
+            <button class="buytickets" onClick={() => setEditingEvent(null)}>Cancel</button>
+        </div>
+    );
+
+
+    const renderEventForm2 = (event, type) => (
+        <div className="mb-3 col-md-6">
+            <input class="form-control" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
+            <input class="form-control" type="date" name="theaterDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
+            <input class="form-control" type="time" name="theaterTime1" value={event.eventTime} onChange={handleChange} placeholder="Event Time" />
+            <input class="form-control" type="text" name="theaterVenue" value={event.eventVenue} onChange={handleChange} placeholder="Venue" />
+            <input class="form-control" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
+           <br /> <button class="buytickets1" onClick={() => updateEvent(event, type)}>Save</button>
+            <button class="buytickets" onClick={() => setEditingEvent(null)}>Cancel</button>
+        </div>
+    );
+
     return (
         <div>
             <div className="error-msg">
@@ -100,7 +125,7 @@ export default function Update() {
                 {Sports.map(event => (
                     <div className="image-box" key={event.eventId}>
                         {editingEvent?.eventId === event.eventId ? (
-                            renderEventForm(editingEvent, 'sports')
+                            renderEventForm1(editingEvent, 'sports')
                         ) : (
                             <div>
                                 <img src={event.matchImagePath} alt="sports" className="display-image" />
@@ -122,7 +147,7 @@ export default function Update() {
                 {Theater.map(event => (
                     <div className="image-box" key={event.eventId}>
                         {editingEvent?.eventId === event.eventId ? (
-                            renderEventForm(editingEvent, 'theater')
+                            renderEventForm2(editingEvent, 'theater')
                         ) : (
                             <div>
                                 <img src={event.theaterImagePath} alt="theater" className="display-image" />
