@@ -22,6 +22,8 @@ import Customer from "./pages/admin/Customer";
 import Notification from "./pages/admin/Notification";
 import Calender from "./components/other/EventCalendar";
 import MyReservation from "./components/other/MyReservation";
+import Delete from "./pages/web/Delete";
+import DeleteEvent from "./pages/admin/DeleteEvent";
 
 function App() {
   return (
@@ -50,6 +52,8 @@ function App() {
             <Route exact path="/notification" element={<Notification/>}/>
             <Route exact path="/Calender" element={<Calender/>}/>
             <Route exact path="/Reservation" element={<MyReservation/>}/>
+            <Route exact path="/Delete" element={<Delete/>}/>
+            <Route exact path="/DeleteEvent" element={<DeleteEvent/>}/>
           </Routes> 
       </Router>
     </div>
