@@ -140,10 +140,6 @@ export default function Home() {
                 </div>
             )}
 
-            <div className='error-msg'>
-                {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
-            </div>
-
             <div class="midsection">
                 <div class="content-info">
                     <div>
