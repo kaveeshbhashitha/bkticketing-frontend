@@ -49,7 +49,7 @@ export default function AdminSideBar() {
             </li>
             <li class="menu-item">
                 <NavLink to="/customer" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
-                    <i class="menu-icon tf-icons bx bx-male gap-space"></i><i class="menu-icon tf-icons bx bx-female"></i>
+                    <i class="menu-icon fa fa-users"></i>
                     <div data-i18n="Analytics">Customers</div>
                 </NavLink>
             </li>
@@ -94,7 +94,7 @@ export default function AdminSideBar() {
 
             <li class="menu-item">
                 <NavLink to="/DeleteEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
-                    <i class="menu-icon tf-icons bx bx-crown"></i>
+                    <i class="menu-icon fa-solid fa-triangle-exclamation"></i>
                     <div data-i18n="Analytics">Update and Delete Events</div>
                 </NavLink>
             </li>
@@ -102,7 +102,7 @@ export default function AdminSideBar() {
 
             <li class="menu-item">
                 <NavLink to="/seeEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
-                    <i class="menu-icon tf-icons bx bx-crown"></i>
+                    <i class="menu-icon fa-solid fa-file-video"></i>
                     <div data-i18n="Analytics">All Events</div>
                 </NavLink>
             </li>
