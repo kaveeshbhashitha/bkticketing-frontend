@@ -64,15 +64,15 @@ export default function Delete() {
     return (
         <div>
             <h3>Delete an Event</h3>
-            <div className="error-msg">
+            <div className="error-msg1">
                 <div className="alert alert-danger d-flex justify-content-between">Take your own responsibility when deleting any content here<i className="fa-solid fa-circle-exclamation pt-1"></i></div>
             </div>
-            <div className="error-msg">
+            <div className="error-msg1">
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i className="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
             <h4 class="fw-bold py-3 my-1"><span class="text-muted fw-light">General Events</span></h4>
             {generalEvents.length > 0 && (
-                <div className="event-container">
+                <div className="event-container1">
                     {generalEvents.map((event) => (
                         <div className="image-box" key={event.eventId}>
                             <div className="image-container">
@@ -95,7 +95,7 @@ export default function Delete() {
             {/* Repeat for Sports and Theater events */}
             <h4 class="fw-bold py-3 my-1"><span class="text-muted fw-light">Sport Events</span></h4>
             {Sports.map((event) => (
-                <div className="event-container" key={event.eventId}>
+                <div className="event-container1" key={event.eventId}>
                     <div className="image-box">
                         <img src={event.matchImagePath} alt="sports" className="display-image" />
                         <div className="textforimg">
@@ -113,7 +113,7 @@ export default function Delete() {
 
             <h4 class="fw-bold py-3 my-1"><span class="text-muted fw-light">Theater Events</span></h4>
             {Theater.map((event) => (
-                <div className="event-container" key={event.eventId}>
+                <div className="event-container1" key={event.eventId}>
                     <div className="image-box">
                         <img src={event.theaterImagePath} alt="theater" className="display-image" />
                         <div className="textforimg">

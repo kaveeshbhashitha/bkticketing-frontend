@@ -357,6 +357,9 @@
   flex-wrap: wrap;
 }
 
+.event-title, .error-msg, .event-container{
+  margin: 10px 3cm;
+}
 
 .textforimg{
   padding: 8px;
