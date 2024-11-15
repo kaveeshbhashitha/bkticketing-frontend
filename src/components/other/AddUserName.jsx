@@ -1,31 +1,28 @@
-import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
-function CongratulationsCard({ userId }) {
-  const [username, setUsername] = useState('');
+function CongratulationsCard() {
+    const [income, setIncome] = useState([]);
+    const [error, setError] = useState("");
 
-  useEffect(() => {
-    // Fetch the username by user ID
-    const fetchUsername = async () => {
-      try {
-        const response = await axios.get(`http://localhost:8080/user/getUserNameByID/${userId}`);
-        setUsername(response.data); // Directly set the response as username, since it's a string
-      } catch (error) {
-        console.error('Error fetching username:', error);
-      }
-    };
-
-    fetchUsername();
-  }, [userId]);
-
+    useEffect(() => {
+        // Fetch event data from backend
+        axios.get("http://localhost:8080/reservation/totalCharge/today")
+          .then(response => {
+            setIncome(response.data);
+          })
+          .catch(err => {
+            setError("Error fetching event data.");
+          });
+      }, []);
   return (
     <div className="card-body">
       <h5 className="card-title text-primary">
-        Congratulations {username}! 🎉
+        Congratulations! 🎉
       </h5>
       <p className="mb-4">
-        You have done <span className="fw-bold">72%</span> more sales today. Check your new badge in
-        your profile.
+        We have earn <span className="fw-bold text-success">Rs.{income}
+        {error}.00 </span> more sales today. Check all incomes under income page.
       </p>
       <a href="/payment" className="btn btn-sm btn-outline-primary">
         View Badges

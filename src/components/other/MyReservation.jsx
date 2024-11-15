@@ -70,7 +70,7 @@ export default function MyReservation() {
           {reservations.map((reservation) => (
             <tr key={reservation.reservationId}>
               <td>{reservation.eventName}</td>
-              <td>{reservation.eventDate}</td>
+              <td className='text-center'>{reservation.eventDate}</td>
               <td>{reservation.eventTime}</td>
               <td>{reservation.eventVenue}</td>
               <td>{reservation.numOfTickets}</td>
