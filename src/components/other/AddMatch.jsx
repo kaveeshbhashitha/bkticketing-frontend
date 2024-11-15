@@ -5,14 +5,14 @@ export default function AddMatch() {
     const [eventData, setEventData] = useState({
         eventName: "",
         matchDate: "",
-        eventTime: "",
-        eventVenue: "",
-        eventOrganizer: "",
-        description: "",
+        matchTime: "",
+        matchVenue: "",
+        matchHost: "",
+        teamOne: "",
+        teamTwo: "",
         oneTicketPrice: "",
-        eventType: "",
-        eventIsFor: "",
-        eventImagePath: "",
+        matchType: "",
+        matchImagePath: "",
         numOfTickets: "",
     });
     const [file, setFile] = useState(null);
@@ -35,7 +35,7 @@ export default function AddMatch() {
             if (file) {
                 const formData = new FormData();
                 formData.append("file", file);
-                const uploadResponse = await axios.post("http://localhost:8080/sport/uploadImage", formData, {
+                const uploadResponse = await axios.post("http://localhost:8080/generalEvent/uploadImage", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 imagePath = uploadResponse.data; // Get the returned image path
@@ -47,8 +47,9 @@ export default function AddMatch() {
                 matchImagePath: imagePath,
             });
 
-            setMessage("Event added successfully..!", response.status);
+            setMessage("Sport added successfully..!", response.status);
         } catch (error) {
+            console.error(error);
             setMessage("Error uploading event:", error);
         }
     };

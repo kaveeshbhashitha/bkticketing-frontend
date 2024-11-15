@@ -35,7 +35,7 @@ export default function AddTheater() {
             if (file) {
                 const formData = new FormData();
                 formData.append("file", file);
-                const uploadResponse = await axios.post("http://localhost:8080/theater/uploadImage", formData, {
+                const uploadResponse = await axios.post("http://localhost:8080/generalEvent/uploadImage", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 imagePath = uploadResponse.data; // Get the returned image path

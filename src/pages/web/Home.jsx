@@ -26,8 +26,8 @@ export default function Home() {
         ];
 
         const TheaterEventUrls = [
-            "http://192.168.50.90:8080/theater/getAllTheater",
-            "http://localhost/theater/getAllTheater" // Second URL for sports events
+            "http://localhost:8080/theater/getAllTheater",
+            "http://localhost/theater/getAllTheater"
         ];        
 
         // Function to fetch data from a list of URLs
@@ -139,10 +139,6 @@ export default function Home() {
                 No events to display.
                 </div>
             )}
-
-            <div className='error-msg'>
-                {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
-            </div>
 
             <div class="midsection">
                 <div class="content-info">
