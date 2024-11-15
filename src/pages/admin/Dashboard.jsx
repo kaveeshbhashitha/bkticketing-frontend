@@ -5,6 +5,8 @@ import FooterRest from '../../components/layout/FooterRest'
 import CongratulationsCard from '../../components/other/AddUserName'
 import TotolIncome from '../../components/charts/TotolIncome'
 import TodayIncome from '../../components/charts/TodayIncome'
+import TotalTickets from '../../components/charts/TotalTickets'
+import TodayTickets from '../../components/charts/TodayTickets'
 export default function Dashboard() {
   
   return (
@@ -289,8 +291,8 @@ export default function Dashboard() {
                               </div>
                             </div>
                           </div>
-                          <span class="d-block mb-1">Payments</span>
-                          <h3 class="card-title text-nowrap mb-2">RS.21,456</h3>
+                          <span class="d-block mb-1">Total Ticket Sales</span>
+                          <h3 class="card-title text-nowrap mb-2"> <TotalTickets/> </h3>
                           <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
                         </div>
                       </div>
@@ -319,8 +321,8 @@ export default function Dashboard() {
                               </div>
                             </div>
                           </div>
-                          <span class="fw-semibold d-block mb-1">Transactions</span>
-                          <h3 class="card-title mb-2">RS.14,857</h3>
+                          <span class="fw-semibold d-block mb-1">Today Ticket Sales</span>
+                          <h3 class="card-title mb-2"> <TodayTickets/> </h3>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
                         </div>
                       </div>
