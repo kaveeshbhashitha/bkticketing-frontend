@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-function CongratulationsCard() {
+export default function TotolIncome() {
     const [income, setIncome] = useState([]);
     const [error, setError] = useState("");
 
@@ -15,20 +15,11 @@ function CongratulationsCard() {
             setError("Error fetching event data.");
           });
       }, []);
-  return (
-    <div className="card-body">
-      <h5 className="card-title text-primary">
-        Congratulations! 🎉
-      </h5>
-      <p className="mb-4">
-        We have earn <span className="fw-bold text-success">Rs.{income}
-        {error}.00 </span> more sales today. Check all incomes under income page.
-      </p>
-      <a href="/payment" className="btn btn-sm btn-outline-primary">
-        View Badges
-      </a>
-    </div>
-  );
-}
 
-export default CongratulationsCard;
+  return (
+    <div>
+        {income}
+        {error}
+    </div>
+  )
+}
