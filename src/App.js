@@ -20,6 +20,8 @@ import Theater from "./pages/web/Theater";
 import Sports from "./pages/web/Sports";
 import Customer from "./pages/admin/Customer";
 import Notification from "./pages/admin/Notification";
+import Schedule from "./pages/admin/Schedule";
+import Reservation from "./pages/admin/Reservation";
 import Calender from "./components/other/EventCalendar";
 import MyReservation from "./components/other/MyReservation";
 import Delete from "./pages/web/Delete";
@@ -51,6 +53,8 @@ function App() {
             <Route exact path="/Sports" element={<Sports/>}/>
             <Route exact path="/customer" element={<Customer/>}/>
             <Route exact path="/notification" element={<Notification/>}/>
+            <Route exact path="/schedule" element={<Schedule/>}/>
+            <Route exact path="/reservation" element={<Reservation/>}/>
             <Route exact path="/Calender" element={<Calender/>}/>
             <Route exact path="/Reservation" element={<MyReservation/>}/>
             <Route exact path="/Delete" element={<Delete/>}/>

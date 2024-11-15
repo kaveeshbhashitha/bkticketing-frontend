@@ -26,8 +26,8 @@ export default function Home() {
         ];
 
         const TheaterEventUrls = [
-            "http://192.168.50.90:8080/theater/getAllTheater",
-            "http://localhost/theater/getAllTheater" // Second URL for sports events
+            "http://localhost:8080/theater/getAllTheater",
+            "http://localhost/theater/getAllTheater"
         ];        
 
         // Function to fetch data from a list of URLs

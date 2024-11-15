@@ -60,7 +60,7 @@ export default function AdminSideBar() {
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/Calender" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/schedule" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-calendar"></i>
                     <div data-i18n="Analytics">Schedules</div>
                 </NavLink>
@@ -109,7 +109,7 @@ export default function AdminSideBar() {
 
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Actions</span></li>
             <li class="menu-item">
-                <NavLink to="/Reservation" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/reservation" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-detail"></i>
                     <div data-i18n="Analytics">Reservations</div>
                 </NavLink>
