@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import AdminSideBar from '../../components/layout/AdminSideBar';
 import FooterRest from '../../components/layout/FooterRest';
 import '../../styles/adminEvents.css';
-import Delete from '../web/Delete';
-import Update from '../web/Update';
+import Delete from '../../components/other/Delete';
+import Update from '../../components/other/Update';
 
 export default function DeleteEvent() {
     const [visibleDiv, setVisibleDiv] = useState(1);

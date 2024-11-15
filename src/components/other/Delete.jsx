@@ -3,7 +3,6 @@ import axios from 'axios';
 import '../../styles/home.css';
 import '../../styles/adminEvents.css';
 
-
 export default function Delete() {
     const [generalEvents, setGeneralEvents] = useState([]);
     const [Sports, setSportsEvents] = useState([]);
@@ -11,9 +10,9 @@ export default function Delete() {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        const generalEventUrls = ["http://192.168.50.90:8080/generalEvent/getAllEvents"];
-        const sportEventUrls = ["http://192.168.50.90:8080/sport/getAllSport"];
-        const theaterEventUrls = ["http://192.168.50.90:8080/theater/getAllTheater"];
+        const generalEventUrls = ["http://localhost:8080/generalEvent/getAllEvents"];
+        const sportEventUrls = ["http://localhost:8080/sport/getAllSport"];
+        const theaterEventUrls = ["http://localhost:8080/theater/getAllTheater"];
         
         const fetchData = async (urls, setData) => {
             for (let i = 0; i < urls.length; i++) {
@@ -46,19 +45,27 @@ export default function Delete() {
             theater: `http://localhost:8080/theater/deleteTheater/${id}`
         };
 
-        try {
-            await axios.delete(urlMap[type]);
-            // Remove event from state after deletion
-            if (type === 'general') setGeneralEvents(prev => prev.filter(event => event.eventId !== id));
-            if (type === 'sports') setSportsEvents(prev => prev.filter(event => event.eventId !== id));
-            if (type === 'theater') setTheaterEvents(prev => prev.filter(event => event.eventId !== id));
-        } catch (error) {
-            console.error("Error deleting event:", error);
+        // eslint-disable-next-line no-restricted-globals
+        let answer = confirm("Are you sure to delete this");
+
+        if (answer) {
+            try {
+                await axios.delete(urlMap[type]);
+                // Remove event from state after deletion
+                if (type === 'general') setGeneralEvents(prev => prev.filter(event => event.eventId !== id));
+                if (type === 'sports') setSportsEvents(prev => prev.filter(event => event.eventId !== id));
+                if (type === 'theater') setTheaterEvents(prev => prev.filter(event => event.eventId !== id));
+            } catch (error) {
+                console.error("Error deleting event:", error);
+            }
         }
     };
 
     return (
         <div>
+            <div className="error-msg">
+                <div className="alert alert-success d-flex justify-content-between">Take your own responsibility when deleting any content here<i className="fa-solid fa-circle-exclamation pt-1"></i></div>
+            </div>
             <div className="error-msg">
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i className="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>

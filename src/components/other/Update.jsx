@@ -22,9 +22,9 @@ export default function Update() {
             }
         };
 
-        fetchData("http://192.168.50.90:8080/generalEvent/getAllEvents", setGeneralEvents);
-        fetchData("http://192.168.50.90:8080/sport/getAllSport", setSportsEvents);
-        fetchData("http://192.168.50.90:8080/theater/getAllTheater", setTheaterEvents);
+        fetchData("http://localhost:8080/generalEvent/getAllEvents", setGeneralEvents);
+        fetchData("http://localhost:8080/sport/getAllSport", setSportsEvents);
+        fetchData("http://localhost:8080/theater/getAllTheater", setTheaterEvents);
     }, []);
 
     // Function to handle updating an event
@@ -56,45 +56,48 @@ export default function Update() {
     };
 
     const renderEventForm = (event, type) => (
-        <div className="mb-3 col-md-6">
-            <input class="form-control" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
-            <input class="form-control" type="date" name="eventDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
-            <input class="form-control" type="time" name="eventTime" value={event.eventTime} onChange={handleChange} placeholder="Event Time" />
-            <input class="form-control" type="text" name="eventVenue" value={event.eventVenue} onChange={handleChange} placeholder="Venue" />
-            <input class="form-control" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
-           <br /> <button class="buytickets1" onClick={() => updateEvent(event, type)}>Save</button>
-            <button class="buytickets" onClick={() => setEditingEvent(null)}>Cancel</button>
+        <div className="mb-3 col-md-12">
+            <input class="form-control mb-1" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
+            <input class="form-control mb-1" type="date" name="eventDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
+            <input class="form-control mb-1" type="time" name="eventTime" value={event.eventTime} onChange={handleChange} placeholder="Event Time" />
+            <input class="form-control mb-1" type="text" name="eventVenue" value={event.eventVenue} onChange={handleChange} placeholder="Venue" />
+            <input class="form-control mb-1" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
+           <br /> <button class="btn btn-primary w-100" onClick={() => updateEvent(event, type)}>Save</button>
+            <button class="btn btn-warning w-100" onClick={() => setEditingEvent(null)}>Cancel</button>
         </div>
     );
 
     const renderEventForm1 = (event, type) => (
-        <div className="mb-3 col-md-6">
-            <input class="form-control" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
-            <input class="form-control" type="date" name="matchDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
-            <input class="form-control" type="time" name="matchTime" value={event.eventTime} onChange={handleChange} placeholder="Event Time" />
-            <input class="form-control" type="text" name="matchVenue" value={event.matchVenue} onChange={handleChange} placeholder="Venue" />
-            <input class="form-control" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
-           <br /> <button class="buytickets1" onClick={() => updateEvent(event, type)}>Save</button>
-            <button class="buytickets" onClick={() => setEditingEvent(null)}>Cancel</button>
+        <div className="mb-3 col-md-12">
+            <input class="form-control mb-1" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
+            <input class="form-control mb-1" type="date" name="matchDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
+            <input class="form-control mb-1" type="time" name="matchTime" value={event.eventTime} onChange={handleChange} placeholder="Event Time" />
+            <input class="form-control mb-1" type="text" name="matchVenue" value={event.matchVenue} onChange={handleChange} placeholder="Venue" />
+            <input class="form-control mb-1" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
+           <br /> <button class="btn btn-primary w-100" onClick={() => updateEvent(event, type)}>Save</button>
+            <button class="btn btn-warning w-100" onClick={() => setEditingEvent(null)}>Cancel</button>
         </div>
     );
 
 
     const renderEventForm2 = (event, type) => (
-        <div className="mb-3 col-md-6">
-            <input class="form-control" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
-            <input class="form-control" type="date" name="theaterDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
-            <input class="form-control" type="time" name="theaterTime1" value={event.eventTime1} onChange={handleChange} placeholder="Event Time1" />
-            <input class="form-control" type="time" name="theaterTime2" value={event.eventTime2} onChange={handleChange} placeholder="Event Time2" />
-            <input class="form-control" type="text" name="theaterVenue" value={event.theaterVenue} onChange={handleChange} placeholder="Venue" />
-            <input class="form-control" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
-           <br /> <button class="buytickets1" onClick={() => updateEvent(event, type)}>Save</button>
-            <button class="buytickets" onClick={() => setEditingEvent(null)}>Cancel</button>
+        <div className="mb-3 col-md-12">
+            <input class="form-control mb-1" type="text" name="eventName" value={event.eventName} onChange={handleChange} placeholder="Event Name" />
+            <input class="form-control mb-1" type="date" name="theaterDate" value={event.eventDate} onChange={handleChange} placeholder="Event Date" />
+            <input class="form-control mb-1" type="time" name="theaterTime1" value={event.eventTime1} onChange={handleChange} placeholder="Event Time1" />
+            <input class="form-control mb-1" type="time" name="theaterTime2" value={event.eventTime2} onChange={handleChange} placeholder="Event Time2" />
+            <input class="form-control mb-1" type="text" name="theaterVenue" value={event.theaterVenue} onChange={handleChange} placeholder="Venue" />
+            <input class="form-control mb-1" type="number" name="oneTicketPrice" value={event.oneTicketPrice} onChange={handleChange} placeholder="Ticket Price" />
+           <br /> <button class="btn btn-primary w-100" onClick={() => updateEvent(event, type)}>Save</button>
+            <button class="btn btn-warning w-100" onClick={() => setEditingEvent(null)}>Cancel</button>
         </div>
     );
 
     return (
         <div>
+            <div className="error-msg">
+                <div className="alert alert-warning d-flex justify-content-between">Take your own responsibility when updating any content here<i className="fa-solid fa-circle-exclamation pt-1"></i></div>
+            </div>
             <div className="error-msg">
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i className="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>

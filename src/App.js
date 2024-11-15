@@ -24,9 +24,9 @@ import Schedule from "./pages/admin/Schedule";
 import Reservation from "./pages/admin/Reservation";
 import Calender from "./components/other/EventCalendar";
 import MyReservation from "./components/other/MyReservation";
-import Delete from "./pages/web/Delete";
+import Delete from "./components/other/Delete";
 import DeleteEvent from "./pages/admin/DeleteEvent";
-import Update from "./pages/web/Update";
+import Update from "./components/other/Update";
 
 function App() {
   return (
