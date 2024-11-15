@@ -340,5 +340,19 @@
 .textforimg{
   padding: 8px;
 }
+.event-title{
+  margin-left: 3cm;
+  margin-top: 1cm;
+}
 
+.error-msg{
+  margin-left: 3cm;
+  margin-top: 10px;
+}
 
+.event-container{
+  margin: 1cm 3cm;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
