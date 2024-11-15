@@ -3,6 +3,8 @@ import AdminSideBar from '../../components/layout/AdminSideBar'
 import AdminHead from '../../components/layout/AdminHead'
 import FooterRest from '../../components/layout/FooterRest'
 import CongratulationsCard from '../../components/other/AddUserName'
+import TotolIncome from '../../components/charts/TotolIncome'
+import TodayIncome from '../../components/charts/TodayIncome'
 export default function Dashboard() {
   
   return (
@@ -163,8 +165,8 @@ export default function Dashboard() {
                               </div>
                             </div>
                           </div>
-                          <span class="fw-semibold d-block mb-1">Profit</span>
-                          <h3 class="card-title mb-2">RS.12,628</h3>
+                          <span class="fw-semibold d-block mb-1">Total Income</span>
+                          <h4 class="card-title mb-2"><TotolIncome/></h4>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
                         </div>
                       </div>
@@ -197,8 +199,8 @@ export default function Dashboard() {
                               </div>
                             </div>
                           </div>
-                          <span>Sales</span>
-                          <h3 class="card-title text-nowrap mb-1">RS.4,679</h3>
+                          <span>Today Income</span>
+                          <h4 class="card-title text-nowrap mb-1"><TodayIncome/></h4>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
                         </div>
                       </div>
