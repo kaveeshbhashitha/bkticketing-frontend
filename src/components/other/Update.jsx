@@ -95,8 +95,9 @@ export default function Update() {
 
     return (
         <div>
+            <h3>Update an Event</h3>
             <div className="error-msg">
-                <div className="alert alert-warning d-flex justify-content-between">Take your own responsibility when updating any content here<i className="fa-solid fa-circle-exclamation pt-1"></i></div>
+                <div className="alert alert-success d-flex justify-content-between">Take your own responsibility when updating any content here<i className="fa-solid fa-circle-exclamation pt-1"></i></div>
             </div>
             <div className="error-msg">
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i className="fa-solid fa-circle-exclamation pt-1"></i></div>)}
