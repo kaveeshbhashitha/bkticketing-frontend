@@ -16,18 +16,15 @@ export default function Home() {
     useEffect(() => {
         // URLs for general events and sports events
         const generalEventUrls = [
-            "http://localhost:8080/generalEvent/getAllEvents",
-            "http://localhost/generalEvent/getAllEvents"
+            "http://localhost:8080/generalEvent/getAllEvents"
         ];
 
         const sportEventUrls = [
-            "http://localhost:8080/sport/getAllSport",
-            "http://localhost/sport/getAllSport"
+            "http://localhost:8080/sport/getAllSport"
         ];
 
         const TheaterEventUrls = [
-            "http://localhost:8080/theater/getAllTheater",
-            "http://localhost/theater/getAllTheater"
+            "http://localhost:8080/theater/getAllTheater"
         ];        
 
         // Function to fetch data from a list of URLs
