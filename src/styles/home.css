@@ -341,4 +341,21 @@
   padding: 8px;
 }
 
+.event-title, .error-msg, .event-container{
+  margin: 10px 3cm;
+}
 
+.buytickets{
+  width: 100%;
+  height: auto;
+  padding: 8px 5px;
+  text-align: center;
+  background-color: #135bf2;
+  color: white;
+  border-radius: 0 0 8px 8px;
+}
+.buytickets:hover{
+  background-color: #fd7e14;
+  color: white;
+  cursor: pointer;
+}
