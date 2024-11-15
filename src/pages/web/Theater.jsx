@@ -16,7 +16,7 @@ export default function Other() {
         // URLs for general events and sports events
 
         const sportEventUrls = [
-            "http://localhost/theater/getAllTheater" // Second URL for sports events
+            "http://localhost:8080/theater/getAllTheater" // Second URL for sports events
         ];
 
         // Function to fetch data from a list of URLs
