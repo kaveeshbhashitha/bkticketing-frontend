@@ -356,6 +356,39 @@
   cursor: pointer;
 }
 
+.buytickets1{
+  width: 100%;
+  height: auto;
+  padding: 8px 5px;
+  text-align: center;
+  background-color: #135bf2;
+  color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+.buytickets1:hover{
+  background-color: #00f804;
+  color: white;
+  cursor: pointer;
+}
+
+
+.buytickets2{
+  width: 100%;
+  height: auto;
+  padding: 8px 5px;
+  text-align: center;
+  background-color: #ff0101;
+  color: white;
+  border-radius: 0 0 8px 8px;
+}
+
+.buytickets2:hover{
+  background-color: #135bf2;
+  color: white;
+  cursor: pointer;
+}
+
 .buybtn{
   display: flex;
   justify-content: center;

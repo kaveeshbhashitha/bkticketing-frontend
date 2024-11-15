@@ -93,6 +93,14 @@ export default function AdminSideBar() {
             </li>
 
             <li class="menu-item">
+                <NavLink to="/DeleteEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                    <i class="menu-icon tf-icons bx bx-crown"></i>
+                    <div data-i18n="Analytics">Update and Delete Events</div>
+                </NavLink>
+            </li>
+
+
+            <li class="menu-item">
                 <NavLink to="/seeEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-crown"></i>
                     <div data-i18n="Analytics">All Events</div>

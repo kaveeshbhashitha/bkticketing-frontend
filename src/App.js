@@ -22,6 +22,11 @@ import Customer from "./pages/admin/Customer";
 import Notification from "./pages/admin/Notification";
 import Schedule from "./pages/admin/Schedule";
 import Reservation from "./pages/admin/Reservation";
+import Calender from "./components/other/EventCalendar";
+import MyReservation from "./components/other/MyReservation";
+import Delete from "./pages/web/Delete";
+import DeleteEvent from "./pages/admin/DeleteEvent";
+import Update from "./pages/web/Update";
 
 function App() {
   return (
@@ -50,6 +55,11 @@ function App() {
             <Route exact path="/notification" element={<Notification/>}/>
             <Route exact path="/schedule" element={<Schedule/>}/>
             <Route exact path="/reservation" element={<Reservation/>}/>
+            <Route exact path="/Calender" element={<Calender/>}/>
+            <Route exact path="/Reservation" element={<MyReservation/>}/>
+            <Route exact path="/Delete" element={<Delete/>}/>
+            <Route exact path="/DeleteEvent" element={<DeleteEvent/>}/>
+            <Route exact path="/Update" element={<Update/>}/>
           </Routes> 
       </Router>
     </div>
