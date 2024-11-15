@@ -340,61 +340,14 @@
 .textforimg{
   padding: 8px;
 }
-.buytickets{
-  width: 100%;
-  height: auto;
-  padding: 8px 5px;
-  text-align: center;
-  background-color: #135bf2;
-  color: white;
-  border-radius: 0 0 8px 8px;
+.event-title{
+  margin-left: 3cm;
+  margin-top: 1cm;
 }
 
-.buytickets:hover{
-  background-color: #fd7e14;
-  color: white;
-  cursor: pointer;
-}
-
-.buytickets1{
-  width: 100%;
-  height: auto;
-  padding: 8px 5px;
-  text-align: center;
-  background-color: #135bf2;
-  color: white;
-  border-radius: 0 0 8px 8px;
-}
-
-.buytickets1:hover{
-  background-color: #00f804;
-  color: white;
-  cursor: pointer;
-}
-
-
-.buytickets2{
-  width: 100%;
-  height: auto;
-  padding: 8px 5px;
-  text-align: center;
-  background-color: #ff0101;
-  color: white;
-  border-radius: 0 0 8px 8px;
-}
-
-.buytickets2:hover{
-  background-color: #135bf2;
-  color: white;
-  cursor: pointer;
-}
-
-.buybtn{
-  display: flex;
-  justify-content: center;
-}
-.textforimg span{
-  color: rgb(93, 93, 93);
+.error-msg{
+  margin-left: 3cm;
+  margin-top: 10px;
 }
 
 .event-container{
@@ -402,48 +355,4 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-}
-
-.image-box{
-  padding: 8px;
-  border: solid 0.1px rgb(229, 229, 229);
-  width: 110%;
-  max-width: 298px;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-.event-title{
-  margin: 30px 3cm 30px 3cm;
-  font-size: 30px;
-
-}
-.error-msg{
-  margin: 10px 3cm;
-}
-.event-title span{
-  color: #135bf2;
-}
-.rightgap{
-  margin-right: 5px;
-}
-.d-none{
-  display: none;
-}
-hr {
-  border: none;          /* Remove default border */
-  height: 1px;           /* Set thickness of the line */
-  background-color:black;  /* Set the color you want */
-  margin: 20px 0;        /* Optional: Add space above and below */
-  opacity: 0.2;          /* Optional: Make it semi-transparent */
-}
-
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.6cm;
-  margin-top: 1cm;
-  margin-left: 1.5cm;
-  margin-right: 1.5cm;
-  margin-bottom: 1cm;
 }

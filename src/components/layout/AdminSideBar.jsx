@@ -49,7 +49,7 @@ export default function AdminSideBar() {
             </li>
             <li class="menu-item">
                 <NavLink to="/customer" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
-                    <i class="menu-icon tf-icons bx bx-male gap-space"></i><i class="menu-icon tf-icons bx bx-female"></i>
+                    <i class="menu-icon fa fa-users"></i>
                     <div data-i18n="Analytics">Customers</div>
                 </NavLink>
             </li>
@@ -60,7 +60,7 @@ export default function AdminSideBar() {
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/Calender" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/schedule" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-calendar"></i>
                     <div data-i18n="Analytics">Schedules</div>
                 </NavLink>
@@ -94,7 +94,7 @@ export default function AdminSideBar() {
 
             <li class="menu-item">
                 <NavLink to="/DeleteEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
-                    <i class="menu-icon tf-icons bx bx-crown"></i>
+                    <i class="menu-icon fa-solid fa-triangle-exclamation"></i>
                     <div data-i18n="Analytics">Update and Delete Events</div>
                 </NavLink>
             </li>
@@ -102,14 +102,14 @@ export default function AdminSideBar() {
 
             <li class="menu-item">
                 <NavLink to="/seeEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
-                    <i class="menu-icon tf-icons bx bx-crown"></i>
+                    <i class="menu-icon fa-solid fa-file-video"></i>
                     <div data-i18n="Analytics">All Events</div>
                 </NavLink>
             </li>
 
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Actions</span></li>
             <li class="menu-item">
-                <NavLink to="/Reservation" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/reservation" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-detail"></i>
                     <div data-i18n="Analytics">Reservations</div>
                 </NavLink>

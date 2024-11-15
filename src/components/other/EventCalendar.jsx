@@ -6,7 +6,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 const localizer = momentLocalizer(moment);
 
-export default function EventCalendar() {
+export default function EventCalendar({height}) {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -39,8 +39,7 @@ export default function EventCalendar() {
       return '#4682B4'; 
     } else if (eventType === 'generalEvent') {
       return '#61d53d'; 
-    } else if (eventType === 'generalEvent') {
-    } else {
+    }  else {
       return '#135bf2'; 
     }
   };
@@ -65,7 +64,7 @@ export default function EventCalendar() {
         events={events}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{ height }}
         titleAccessor="title"
         views={['month']}
         eventPropGetter={eventStyleGetter} // Apply custom color styling

@@ -17,8 +17,7 @@ export default function Other() {
         // URLs for general events and sports events
 
         const sportEventUrls = [
-            "http://192.168.50.90:8080/sport/getAllSport",
-            "http://localhost/sport/getAllSport" // Second URL for sports events
+            "http://localhost:8080/sport/getAllSport"
         ];
 
         // Function to fetch data from a list of URLs

@@ -23,7 +23,7 @@ export default function MyTickets() {
                     <MyReservation/>
                 </div>
                 <div className={visibleDiv === 2 ? "visible" : "hidden"}>
-                    <EventCalendar/>
+                    <EventCalendar height={560}/>
                 </div>
             </div>
         <Footer/>

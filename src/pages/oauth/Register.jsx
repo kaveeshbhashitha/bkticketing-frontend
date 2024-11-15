@@ -19,15 +19,19 @@ export default function Register() {
 
     const handleRegister = async (e) => {
       e.preventDefault();
-      try {
-          const response = await axios.post('http://localhost:8080/user/register', { firstName, lastName, userEmail, password });
-          if (response.data === "User already registered as a user") {
-              setMessage({text: response.data, class: 'alert alert-danger'});
-          }else{
-              navigate('/login');
-          }
-      } catch (error) {
-          setMessage({ text: 'Error occuerd, registration faild', class: 'alert alert-danger' });
+      if (firstName !== "" || lastName !== "" || userEmail !== "" || password !== "") {
+        try {
+            const response = await axios.post('http://localhost:8080/user/register', { firstName, lastName, userEmail, password });
+            if (response.data === "User already registered as a user") {
+                setMessage({text: response.data, class: 'alert alert-danger'});
+            }else{
+                navigate('/login');
+            }
+        } catch (error) {
+            setMessage({ text: 'Error occuerd, registration faild', class: 'alert alert-danger' });
+        }
+      }else{
+        setMessage({ text: 'Required all feilds, Please fill all', class: 'alert alert-warning' });
       }
   };
   return (
@@ -40,7 +44,7 @@ export default function Register() {
         <div class="authentication-inner">
           <div class="card">
             <div class="card-body">
-              <div class="app-brand justify-content-center">
+              <div class="app-brand justify-content-center text-center">
                 <a href="/" class="app-brand-link gap-2">
                   <span class="app-brand-text demo text-body fw-bolder">
                     <Logo/>
