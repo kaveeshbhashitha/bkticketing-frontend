@@ -15,7 +15,7 @@ import {
 // Register chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-const DailyIncomeChart = () => {
+const DailyIncomeChart = ({height, width}) => {
   const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const DailyIncomeChart = () => {
   };
 
   return (
-    <div style={{ width: "auto", height: "400px" }}>
+    <div style={{ width: width, height: height }}>
       {chartData ? <Line data={chartData} options={options} /> : <p>Loading chart...</p>}
     </div>
   );

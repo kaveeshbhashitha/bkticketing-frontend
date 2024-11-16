@@ -93,7 +93,7 @@ export default function Delete() {
                 </div>
             )}
             {/* Repeat for Sports and Theater events */}
-            <h4 class="fw-bold py-3 my-1"><span class="text-muted fw-light">Sport Events</span></h4>
+            <h5 class="fw-bold py-3 my-1"><span class="text-muted fw-light">Sport Events</span></h5>
             {Sports.map((event) => (
                 <div className="event-container1" key={event.eventId}>
                     <div className="image-box">

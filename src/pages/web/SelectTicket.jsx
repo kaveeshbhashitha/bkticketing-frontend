@@ -19,17 +19,35 @@ export default function SelectTicket() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [oneTicketPrice, setOneTicketPrice] = useState(0);
 
-  // Fetch event details
+  const endpoints = [
+    `http://localhost:8080/generalEvent/getEventById/${eventId}`,
+    `http://localhost:8080/theater/getTheaterById/${eventId}`,
+    `http://localhost:8080/activity/getActivityById/${eventId}`,
+    `http://localhost:8080/sport/getSportById/${eventId}`,
+  ];
+
+  // Fetch event details from the appropriate category
   useEffect(() => {
-    axios.get(`http://localhost:8080/generalEvent/getEventById/${eventId}`)
-      .then((response) => {
-        setEvent(response.data);
-        setOneTicketPrice(response.data.oneTicketPrice);
-      })
-      .catch(() => {
-        setError('Unable to fetch event details.');
-      });
-  }, [eventId]);
+    const fetchEventDetails = async () => {
+      for (const endpoint of endpoints) {
+        try {
+          const response = await axios.get(endpoint);
+          if (response.data) {
+            setEvent(response.data);
+            setOneTicketPrice(response.data.oneTicketPrice);
+            return; // Exit the loop once data is found
+          }
+        } catch (error) {
+          // Continue to the next endpoint if the current one fails
+          console.error(`Failed to fetch from ${endpoint}`, error);
+        }
+      }
+      setError('Unable to fetch event details from any category.');
+    };
+
+    fetchEventDetails();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, [eventId]);
 
   // Fetch user details by email
   useEffect(() => {
@@ -84,7 +102,7 @@ export default function SelectTicket() {
       const response = await axios.post('http://localhost:8080/reservation/addReservation', reservationData);
       if (response.status === 200) {
         console.log('Reservation successful...!');
-        navigate(`/payment/${response.data.reservationId}`)
+        navigate(`/payment/${response.data.reservationId}`);
       } else {
         setError('Failed to make reservation. Please try again.');
       }

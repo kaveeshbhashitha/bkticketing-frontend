@@ -65,14 +65,12 @@ export default function Dashboard() {
                     data-size="large"
                     data-show-count="true"
                     aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">
-                      Star
+                      Hello Admin
                   </a>
                 </li>
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="/" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="assets/img/avatars/1.png" alt='avatar1' class="w-px-40 h-auto rounded-circle"/>
-                    </div>
+                   
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
@@ -80,7 +78,6 @@ export default function Dashboard() {
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="/assets/img/avatar/1.png" alt='avatear2' class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -231,7 +228,7 @@ export default function Dashboard() {
                     <div class="row row-bordered g-0">
                       <div class="col-md-8">
                         <h5 class="card-header">Total Income</h5>
-                        <DailyIncomeChart/>
+                        <DailyIncomeChart height={'400px'} width={'auto'}/>
                       </div>
                       <div class="col-md-4">
                         <div class="card-body">
