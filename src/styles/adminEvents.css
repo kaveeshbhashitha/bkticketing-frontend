@@ -76,3 +76,7 @@ hr {
   margin-right: 1.5cm;
   margin-bottom: 1cm;
 }
+.event-container1{
+  display: flex;
+  flex-wrap: wrap;
+}

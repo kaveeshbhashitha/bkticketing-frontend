@@ -107,7 +107,7 @@ export default function Home() {
                             <span>{event.oneTicketPrice}.00 LKR upwards</span>
                         </div>
                         <div className='buybtn'>
-                            <Link className='buytickets' to={`/selectTicket/${event.matchtId}`}>Buy Tickets</Link>
+                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}>Buy Tickets</Link>
                         </div>
                     </div>
                 </div>
