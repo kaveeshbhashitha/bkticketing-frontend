@@ -46,11 +46,11 @@ export default function Header() {
                     </a>
                     <ul className="menu-links">
                         <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-                        <li><NavLink to="/Theater" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Theater</NavLink></li>
-                        <li><NavLink to="/Sports" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Sports</NavLink></li>
-                        <li><NavLink to="/Other" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Other</NavLink></li>
-                        <li><NavLink to="/Deals" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>Deals</NavLink></li>
-                        <li><a href="/myTickets">MyTickets</a></li>
+                        <li><NavLink to="/theater" className={({ isActive }) => isActive ? 'menu-link active-link' : 'menu-link'}>Theater</NavLink></li>
+                        <li><NavLink to="/sports" className={({ isActive }) => isActive ? 'menu-link active-link' : 'menu-link'}>Sports</NavLink></li>
+                        <li><NavLink to="/other" className={({ isActive }) => isActive ? 'menu-link active-link' : 'menu-link'}>Other</NavLink></li>
+                        <li><NavLink to="/deals" className={({ isActive }) => isActive ? 'menu-link active-link' : 'menu-link'}>Deals</NavLink></li>
+                        <li><NavLink to="/myTickets" className={({ isActive }) => isActive ? 'menu-link active-link' : 'menu-link'}>MyTickets</NavLink></li>
                         <span id="close-menu-btn" className="material-symbols-outlined" onClick={toggleMobileMenu}>
                             <i className="fa fa-times" aria-hidden="true"></i>
                         </span>

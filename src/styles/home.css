@@ -329,12 +329,11 @@
   width: 100%;
   height: auto;
   max-height: 500px;
+  line-height: 30px;
+  padding-bottom: 0;
 }
 .textinimage{
   margin: 120px 0;
-}
-.image-container{
-  line-height: 30px;
 }
 .textforimg{
   padding: 8px;
@@ -372,6 +371,11 @@
   color: white;
   border-radius: 0 0 8px 8px;
 }
+
+.buytickets Link{
+  color: white;
+}
+
 .buytickets:hover{
   background-color: #fd7e14;
   color: white;
