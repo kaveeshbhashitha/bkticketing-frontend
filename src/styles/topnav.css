@@ -164,6 +164,10 @@ header.show-mobile-menu #close-menu-btn {
   display: none;
 }
 
+a:visited{
+  color: #000;
+}
+
 /* Responsive Design for Mobile */
 @media screen and (max-width: 900px) {
     #hamburger-btn {
