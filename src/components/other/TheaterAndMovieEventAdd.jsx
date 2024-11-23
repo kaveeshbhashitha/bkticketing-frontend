@@ -37,14 +37,14 @@ export default function TheaterAndMovieEventAdd() {
             if (file) {
                 const formData = new FormData();
                 formData.append("file", file);
-                const uploadResponse = await axios.post("http://localhost:8080/generalEvent/uploadImage", formData, {
+                const uploadResponse = await axios.post("http://localhost:8080/theater/uploadImage", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 imagePath = uploadResponse.data; // Get the returned image path
             }
 
             // Step 2: Submit event data, including the image path
-            const response = await axios.post("http://localhost:8080/generalEvent/addEvent", {
+            const response = await axios.post("http://localhost:8080/theater/addEvent", {
                 ...eventData,
                 eventImagePath: imagePath,
             });

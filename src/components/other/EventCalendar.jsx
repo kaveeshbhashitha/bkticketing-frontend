@@ -34,7 +34,6 @@ export default function EventCalendar({height}) {
   const getEventColor = (eventType) => {
     if (eventType === 'theater') {
       return '#FF6347'; 
-
     } else if (eventType === 'sports') {
       return '#4682B4'; 
     } else if (eventType === 'generalEvent') {
