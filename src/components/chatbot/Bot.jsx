@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import '../../styles/chatbot.css';
 
 // Google Gemini API Key (replace with your actual key)
-const GEMINI_API_KEY = "AIzaSyBlyTvRdXJbY8KuzZT_8x0UJsTqEiJKeOM";
+const GEMINI_API_KEY = "YOUR API KEY";
 
 // Function to load JSON data
 const loadJSON = async () => {
