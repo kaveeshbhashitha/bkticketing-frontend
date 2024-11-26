@@ -8,6 +8,7 @@ import AdminHead from '../../components/layout/AdminHead'
 import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 import FooterRest from '../../components/layout/FooterRest';
+import Chatbot from '../../components/chatbot/Chatbot';
 
 export default function Register() {
     const [password, setPassword] = useState('');
@@ -88,6 +89,7 @@ export default function Register() {
         </div>
       </div>
     </div>
+    <Chatbot/>
     <Footer/>
     <FooterRest/>
     </div>

@@ -5,6 +5,7 @@ import Footer from '../../components/layout/Footer'
 import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/home.css';
 import { Link } from 'react-router-dom';
+import Chatbot from '../../components/chatbot/Chatbot';
 
 export default function Home() {
     const [generalEvents, setGeneralEvents] = useState([]);
@@ -69,6 +70,9 @@ export default function Home() {
                 </div>
             </section>
             {/* Search section end */}
+
+            {/* chatbot */}
+            {/* chatbot */}
 
             <div className='event-title'>
                 What’s happening <span>this month</span>
@@ -158,7 +162,7 @@ export default function Home() {
                     <img src="Images/file.png" alt="" />
                 </div>
             </div>
-
+        <Chatbot/>
         <Footer />
         <FooterRest />
     </div>
