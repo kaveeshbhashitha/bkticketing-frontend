@@ -65,11 +65,14 @@ header .navbar {
 }
 
 .navbar .menu-links li a {
-    color: black;
     font-weight: 400;
     text-decoration: none;
     transition: 0.2s ease;
     font-size: 16px;
+}
+
+.navbar .menu-link{
+    color: black;
 }
 
 .navbar .menu-links li a:hover {
@@ -112,10 +115,15 @@ header .navbar {
 }
 
 .signin:hover {
-    background-color: white;
-    color: #135bf2;
-    border: solid 1px #135bf2;
     cursor: pointer;
+    background-color: #000;
+}
+
+.rest a span{
+    color: white;
+}
+.rest a i{
+    color: white;
 }
 
 .register:hover {

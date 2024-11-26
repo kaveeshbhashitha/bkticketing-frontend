@@ -7,7 +7,7 @@ import FooterRest from '../../components/layout/FooterRest'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../../styles/login.css';
-import Chatbot from '../../components/chatbot/Chatbot';
+import Bot from '../../components/chatbot/Bot';
 
 export default function Login() {
   const [password, setPassword] = useState('');
@@ -91,7 +91,7 @@ export default function Login() {
         </div>
       </div>
     </div>
-    <Chatbot/>
+    <Bot/>
     <Footer/>
     <FooterRest/>
     </div>

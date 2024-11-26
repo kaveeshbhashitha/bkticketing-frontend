@@ -7,7 +7,7 @@ import axios from 'axios';
 export default function Header() {
     const [className, setClassName] = useState('');
     const [signed, setSigned] = useState('');
-    const [mobileMenu, setMobileMenu] = useState(false); // State to handle mobile menu toggle
+    const [mobileMenu, setMobileMenu] = useState(false);
     let navigate = useNavigate();
 
     useEffect(() => {
