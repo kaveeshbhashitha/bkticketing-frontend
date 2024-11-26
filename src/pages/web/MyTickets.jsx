@@ -7,6 +7,7 @@ import MyReservation from '../../components/other/MyReservation';
 import useAuthCheck from '../../AuthCheck';
 import EventCalendar from '../../components/other/EventCalendar';
 import UserProfile from '../../components/other/UserProfile';
+import Chatbot from '../../components/chatbot/Chatbot';
 
 export default function MyTickets() {
   useAuthCheck();
@@ -31,6 +32,7 @@ export default function MyTickets() {
                     <UserProfile/>
                 </div>
             </div>
+        <Chatbot/>
         <Footer/>
         <FooterRest/>
     </div>

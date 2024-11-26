@@ -5,6 +5,7 @@ import Header from '../../components/layout/Header';
 import Footer from '../../components/layout/Footer';
 import FooterRest from '../../components/layout/FooterRest';
 import '../../styles/select.css';
+import Chatbot from '../../components/chatbot/Chatbot';
 
 export default function SelectTicket() {
   const { eventId } = useParams();
@@ -167,7 +168,7 @@ export default function SelectTicket() {
           <div>Loading event details...</div>
         )}
       </div>
-
+      <Chatbot/>
       <Footer />
       <FooterRest />
     </div>

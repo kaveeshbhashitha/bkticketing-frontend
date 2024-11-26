@@ -6,6 +6,7 @@ import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/home.css';
 import '../../styles/other.css';
 import { Link } from 'react-router-dom';
+import Chatbot from '../../components/chatbot/Chatbot';
 
 export default function Other() {
     const [generalEvents, setGeneralEvents] = useState([]);
@@ -110,7 +111,7 @@ export default function Other() {
                     <img src="Images/file.png" alt="" />
                 </div>
             </div>
-
+        <Chatbot/>
         <Footer />
         <FooterRest />
     </div>
