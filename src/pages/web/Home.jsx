@@ -12,6 +12,7 @@ export default function Home() {
     const [error, setError] = useState("");
     const [Sports, setSportsEvents] = useState([]);
     const [Theater, setTheaterEvents] = useState([]);
+    const [className, setClassName] = useState("");
     
 
     useEffect(() => {
@@ -35,16 +36,19 @@ export default function Home() {
                     const response = await axios.get(urls[i]);
                     if (response.data && response.data.length > 0) {
                         setData(response.data);
-                        setError(null); // Clear any previous error
+                        setError("");
+                        setClassName("none") // Clear any previous error
                         return; // Exit the loop if data is fetched successfully
                     } else {
                         setError("No events found to display.");
+                        setClassName('error-msg');
                     }
                 } catch (err) {
                     console.error(`Failed to fetch from ${urls[i]}, trying next if available...`);
                 }
             }
-            setError("Error fetching event data."); // Set error if all URLs fail
+            setError("Error fetching event data."); 
+            setClassName('error-msg');
         };
 
         // Fetch general events and sports events
@@ -78,9 +82,10 @@ export default function Home() {
                 What’s happening <span>this month</span>
             </div>
 
-            <div className='error-msg'>
+            <div className={className}>
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
+
             {generalEvents.length > 0 ? (
             <div className='event-container'>
                 {generalEvents.map((event) => (

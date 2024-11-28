@@ -27,6 +27,8 @@ import MyReservation from "./components/other/MyReservation";
 import Delete from "./components/other/Delete";
 import DeleteEvent from "./pages/admin/DeleteEvent";
 import Update from "./components/other/Update";
+import ForgotPassword from "./pages/oauth/ForgotPassword";
+import RecoverPassword from "./pages/oauth/RecoverPassword";
 
 function App() {
   return (
@@ -60,6 +62,8 @@ function App() {
             <Route exact path="/Delete" element={<Delete/>}/>
             <Route exact path="/DeleteEvent" element={<DeleteEvent/>}/>
             <Route exact path="/Update" element={<Update/>}/>
+            <Route exact path="/forgot-password" element={<ForgotPassword/>}/>
+            <Route exact path="/recover/:userEmail" element={<RecoverPassword/>}/>
           </Routes> 
       </Router>
     </div>

@@ -5,3 +5,161 @@
 .topgap{
     margin: -20px 0 20px 0;
 }
+
+small:hover{
+    color: #fd7e14;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.center-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.white-back{
+    background-color: white;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.white-back .col-two{
+    padding: 20px;
+}
+.recovery{
+    margin: 20px 0;
+}
+.btnfield{
+    display: flex;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.btnfield input{
+    border: none;
+    width: 400px;
+    padding: 10px;
+    border-top: solid 0.5px rgb(82, 82, 82);
+    border-bottom: solid 0.5px rgb(82, 82, 82);
+    color: rgb(85, 85, 85);
+}
+
+input:focus{
+    outline: none;
+}
+
+.btnfield button{
+    border: none;
+    background-color: white;
+    padding: 10px;
+    border-top: solid 0.5px rgb(82, 82, 82);
+    border-bottom: solid 0.5px rgb(82, 82, 82);
+    border-right: solid 0.5px rgb(82, 82, 82);
+    color: rgb(85, 85, 85);
+}
+
+.reviveryicon{
+    border-left: solid 0.5px rgb(82, 82, 82);
+    border-top: solid 0.5px rgb(82, 82, 82);
+    border-bottom: solid 0.5px rgb(82, 82, 82);
+}
+
+.reviveryicon i{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 10px;
+    color: rgb(85, 85, 85);
+    font-weight: 100px;
+}
+
+.btnfield button i{
+    margin-left: 5px;
+    color: rgb(85, 85, 85);
+}
+
+.warning-msg{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fbcfab;
+    max-width: 516px;
+}
+
+.status-msg{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #acff9f;
+    max-width: 516px;
+    margin-top: 10px;
+}
+
+.error-msg-1{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #febcbc;
+    max-width: 516px;
+}
+
+.warning-msg div i{
+    margin-right: 10px;
+}
+.none{
+    visibility: hidden;
+}
+.d-flex{
+    display: flex;
+}
+.mx-1{
+    margin-right: 10px;
+}
+
+
+.block{
+    display: block;
+}
+
+.recovery-area{
+    margin-top: 30px;
+}
+.recovery-area input{
+    border-top: none;
+    border-bottom: solid 0.5px rgb(82, 82, 82);
+    border-right: none;
+    color: rgb(85, 85, 85);
+    border-left: none;
+    padding: 10px;
+    width: 516px;
+}
+.submit-btn{
+    margin-top: 20px;
+    padding: 5px 20px;
+    float: right;
+    background-color: #135bf2;
+    border-radius: 3px;
+    color: white;
+    border: none;
+}
+
+.submit-btn:hover{
+    background-color: #fd7e14;
+    color: white;
+    cursor: pointer;
+}
+.recoveryfield{
+    line-height: 40px;
+}
+
+.recoveryfield button{
+    padding: 2px 20px;
+}
