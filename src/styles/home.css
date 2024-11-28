@@ -346,6 +346,17 @@
 .error-msg{
   margin-left: 3cm;
   margin-top: 10px;
+  padding: 10px 10px;
+  background-color: #ebd2d2;
+  border: solid 1px rgb(236, 65, 65);
+  border-radius: 5px;
+  color: rgb(236, 65, 65);
+  display: flex;
+  justify-content: space-between;
+}
+
+.none{
+  display: none;
 }
 
 .event-container{
@@ -463,4 +474,9 @@ hr {
   margin-left: 1.5cm;
   margin-right: 1.5cm;
   margin-bottom: 1cm;
+}
+.subtopic{
+  font-weight: 100px;
+  font-size: 25px;
+  display: none;
 }

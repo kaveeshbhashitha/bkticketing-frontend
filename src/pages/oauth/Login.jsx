@@ -34,7 +34,6 @@ export default function Login() {
   return (
     <div>
     <AdminHead />
-
     <Header/>
 
     <div class="container-xxl">
@@ -61,7 +60,7 @@ export default function Login() {
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Password</label>
-                    <a href="auth-forgot-password-basic.html">
+                    <a href="/forgot-password">
                       <small>Forgot Password?</small>
                     </a>
                   </div>
@@ -83,7 +82,7 @@ export default function Login() {
               <p class="text-center">
                 <span>New on our platform?</span>
                 <a href="/register" className='mx-2'>
-                  <span>Create an account</span>
+                  <small>Create an account</small>
                 </a>
               </p>
             </div>
@@ -91,6 +90,7 @@ export default function Login() {
         </div>
       </div>
     </div>
+    
     <Bot/>
     <Footer/>
     <FooterRest/>
