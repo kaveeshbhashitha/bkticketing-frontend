@@ -442,10 +442,12 @@
   max-width: 298px;
   border-radius: 8px;
   margin-top: 10px;
+
 }
 .event-title{
   margin: 30px 3cm 30px 3cm;
   font-size: 30px;
+  
 
 }
 .error-msg{
@@ -482,3 +484,12 @@ hr {
   font-size: 25px;
   display: none;
 }
+
+.mt-3{
+ 
+    white-space: nowrap;        /* Prevent text from wrapping */
+    overflow: hidden;           /* Hide the overflowed content */
+    text-overflow: ellipsis;    /* Add '...' at the end of the truncated text */
+    max-width: auto;           /* Adjust the width based on your design */
+  }
+  
