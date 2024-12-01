@@ -8,6 +8,7 @@ import '../../styles/other.css';
 import { Link } from 'react-router-dom';
 import Chatbot from '../../components/chatbot/Chatbot';
 
+
 export default function Home() {
     const [generalEvents, setGeneralEvents] = useState([]);
     const [error, setError] = useState("");
