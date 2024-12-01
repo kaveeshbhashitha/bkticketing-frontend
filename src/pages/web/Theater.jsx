@@ -10,7 +10,8 @@ import Chatbot from '../../components/chatbot/Chatbot';
 export default function Other() {
     const [Theater, setSportsEvents] = useState([]);
     const [error, setError] = useState("");
-
+    const [className, setClassName] = useState("");
+    
 
 
     useEffect(() => {
@@ -31,12 +32,14 @@ export default function Other() {
                         return; // Exit the loop if data is fetched successfully
                     } else {
                         setError("No events found to display.");
+                        setClassName('error-msg');
                     }
                 } catch (err) {
                     console.error(`Failed to fetch from ${urls[i]}, trying next if available...`);
                 }
             }
             setError("Error fetching event data."); // Set error if all URLs fail
+            setClassName('error-msg');
         };
 
         // Fetch general events and sports events
@@ -72,7 +75,7 @@ export default function Other() {
                 What’s happening <span>this month</span>
             </div>
 
-            <div className='error-msg'>
+            <div className={className}>
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
             {Theater.length > 0 ? (
