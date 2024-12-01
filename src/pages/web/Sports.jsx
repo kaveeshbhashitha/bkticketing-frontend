@@ -9,17 +9,16 @@ import { Link } from 'react-router-dom';
 import Chatbot from '../../components/chatbot/Chatbot';
 
 export default function Other() {
-    const [Sports, setSportsEvents] = useState([]);
     const [error, setError] = useState("");
-
-
+    const [Sports, setSportsEvents] = useState([]);
+    const [className, setClassName] = useState("");
 
     useEffect(() => {
         // URLs for general events and sports events
-
         const sportEventUrls = [
             "http://localhost:8080/sport/getAllSport"
         ];
+       
 
         // Function to fetch data from a list of URLs
         const fetchData = async (urls, setData) => {
@@ -28,23 +27,25 @@ export default function Other() {
                     const response = await axios.get(urls[i]);
                     if (response.data && response.data.length > 0) {
                         setData(response.data);
-                        setError(null); // Clear any previous error
+                        setError("");
+                        setClassName("none") // Clear any previous error
                         return; // Exit the loop if data is fetched successfully
                     } else {
                         setError("No events found to display.");
+                        setClassName('error-msg');
                     }
                 } catch (err) {
                     console.error(`Failed to fetch from ${urls[i]}, trying next if available...`);
                 }
             }
-            setError("Error fetching event data."); // Set error if all URLs fail
+            setError("Error fetching event data."); 
+            setClassName('error-msg');
         };
 
         // Fetch general events and sports events
         fetchData(sportEventUrls, setSportsEvents);
 
     }, []);
-
 
   return (
     <div>
@@ -81,10 +82,9 @@ export default function Other() {
                 What’s happening <span>this month</span>
             </div>
 
-            <div className='error-msg'>
+            <div className={className}>
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
-            
             {Sports.length > 0 ? (
             <div className='event-container'>
                 {Sports.map((event) => (
@@ -98,7 +98,7 @@ export default function Other() {
                             <span>{event.oneTicketPrice}.00 LKR upwards</span>
                         </div>
                         <div className='buybtn'>
-                            <Link className='buytickets' to={`/selectTicket/${event.matchtId}`}>Buy Tickets</Link>
+                           <Link className='buytickets' to={`/selectTicket/${event.matchtId}`}> <span className='buy'>Buy Tickets</span></Link>
                         </div>
                     </div>
                 </div>

@@ -11,6 +11,7 @@ import Chatbot from '../../components/chatbot/Chatbot';
 export default function Other() {
     const [generalEvents, setGeneralEvents] = useState([]);
     const [error, setError] = useState("");
+    const [className, setClassName] = useState("");
 
     useEffect(() => {
         // Fetch event data from backend
@@ -24,6 +25,7 @@ export default function Other() {
           })
           .catch(err => {
             setError("Error fetching event data.");
+            setClassName('error-msg');
           });
       }, []);
 
@@ -62,7 +64,7 @@ export default function Other() {
                 What’s happening <span>this month</span>
             </div>
 
-            <div className='error-msg'>
+            <div className={className}>
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
             {generalEvents.length > 0 ? (
