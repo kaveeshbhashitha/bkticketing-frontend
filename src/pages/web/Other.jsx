@@ -80,7 +80,7 @@ export default function Other() {
                             <span>{event.oneTicketPrice}.00 LKR upwards</span>
                         </div>
                         <div className='buybtn'>
-                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}>Buy Tickets</Link>
+                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}> <span className='buy'>Buy Tickets</span></Link>
                         </div>
                     </div>
                 </div>
