@@ -48,19 +48,19 @@ export default function AdminSideBar() {
               <span class="menu-header-text">Pages</span>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
-                    <i class="menu-icon tf-icons bx bx-male gap-space"></i><i class="menu-icon tf-icons bx bx-female"></i>
+                <NavLink to="/customer" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                    <i class="menu-icon fa fa-users"></i>
                     <div data-i18n="Analytics">Customers</div>
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/notification" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-bell"></i>
                     <div data-i18n="Analytics">Notifications</div>
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/schedule" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-calendar"></i>
                     <div data-i18n="Analytics">Schedules</div>
                 </NavLink>
@@ -73,13 +73,13 @@ export default function AdminSideBar() {
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/Sports" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-box"></i>
                     <div data-i18n="Analytics">Sport and Match</div>
                 </NavLink>
             </li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/Theater" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-copy"></i>
                     <div data-i18n="Analytics">Theater</div>
                 </NavLink>
@@ -93,15 +93,23 @@ export default function AdminSideBar() {
             </li>
 
             <li class="menu-item">
+                <NavLink to="/DeleteEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                    <i class="menu-icon fa-solid fa-triangle-exclamation"></i>
+                    <div data-i18n="Analytics">Update and Delete Events</div>
+                </NavLink>
+            </li>
+
+
+            <li class="menu-item">
                 <NavLink to="/seeEvent" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
-                    <i class="menu-icon tf-icons bx bx-crown"></i>
+                    <i class="menu-icon fa-solid fa-file-video"></i>
                     <div data-i18n="Analytics">All Events</div>
                 </NavLink>
             </li>
 
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Actions</span></li>
             <li class="menu-item">
-                <NavLink to="/" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
+                <NavLink to="/reservation" className={({ isActive }) => isActive ? 'menu-link active' : 'menu-link'}>
                     <i class="menu-icon tf-icons bx bx-detail"></i>
                     <div data-i18n="Analytics">Reservations</div>
                 </NavLink>
@@ -121,7 +129,7 @@ export default function AdminSideBar() {
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
             <li class="menu-item">
               <a
-                href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                href="/bot"
                 class="menu-link"
               >
                 <i class="menu-icon tf-icons bx bx-support"></i>

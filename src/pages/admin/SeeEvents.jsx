@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import AdminSideBar from '../../components/layout/AdminSideBar'
 import FooterRest from '../../components/layout/FooterRest'
 import SeeGeneralEvent from '../../components/other/SeeGeneralEvent';
+import SeeAllUnifiedEvents from '../../components/other/SeeAllUnifiedEvents';
 
 export default function SeeEvents() {
     const [visibleDiv, setVisibleDiv] = useState(1);
@@ -25,7 +26,7 @@ export default function SeeEvents() {
                             <SeeGeneralEvent/>
                         </div>
                         <div className={visibleDiv === 2 ? "visible" : "hidden"}>
-                            
+                            <SeeAllUnifiedEvents/>
                         </div>
                         <div className={visibleDiv === 3 ? "visible" : "hidden"}>Div 3</div>
                         <div className={visibleDiv === 4 ? "visible" : "hidden"}>Div 4</div>
@@ -33,8 +34,6 @@ export default function SeeEvents() {
                     </div>
                     <div class="content-backdrop fade"></div>
                 </div>
-
-                
             </div>
         </div>
       <FooterRest/>

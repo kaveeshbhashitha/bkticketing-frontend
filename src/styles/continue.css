@@ -204,3 +204,10 @@
     height: auto;
     border-radius: 5px 5px 0 0;
 }
+.select-image{
+    width: 400px;
+    height: auto;
+}
+.gap-10{
+    margin-left: 130px;
+}

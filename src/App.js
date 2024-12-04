@@ -9,6 +9,26 @@ import AdminPayment from "./pages/admin/AdminPayment";
 import Payment from "./pages/payment/Payment";
 import AddEvent from "./pages/admin/AddEvent";
 import SeeEvents from "./pages/admin/SeeEvents";
+import SelectTicket from "./pages/web/SelectTicket";
+import MyTickets from "./pages/web/MyTickets";
+import AdminLogin from "./pages/admin/AdminLogin";
+import Deals from "./pages/web/Deals";
+import Other from "./pages/web/Other";
+import OtherEventAdd from "./components/other/OtherEventAdd";
+import AddTheater from "./components/other/AddTheater";
+import Theater from "./pages/web/Theater";
+import Sports from "./pages/web/Sports";
+import Customer from "./pages/admin/Customer";
+import Notification from "./pages/admin/Notification";
+import Schedule from "./pages/admin/Schedule";
+import Reservation from "./pages/admin/Reservation";
+import Calender from "./components/other/EventCalendar";
+import MyReservation from "./components/other/MyReservation";
+import Delete from "./components/other/Delete";
+import DeleteEvent from "./pages/admin/DeleteEvent";
+import Update from "./components/other/Update";
+import ForgotPassword from "./pages/oauth/ForgotPassword";
+import RecoverPassword from "./pages/oauth/RecoverPassword";
 
 function App() {
   return (
@@ -21,6 +41,29 @@ function App() {
             <Route exact path="/login" element={<Login/>}/>
             <Route exact path="/register" element={<Register/>}/>
             <Route exact path="/adminPayment" element={<AdminPayment/>}/>
+            <Route exact path="/payment/:reservationId" element={<Payment/>}/>
+            <Route exact path="/addEvent" element={<AddEvent/>}/>
+            <Route exact path="/seeEvent" element={<SeeEvents/>}/>
+            <Route exact path="/selectTicket/:eventId" element={<SelectTicket/>}/>
+            <Route exact path="/myTickets" element={<MyTickets/>}/>
+            <Route exact path="/adminLogin" element={<AdminLogin/>}/>
+            <Route exact path="/Deals" element={<Deals/>}/>
+            <Route exact path="/Other" element={<Other/>}/>
+            <Route exact path="/OtherEvent" element={<OtherEventAdd/>}/>
+            <Route exact path="/AddTheater" element={<AddTheater/>}/>
+            <Route exact path="/Theater" element={<Theater/>}/>
+            <Route exact path="/Sports" element={<Sports/>}/>
+            <Route exact path="/customer" element={<Customer/>}/>
+            <Route exact path="/notification" element={<Notification/>}/>
+            <Route exact path="/schedule" element={<Schedule/>}/>
+            <Route exact path="/reservation" element={<Reservation/>}/>
+            <Route exact path="/Calender" element={<Calender/>}/>
+            <Route exact path="/Reservation" element={<MyReservation/>}/>
+            <Route exact path="/Delete" element={<Delete/>}/>
+            <Route exact path="/DeleteEvent" element={<DeleteEvent/>}/>
+            <Route exact path="/Update" element={<Update/>}/>
+            <Route exact path="/forgot-password" element={<ForgotPassword/>}/>
+            <Route exact path="/recover/:userEmail" element={<RecoverPassword/>}/>
             <Route exact path="/payment" element={<Payment/>}/>
             <Route exact path="/addEvent" element={<AddEvent/>}/>
             <Route exact path="/seeEvent" element={<SeeEvents/>}/>

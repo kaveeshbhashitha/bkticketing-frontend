@@ -1,0 +1,57 @@
+.body-calender{
+    margin: 10px 3.5cm;
+    background-color: white;
+}
+
+.btn{
+    width: auto;
+    height: auto;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    color: #135bf2;
+    margin-bottom: 10px;
+}
+.mx-2{
+    margin-left: 10px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.title-margin{
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: none;
+    text-align: left;
+  }
+  td{
+    color: rgb(83, 83, 83);
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+  }
+ 
+.gap{
+    margin-left: 10px;
+}
+
+.calendar-container{
+    margin-bottom: 20px;
+}
+
+.btn-secondary{
+    color: orange;
+}

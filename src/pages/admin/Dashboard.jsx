@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AdminSideBar from '../../components/layout/AdminSideBar'
 import AdminHead from '../../components/layout/AdminHead'
 import FooterRest from '../../components/layout/FooterRest'
+import CongratulationsCard from '../../components/other/AddUserName'
+import TotolIncome from '../../components/charts/TotolIncome'
+import TodayIncome from '../../components/charts/TodayIncome'
+import TotalTickets from '../../components/charts/TotalTickets'
+import TodayTickets from '../../components/charts/TodayTickets'
+import axios from 'axios'
+import DataCounts from '../../components/charts/DataCounts'
+import DailyIncomeChart from '../../components/charts/DailyIncomeChart'
+
 
 export default function Dashboard() {
+  const [totalReservations, setTotalReservations] = useState([]);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/recordCount/reservation")
+      .then(response => {
+        setTotalReservations(response.data);
+      })
+      .catch(err => {
+        setError("Error fetching event data.");
+      });
+  }, []);
+
   return (
     <div>
         <AdminHead/>
@@ -43,14 +65,12 @@ export default function Dashboard() {
                     data-size="large"
                     data-show-count="true"
                     aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">
-                      Star
+                      Hello Admin
                   </a>
                 </li>
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="/" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
-                      <img src="assets/img/avatars/1.png" alt='avatar1' class="w-px-40 h-auto rounded-circle"/>
-                    </div>
+                   
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
@@ -58,7 +78,6 @@ export default function Dashboard() {
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="/assets/img/avatar/1.png" alt='avatear2' class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
@@ -115,13 +134,7 @@ export default function Dashboard() {
                     <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
-                          <p class="mb-4">
-                            You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                            your profile.
-                          </p>
-
-                          <a href="/payment" class="btn btn-sm btn-outline-primary">View Badges</a>
+                        <CongratulationsCard userId="67277f408f76ef5ba83777ad"/>
                         </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">
@@ -168,8 +181,8 @@ export default function Dashboard() {
                               </div>
                             </div>
                           </div>
-                          <span class="fw-semibold d-block mb-1">Profit</span>
-                          <h3 class="card-title mb-2">$12,628</h3>
+                          <span class="fw-semibold d-block mb-1">Total Income</span>
+                          <h4 class="card-title mb-2"><TotolIncome/></h4>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
                         </div>
                       </div>
@@ -202,8 +215,8 @@ export default function Dashboard() {
                               </div>
                             </div>
                           </div>
-                          <span>Sales</span>
-                          <h3 class="card-title text-nowrap mb-1">$4,679</h3>
+                          <span>Today Income</span>
+                          <h4 class="card-title text-nowrap mb-1"><TodayIncome/></h4>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
                         </div>
                       </div>
@@ -214,8 +227,8 @@ export default function Dashboard() {
                   <div class="card">
                     <div class="row row-bordered g-0">
                       <div class="col-md-8">
-                        <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
-                        {/* <div id="totalRevenueChart" class="px-2"><LineChart/></div> */}
+                        <h5 class="card-header">Total Income</h5>
+                        <DailyIncomeChart height={'400px'} width={'auto'}/>
                       </div>
                       <div class="col-md-4">
                         <div class="card-body">
@@ -249,7 +262,7 @@ export default function Dashboard() {
                             </div>
                             <div class="d-flex flex-column">
                               <small>2022</small>
-                              <h6 class="mb-0">$32.5k</h6>
+                              <h6 class="mb-0">RS.12000</h6>
                             </div>
                           </div>
                           <div class="d-flex">
@@ -258,7 +271,7 @@ export default function Dashboard() {
                             </div>
                             <div class="d-flex flex-column">
                               <small>2021</small>
-                              <h6 class="mb-0">$41.2k</h6>
+                              <h6 class="mb-0">RS.25,000</h6>
                             </div>
                           </div>
                         </div>
@@ -292,8 +305,8 @@ export default function Dashboard() {
                               </div>
                             </div>
                           </div>
-                          <span class="d-block mb-1">Payments</span>
-                          <h3 class="card-title text-nowrap mb-2">$2,456</h3>
+                          <span class="d-block mb-1">Total Ticket Sales</span>
+                          <h3 class="card-title text-nowrap mb-2"> <TotalTickets/> </h3>
                           <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> -14.82%</small>
                         </div>
                       </div>
@@ -322,8 +335,8 @@ export default function Dashboard() {
                               </div>
                             </div>
                           </div>
-                          <span class="fw-semibold d-block mb-1">Transactions</span>
-                          <h3 class="card-title mb-2">$14,857</h3>
+                          <span class="fw-semibold d-block mb-1">Today Ticket Sales</span>
+                          <h3 class="card-title mb-2"> <TodayTickets/> </h3>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.14%</small>
                         </div>
                       </div>
@@ -334,14 +347,13 @@ export default function Dashboard() {
                           <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                             <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                               <div class="card-title">
-                                <h5 class="text-nowrap mb-2">Profile Report</h5>
+                                <h5 class="text-nowrap mb-2">Ticket Reservations</h5>
                                 <span class="badge bg-label-warning rounded-pill">Year 2021</span>
                               </div>
                               <div class="mt-sm-auto">
                                 <small class="text-success text-nowrap fw-semibold"
-                                  ><i class="bx bx-chevron-up"></i> 68.2%</small
-                                >
-                                <h3 class="mb-0">$84,686k</h3>
+                                  ><i class="bx bx-chevron-up"></i> 68.2%</small>
+                                <h5 class="mt-2">Number of Reservations: 00{totalReservations}{error}</h5>
                               </div>
                             </div>
                             <div id="profileReportChart"></div>
@@ -358,7 +370,7 @@ export default function Dashboard() {
                     <div class="card-header d-flex align-items-center justify-content-between pb-0">
                       <div class="card-title mb-0">
                         <h5 class="m-0 me-2">Order Statistics</h5>
-                        <small class="text-muted">42.82k Total Sales</small>
+                        <small class="text-muted">RS.42,982 Total Sales</small>
                       </div>
                       <div class="dropdown">
                         <button
@@ -482,7 +494,7 @@ export default function Dashboard() {
                             <div>
                               <small class="text-muted d-block">Total Balance</small>
                               <div class="d-flex align-items-center">
-                                <h6 class="mb-0 me-1">$459.10</h6>
+                                <h6 class="mb-0 me-1">RS.45,910</h6>
                                 <small class="text-success fw-semibold">
                                   <i class="bx bx-chevron-up"></i>
                                   42.9%
@@ -497,7 +509,7 @@ export default function Dashboard() {
                             </div>
                             <div>
                               <p class="mb-n1 mt-1">Expenses This Week</p>
-                              <small class="text-muted">$39 less than last week</small>
+                              <small class="text-muted">RS.3900 less than last week</small>
                             </div>
                           </div>
                         </div>
@@ -506,122 +518,7 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-4 order-2 mb-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="card-title m-0 me-2">Transactions</h5>
-                      <div class="dropdown">
-                        <button
-                          class="btn p-0"
-                          type="button"
-                          id="transactionID"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <i class="bx bx-dots-vertical-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                          <a class="dropdown-item" href="/">Last 28 Days</a>
-                          <a class="dropdown-item" href="/">Last Month</a>
-                          <a class="dropdown-item" href="/">Last Year</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Paypal</small>
-                              <h6 class="mb-0">Send money</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0">+82.6</h6>
-                              <span class="text-muted">USD</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Wallet</small>
-                              <h6 class="mb-0">Mac'D</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0">+270.69</h6>
-                              <span class="text-muted">USD</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/chart.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Transfer</small>
-                              <h6 class="mb-0">Refund</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0">+637.91</h6>
-                              <span class="text-muted">USD</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/cc-success.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Credit Card</small>
-                              <h6 class="mb-0">Ordered Food</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0">-838.71</h6>
-                              <span class="text-muted">USD</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/wallet.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Wallet</small>
-                              <h6 class="mb-0">Starbucks</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0">+203.33</h6>
-                              <span class="text-muted">USD</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="../assets/img/icons/unicons/cc-warning.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Mastercard</small>
-                              <h6 class="mb-0">Ordered Food</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0">-92.45</h6>
-                              <span class="text-muted">USD</span>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                    <DataCounts/>
                 </div>
               </div>
             </div>

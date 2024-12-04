@@ -92,6 +92,26 @@ export default function GeneralEvent() {
                         <input class="form-control" type="number" name="oneTicketPrice" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
+                        <label class="form-label" for="phoneNumber">Event Type</label>
+                        <select className="form-control" name="eventType" onChange={handleInputChange} required>
+                                    <option value="">Select Event Type</option> 
+                                    <option value="All">All</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Deals">Deals</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label" for="phoneNumber">Event For</label>
+                        <select className="form-control" name="eventIsFor" onChange={handleInputChange} required>
+                                    <option value="">Select Event For</option> 
+                                    <option value="Children">Children</option>
+                                    <option value="Adults">Adults</option>
+                                    <option value="teenagers">teenagers</option>
+                                    <option value="undergraduates">undergraduates</option>
+                                    <option value="others">others</option>
+                        </select>
+                    <div class="mb-3 col-md-6">
                         <label for="address" class="form-label">Event Type</label>
                         <input class="form-control" type="text" name="eventType" onChange={handleInputChange} required />
                     </div>

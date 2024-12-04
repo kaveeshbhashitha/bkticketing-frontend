@@ -4,6 +4,8 @@ import FooterRest from '../../components/layout/FooterRest';
 import '../../styles/adminEvents.css';
 import GeneralEvent from '../../components/other/GeneralEventAdd';
 import AddMatch from '../../components/other/AddMatch';
+import OtherEvent from '../../components/other/OtherEventAdd';
+import AddTheater from '../../components/other/AddTheater';
 
 export default function AddGeneralEvent() {
     const [visibleDiv, setVisibleDiv] = useState(1);
@@ -29,14 +31,15 @@ export default function AddGeneralEvent() {
                         <div className={visibleDiv === 2 ? "visible" : "hidden"}>
                             <AddMatch/>
                         </div>
-                        <div className={visibleDiv === 3 ? "visible" : "hidden"}>Div 3</div>
-                        <div className={visibleDiv === 4 ? "visible" : "hidden"}>Div 4</div>
-
+                        <div className={visibleDiv === 3 ? "visible" : "hidden"}>
+                            <OtherEvent/>
+                        </div>
+                        <div className={visibleDiv === 4 ? "visible" : "hidden"}>
+                            <AddTheater/>
+                        </div>
                     </div>
                     <div class="content-backdrop fade"></div>
                 </div>
-
-                
             </div>
         </div>
       <FooterRest/>

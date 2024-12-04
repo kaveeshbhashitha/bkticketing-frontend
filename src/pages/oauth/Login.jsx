@@ -1,11 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react';
 import AdminHead from '../../components/layout/AdminHead'
 import Logo from '../../components/layout/Logo'
+import Header from '../../components/layout/Header'
+import Footer from '../../components/layout/Footer'
+import FooterRest from '../../components/layout/FooterRest'
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import '../../styles/login.css';
+import Bot from '../../components/chatbot/Bot';
 
 export default function Login() {
+  const [password, setPassword] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+      e.preventDefault();
+      try {
+          const response = await axios.post('http://localhost:8080/user/login', { userEmail, password });
+          setMessage(response.data);
+          if (response.data === 'Login successful') {
+              sessionStorage.setItem('user', userEmail);
+              navigate('/');
+          }else{
+              setMessage('Invalid Email or Password, Try again');
+          }
+      } catch (error) {
+          setMessage('Error Login, Try again');
+      }
+  };
+
   return (
     <div>
     <AdminHead />
+    <Header/>
+
     <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
@@ -18,37 +48,24 @@ export default function Login() {
                   </span>
                 </a>
               </div>
-              <h4 class="mb-2">Welcome to Sneat! 👋</h4>
+              <h4 class="mb-2 topgap">Welcome to BkTicketing 👋</h4>
+              <small className='messege'>{ message && <div>{message}</div>}</small>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
               <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email or Username</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="email"
-                    name="email-username"
-                    placeholder="Enter your email or username"
-                    autofocus
-                  />
+                  <input class="form-control" type="text" required value={userEmail} onChange={(e) => setUserEmail(e.target.value)}/>
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Password</label>
-                    <a href="auth-forgot-password-basic.html">
+                    <a href="/forgot-password">
                       <small>Forgot Password?</small>
                     </a>
                   </div>
                   <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="password"
-                      class="form-control"
-                      name="password"
-                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                      aria-describedby="password"
-                    />
+                    <input type="password" class="form-control" required value={password} onChange={(e) => setPassword(e.target.value)}/>
                   </div>
                 </div>
                 <div class="mb-3">
@@ -58,14 +75,14 @@ export default function Login() {
                   </div>
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit" onClick={handleLogin}>Sign in</button>
                 </div>
               </form>
 
               <p class="text-center">
                 <span>New on our platform?</span>
-                <a href="register">
-                  <span>Create an account</span>
+                <a href="/register" className='mx-2'>
+                  <small>Create an account</small>
                 </a>
               </p>
             </div>
@@ -73,6 +90,10 @@ export default function Login() {
         </div>
       </div>
     </div>
+    
+    <Bot/>
+    <Footer/>
+    <FooterRest/>
     </div>
   )
 }
