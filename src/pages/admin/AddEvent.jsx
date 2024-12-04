@@ -37,7 +37,6 @@ export default function AddGeneralEvent() {
                         <div className={visibleDiv === 4 ? "visible" : "hidden"}>
                             <AddTheater/>
                         </div>
-
                     </div>
                     <div class="content-backdrop fade"></div>
                 </div>
