@@ -10,7 +10,6 @@ import Chatbot from '../../components/chatbot/Chatbot';
 export default function Deals() {
     const [generalEvents, setGeneralEvents] = useState([]);
     const [error, setError] = useState("");
-    const [className, setClassName] = useState("");
 
     useEffect(() => {
         // Fetch event data from backend
@@ -20,15 +19,12 @@ export default function Deals() {
                 setGeneralEvents(response.data);
             } else {
               setError("No events found to display.");
-              setClassName('error-msg');
             }
           })
           .catch(err => {
             setError("Error fetching event data.");
-            setClassName('error-msg');
           });
       }, []);
-
 
   return (
     <div>
@@ -57,7 +53,7 @@ export default function Deals() {
                 What’s happening <span>this month</span>
             </div>
 
-            <div className={className}>
+            <div className='error-msg'>
                 {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
             </div>
             {generalEvents.length > 0 ? (

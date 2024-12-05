@@ -387,10 +387,6 @@
   color: white;
 }
 
-.buy{
-  color: white;
-}
-
 .buytickets:hover{
   background-color: #fd7e14;
   color: white;
@@ -431,25 +427,12 @@
 .textforimg span{
   color: rgb(93, 93, 93);
 }
-.event-container {
+.event-container{
   margin: 1cm 3cm;
   display: flex;
-  justify-content: space-evenly; /* Ensures even spacing between items */
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px; /* Adds consistent space between rows */
-  align-items: flex-start; /* Aligns cards at the top */
 }
-
-.event-container > div {
-  flex: 1 1 calc(25% - 20px); /* Adjusts size for two cards per row with spacing */
-  max-width: calc(25% - 20px); /* Ensures cards don't exceed intended width */
-  box-sizing: border-box; /* Includes padding/border in size calculations */
-  background-color: #fff; /* Optional: adds a background for consistency */
-  border: 1px solid #ccc; /* Optional: adds a subtle border for clarity */
-  border-radius: 8px; /* Optional: rounded corners for a clean look */
-  padding: 10px; /* Optional: internal padding for neat spacing */
-}
-
 .image-box{
   padding: 8px;
   border: solid 0.1px rgb(229, 229, 229);
@@ -457,12 +440,10 @@
   max-width: 298px;
   border-radius: 8px;
   margin-top: 10px;
-
 }
 .event-title{
   margin: 30px 3cm 30px 3cm;
   font-size: 30px;
-  
 
 }
 .error-msg{
@@ -499,12 +480,3 @@ hr {
   font-size: 25px;
   display: none;
 }
-
-.mt-3{
- 
-    white-space: nowrap;        /* Prevent text from wrapping */
-    overflow: hidden;           /* Hide the overflowed content */
-    text-overflow: ellipsis;    /* Add '...' at the end of the truncated text */
-    max-width: auto;           /* Adjust the width based on your design */
-  }
-  

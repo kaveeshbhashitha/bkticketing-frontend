@@ -113,7 +113,7 @@ export default function Update() {
                             <div>
                                 <img src={event.eventImagePath} alt="event" className="display-image" />
                                 <div className="textforimg">
-                                    <h4 class="mt-3">{event.eventName}</h4>
+                                    <h4>{event.eventName}</h4>
                                     <span>{event.eventDate} • {event.eventTime} IST</span><br />
                                     <span>At {event.eventVenue}</span><br />
                                     <span>{event.oneTicketPrice}.00 LKR upwards</span>
@@ -135,7 +135,7 @@ export default function Update() {
                             <div>
                                 <img src={event.matchImagePath} alt="sports" className="display-image" />
                                 <div className="textforimg">
-                                    <h4 class="mt-3">{event.eventName}</h4>
+                                    <h4>{event.eventName}</h4>
                                     <span>{event.matchDate} • {event.matchTime} IST</span><br />
                                     <span>At {event.matchVenue}</span><br />
                                     <span>{event.oneTicketPrice}.00 LKR upwards</span>
@@ -157,7 +157,7 @@ export default function Update() {
                             <div>
                                 <img src={event.theaterImagePath} alt="theater" className="display-image" />
                                 <div className="textforimg">
-                                    <h4 class="mt-3">{event.eventName}</h4>
+                                    <h4>{event.eventName}</h4>
                                     <span>{event.theaterDate} • {event.theaterTime1} IST</span><br />
                                     <span>{event.theaterDate} • {event.theaterTime2} IST</span><br />
                                     <span>At {event.theaterVenue}</span><br />

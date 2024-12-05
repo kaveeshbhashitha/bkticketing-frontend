@@ -4,10 +4,8 @@ import Header from '../../components/layout/Header'
 import Footer from '../../components/layout/Footer'
 import FooterRest from '../../components/layout/FooterRest'
 import '../../styles/home.css';
-import '../../styles/other.css';
 import { Link } from 'react-router-dom';
 import Chatbot from '../../components/chatbot/Chatbot';
-
 
 export default function Home() {
     const [generalEvents, setGeneralEvents] = useState([]);
@@ -15,13 +13,6 @@ export default function Home() {
     const [Sports, setSportsEvents] = useState([]);
     const [Theater, setTheaterEvents] = useState([]);
     const [className, setClassName] = useState("");
-
-    const [searchQuery, setSearchQuery] = useState('');
-    // States for filtered events (initially show all events)
-    const [filteredGeneralEvents, setFilteredGeneralEvents] = useState([]);
-    const [filteredSportsEvents, setFilteredSportsEvents] = useState([]);
-    const [filteredTheaterEvents, setFilteredTheaterEvents] = useState([]);
-
     
 
     useEffect(() => {
@@ -67,54 +58,21 @@ export default function Home() {
 
     }, []);
 
-
- // Handle search button click
- const handleSearchClick = () => {
-    // Filter events when the search button is clicked
-    setFilteredGeneralEvents(filterEvents(generalEvents, searchQuery));
-    setFilteredSportsEvents(filterEvents(Sports, searchQuery));
-    setFilteredTheaterEvents(filterEvents(Theater, searchQuery));
-};
-
- // Initially set filtered events to show all events
- useEffect(() => {
-    setFilteredGeneralEvents(generalEvents);
-    setFilteredSportsEvents(Sports);
-    setFilteredTheaterEvents(Theater);
-}, [generalEvents, Sports, Theater]);
-
-
-
- // Filter events based on search query
- const filterEvents = (events, query) => {
-    if (!query) return events; // If no query, return all events
-    return events.filter(event => 
-        event.eventName.toLowerCase().includes(query.toLowerCase()) || 
-        event.matchName?.toLowerCase().includes(query.toLowerCase()) ||
-        event.theaterName?.toLowerCase().includes(query.toLowerCase())
-    );
-};
-
-
-return (
+  return (
     <div>
         <Header />
-        <section className="search hero-section">
-            <div className="content">
-                <h2>Let’s Book Your Ticket</h2>
-                <p>Discover your favorite entertainment right here</p>
-                <div className="search-bar">
-                    <i className="fa fa-search" aria-hidden="true"></i>
-                    <input 
-                        type="text" 
-                        placeholder="Search by Artist, Event or Venue" 
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}  // Use searchQuery and setSearchQuery properly
-                    />
-                    <button type="submit" onClick={handleSearchClick}>Search</button>
+        {/* Search section start */}
+            <section class="search hero-section">
+                <div class="content">
+                    <h2>Let’s Book Your Ticket</h2>
+                    <p>Discover your favorite entertainment right here</p>
+                    <div class="search-bar">
+                        <i class="fa fa-search" aria-hidden="true"></i> 
+                        <input type="text" placeholder="Search by Artist, Event or Venue" />
+                        <button type="submit">Search</button>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
             {/* Search section end */}
 
             {/* chatbot */}
@@ -130,7 +88,7 @@ return (
 
             {generalEvents.length > 0 ? (
             <div className='event-container'>
-                {filteredGeneralEvents.map((event) => (
+                {generalEvents.map((event) => (
                 <div class="image-box">
                     <div className='image-container'>
                     <img src={event.eventImagePath} alt="travel" className='display-image'/>
@@ -141,13 +99,13 @@ return (
                             <span>{event.oneTicketPrice}.00 LKR upwards</span>
                         </div>
                         <div className='buybtn'>
-                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}><span className='buy'>Buy Tickets</span></Link>
+                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}>Buy Tickets</Link>
                         </div>
                     </div>
                 </div>
                 ))}
 
-                {filteredSportsEvents.map((event) => (
+                {Sports.map((event) => (
                 <div class="image-box">
                     <div className='image-container'>
                         <img src={event.matchImagePath} alt="travel" className='display-image'/>
@@ -158,13 +116,13 @@ return (
                             <span>{event.oneTicketPrice}.00 LKR upwards</span>
                         </div>
                         <div className='buybtn'>
-                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}><span className='buy'>Buy Tickets</span></Link>
+                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}>Buy Tickets</Link>
                         </div>
                     </div>
                 </div>
                 ))}
 
-                {filteredTheaterEvents.map((event) => (
+                {Theater.map((event) => (
                 <div class="image-box">
                     <div className='image-container'>
                         <img src={event.theaterImagePath} alt="travel" className='display-image'/>
