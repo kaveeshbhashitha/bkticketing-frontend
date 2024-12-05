@@ -64,6 +64,9 @@ function App() {
             <Route exact path="/Update" element={<Update/>}/>
             <Route exact path="/forgot-password" element={<ForgotPassword/>}/>
             <Route exact path="/recover/:userEmail" element={<RecoverPassword/>}/>
+            <Route exact path="/payment" element={<Payment/>}/>
+            <Route exact path="/addEvent" element={<AddEvent/>}/>
+            <Route exact path="/seeEvent" element={<SeeEvents/>}/>
           </Routes> 
       </Router>
     </div>
