@@ -13,6 +13,7 @@ export default function AddMatch() {
         oneTicketPrice: "",
         matchType: "",
         matchImagePath: "",
+        numOfTickets: "",
     });
     const [file, setFile] = useState(null);
     const [message, setMessage] = useState("");
@@ -40,6 +41,7 @@ export default function AddMatch() {
                 imagePath = uploadResponse.data; // Get the returned image path
             }
 
+            // Step 2: Submit event data, including the image path
             const response = await axios.post("http://localhost:8080/sport/addSport", {
                 ...eventData,
                 matchImagePath: imagePath,
@@ -48,13 +50,6 @@ export default function AddMatch() {
             setMessage("Sport added successfully..!", response.status);
         } catch (error) {
             console.error(error);
-            const response = await axios.post("http://localhost:8080/generalEvent/addEvent", {
-                ...eventData,
-                eventImagePath: imagePath,
-            });
-
-            setMessage("Event added successfully..!", response.status);
-        } catch (error) {
             setMessage("Error uploading event:", error);
         }
     };
@@ -96,6 +91,14 @@ export default function AddMatch() {
                     <div class="mb-3 col-md-6">
                         <label for="organization" class="form-label">Team Two</label>
                         <input class="form-control" name="teamTwo" onChange={handleInputChange} required />
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label class="form-label" for="phoneNumber">Ticket Price</label>
+                        <input class="form-control" type="number" name="oneTicketPrice" onChange={handleInputChange} required />
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="address" class="form-label">Match Type</label>
+                        <input class="form-control" type="text" name="matchType" onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="address" class="form-label">Number of Tickets Available</label>
