@@ -11,7 +11,6 @@
     border-radius: 5px;
     border: none;
     color: #135bf2;
-    margin-bottom: 10px;
 }
 .mx-2{
     margin-left: 10px;
@@ -54,5 +53,20 @@ table {
 }
 
 .btn-secondary{
+    color: orange;
+}
+
+.reservation-cancel{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    background-color: rgb(217, 255, 217);
+    color: rgb(72, 167, 72);
+    padding: 10px;
+    border: 1px solid rgb(127, 234, 127);
+    border-radius: 5px;
+}
+
+.text-warning{
     color: orange;
 }

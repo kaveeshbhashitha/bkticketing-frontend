@@ -10,35 +10,48 @@ const CheckoutForm = ({ reservationId, userId, userEmail, amount }) => {
   const navigate = useNavigate();
   const [paymentMessage, setPaymentMessage] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const [className, setClassName] = useState('label');
+  const [checkBox, setCheckBox] = useState('large');
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+      if (isChecked) {
+        event.preventDefault();
 
-    if (!stripe || !elements) {
-      return;
-    }
-
-    setIsProcessing(true);
-
-    // Mock payment processing
-    setTimeout(async () => {
-      setIsProcessing(false);
-      setPaymentMessage('Payment processed!');
-
-      // Send payment data to backend
-      try {
-        await axios.post('http://localhost:8080/payment/process', {
-          reservationId,
-          userId,
-          userEmail,
-          amount,
-        });
-        console.log('Payment details saved successfully.');
-        navigate('/myTickets');
-      } catch (error) {
-        console.error('Error saving payment details:', error);
+      if (!stripe || !elements) {
+        return;
       }
-    }, 4000);
+
+      setIsProcessing(true);
+
+      // Mock payment processing
+      setTimeout(async () => {
+        setIsProcessing(false);
+        setPaymentMessage('Payment processed!');
+
+        // Send payment data to backend
+        try {
+          await axios.post('http://localhost:8080/payment/process', {
+            reservationId,
+            userId,
+            userEmail,
+            amount,
+          });
+          console.log('Payment details saved successfully.');
+          navigate('/myTickets');
+        } catch (error) {
+          console.error('Error saving payment details:', error);
+        }
+      }, 4000);
+    }else{
+      setClassName("danger label");
+      setCheckBox("danger large");
+      alert('Confirm terms and conditions first..!');
+    }
   };
 
   return (
@@ -63,8 +76,8 @@ const CheckoutForm = ({ reservationId, userId, userEmail, amount }) => {
         By checking the checkbox below, you agree to our Terms of Use, Privacy Statement, and that you are over 18.
       </div>
       <div className='text-dark d-flex mt-2'>
-        <input type="checkbox" name="check" className='large'/>
-        <label className='label'>I agree</label>
+        <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} className={checkBox}/>
+        <label className={className}>I agree with all terms.</label>
       </div>
       <button type="submit" disabled={!stripe || isProcessing}>
         {isProcessing ? 'Processing...' : 'Pay'}
