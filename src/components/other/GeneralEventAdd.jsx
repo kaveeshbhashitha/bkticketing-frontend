@@ -91,6 +91,7 @@ export default function GeneralEvent() {
                         <label class="form-label" for="phoneNumber">Ticket Price</label>
                         <input class="form-control" type="number" name="oneTicketPrice" onChange={handleInputChange} required />
                     </div>
+
                     <div class="mb-3 col-md-6">
                         <label class="form-label" for="phoneNumber">Event Type</label>
                         <select className="form-control" name="eventType" onChange={handleInputChange} required>
@@ -111,13 +112,6 @@ export default function GeneralEvent() {
                                     <option value="undergraduates">undergraduates</option>
                                     <option value="others">others</option>
                         </select>
-                    <div class="mb-3 col-md-6">
-                        <label for="address" class="form-label">Event Type</label>
-                        <input class="form-control" type="text" name="eventType" onChange={handleInputChange} required />
-                    </div>
-                    <div class="mb-3 col-md-6">
-                        <label class="form-label" for="phoneNumber">Event For</label>
-                        <input class="form-control" type="text" name="eventIsFor"  onChange={handleInputChange} required />
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="address" class="form-label">Number of Tickets Available</label>
@@ -139,4 +133,3 @@ export default function GeneralEvent() {
     </div>
   )
 }
-
