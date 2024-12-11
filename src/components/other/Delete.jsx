@@ -94,9 +94,9 @@ export default function Delete() {
             )}
             {/* Repeat for Sports and Theater events */}
             <h5 class="fw-bold py-3 my-1"><span class="text-muted fw-light">Sport Events</span></h5>
-            <div className="event-container1" >
             {Sports.map((event) => (
-                    <div className="image-box" key={event.eventId}>
+                <div className="event-container1" key={event.eventId}>
+                    <div className="image-box">
                         <img src={event.matchImagePath} alt="sports" className="display-image" />
                         <div className="textforimg">
                             <h4 className="mt-3">{event.eventName}</h4>
@@ -108,13 +108,13 @@ export default function Delete() {
                             <button className="buytickets2" onClick={() => deleteEvent(event.eventId, 'sports')}>Delete</button>
                         </div>
                     </div>
-               
-            ))} </div>
+                </div>
+            ))}
 
             <h4 class="fw-bold py-3 my-1"><span class="text-muted fw-light">Theater Events</span></h4>
-            <div className="event-container1">
             {Theater.map((event) => (
-                    <div className="image-box" key={event.eventId}>
+                <div className="event-container1" key={event.eventId}>
+                    <div className="image-box">
                         <img src={event.theaterImagePath} alt="theater" className="display-image" />
                         <div className="textforimg">
                             <h4 className="mt-3">{event.eventName}</h4>
@@ -126,8 +126,8 @@ export default function Delete() {
                             <button className="buytickets2" onClick={() => deleteEvent(event.eventId, 'theater')}>Delete</button>
                         </div>
                     </div>
-                
-            ))}</div>
+                </div>
+            ))}
         </div>
     );
 }

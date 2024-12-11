@@ -5,6 +5,7 @@ import '../../styles/calendar.css';
 export default function MyReservation() {
   const [reservations, setReservations] = useState([]);
   const [userId, setUserId] = useState(null);
+  const [error, setError] = useState('');
 
   let id = userId;
 
@@ -12,13 +13,10 @@ export default function MyReservation() {
     const userEmail = sessionStorage.getItem('user');
 
     if (userEmail) {
-      // Step 1: Get user ID by email
       axios.get(`http://localhost:8080/user/getUserByEmail/${userEmail}`)
         .then((response) => {
           const userId = response.data.userId;
           setUserId(userId);
-
-          // Step 2: Fetch reservations for this user ID
           return axios.get(`http://localhost:8080/reservation/getReservationByUserId/${userId}`);
         })
         .then(async (reservationResponse) => {
@@ -50,8 +48,23 @@ export default function MyReservation() {
     }
   }, []);
 
+const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this reservation?")) {
+        axios.delete(`http://localhost:8080/reservation/deleteReservation/${id}`)
+            .then(() => {
+                setReservations(reservations.filter(reservation => reservation.id !== id));
+                setError("Reservation cancelled successfully");
+            })
+            .catch((error) => {
+                console.error('Unable to delete the reservation.', error);
+                setError("Failed to cancel reservation");
+            });
+    }
+};
+
   return (
     <div>
+      {error && (<div className='reservation-cancel'>{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
       <table>
         <thead>
           <tr>
@@ -63,21 +76,25 @@ export default function MyReservation() {
             <th><i class="fa-solid fa-money-check-dollar"></i></th>
             <th><i class="fa-solid fa-calculator"></i></th>
             <th><i class="fa-solid fa-person"></i></th>
-            <th><i class="fa-regular fa-images"></i></th>
+            <th><i class="fa-regular fa-trash-can"></i></th>
           </tr>
         </thead>
         <tbody>
           {reservations.map((reservation) => (
             <tr key={reservation.reservationId}>
-              <td>{reservation.eventName}</td>
-              <td className='text-center'>{reservation.eventDate}</td>
-              <td>{reservation.eventTime}</td>
-              <td>{reservation.eventVenue}</td>
-              <td>{reservation.numOfTickets}</td>
-              <td>{reservation.perTicketCharge}.00</td>
-              <td className='right'>{reservation.totalCharge}.00</td>
-              <td>{reservation.eventIsFor}</td>
-              <td><a href={reservation.eventImagePath} target="blank"><i class="fa-regular fa-image"></i></a></td>
+              <td style={{textAlign:'left'}}>{reservation.eventName}</td>
+              <td style={{textAlign:'center'}}>{reservation.eventDate}</td>
+              <td style={{textAlign:'center'}}>{reservation.eventTime}</td>
+              <td style={{textAlign:'center'}}>{reservation.eventVenue}</td>
+              <td style={{textAlign:'center'}}>{reservation.numOfTickets}</td>
+              <td style={{textAlign:'center'}}>{reservation.perTicketCharge}.00</td>
+              <td style={{textAlign:'center'}}>{reservation.totalCharge}.00</td>
+              <td style={{textAlign:'center'}}>{reservation.eventIsFor}</td>
+              <td style={{textAlign:'center'}}>
+                  <button className="text-warning btn" onClick={() => handleDelete(reservation.reservationId)}>
+                    <i class="fa-regular fa-trash-can"></i>
+                  </button>
+              </td>
             </tr>
           ))}
         </tbody>
