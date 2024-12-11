@@ -3,28 +3,73 @@ import axios from 'axios';
 import AdminSideBar from '../../components/layout/AdminSideBar';
 
 export default function Reservation() {
-    const [reservation, setReservation] = useState([]);
+    const [reservations, setReservations] = useState([]);
     const [error, setError] = useState("");
+    const [filteredReservations, setFilteredReservations] = useState([]);
 
     useEffect(() => {
-        // Fetch event data from backend
+        // Fetch all reservations from the backend
         axios.get("http://localhost:8080/reservation/getAllReservations")
           .then(response => {
             if (response.data && response.data.length > 0) {
-              setReservation(response.data);
+              setReservations(response.data);
+              setFilteredReservations(response.data); // Default to all reservations
             } else {
-              setError("No reservation found to display.");
+              setError("No reservations found to display.");
             }
           })
           .catch(err => {
-            setError("Error fetching event data.");
+            setError("Error fetching reservation data.");
           });
       }, []);
+    
+      const filterByDate = (filterType) => {
+        const now = new Date();
+        let filtered = [];
+    
+        switch (filterType) {
+            case "lastWeek":
+                filtered = reservations.filter((reservations) => {
+                const dateAdded = new Date(reservations.reservationDate);
+                const oneWeekAgo = new Date(now);
+                oneWeekAgo.setDate(now.getDate() - 7);
+                return dateAdded >= oneWeekAgo;
+                });
+                break;
+    
+            case "lastMonth":
+                filtered = reservations.filter((reservations) => {
+                const dateAdded = new Date(reservations.reservationDate);
+                const oneMonthAgo = new Date(now);
+                oneMonthAgo.setMonth(now.getMonth() - 1);
+                return dateAdded >= oneMonthAgo;
+                });
+                break;
+    
+            case "lastYear":
+                filtered = reservations.filter((reservations) => {
+                const dateAdded = new Date(reservations.reservationDate);
+                const oneYearAgo = new Date(now);
+                oneYearAgo.setFullYear(now.getFullYear() - 1);
+                return dateAdded >= oneYearAgo;
+                });
+                break;
+    
+            case "all":
+            filtered = reservations; // Show all reservations
+            break;
+          default:
+            filtered = [];
+        }
+    
+        setFilteredReservations(filtered);
+      };
+    
 
     const handleDelete = (id) => {
         axios.delete(`http://localhost:8080/reservation/deleteReservation/${id}`)
             .then(() => {
-              setReservation(reservation.filter(reservation => reservation.reservationId !== id));
+              setReservations(reservations.filter(reservation => reservation.reservationId !== id));
             })
             .catch((error) => setError('Unable to delete the reservation.'));
     };
@@ -37,9 +82,17 @@ export default function Reservation() {
                       <div class="container-xxl flex-grow-1 container-p-y">
                           <h4 class="fw-bold py-3 my-1"><span class="text-muted fw-light">Events /</span> Reservations</h4>
                           <div>
+                          <div className="d-flex justify-content-end">
+                                <div>
+                                    <button onClick={() => filterByDate("all")} className='btn btn-success mx-1'>All</button>
+                                    <button onClick={() => filterByDate("lastWeek")} className='btn btn-success'>Last Week</button>
+                                    <button onClick={() => filterByDate("lastMonth")} className='btn btn-success mx-1'>Last Month</button>
+                                    <button onClick={() => filterByDate("lastYear")} className='btn btn-success'>Last Year</button>
+                                </div>
+                            </div>
                             {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
                             <div className="table-container">
-                                {reservation.length > 0 ? (
+                                {filteredReservations.length > 0 ? (
                                     <table className="table table-bordered">
                                     <thead>
                                         <tr>
@@ -55,7 +108,7 @@ export default function Reservation() {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {reservation.map((reservations) => (
+                                        {filteredReservations.map((reservations) => (
                                         <tr key={reservations.reservationId}>
                                             <td>{reservations.userId}</td>
                                             <td>{reservations.eventId}</td>
