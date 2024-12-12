@@ -65,7 +65,7 @@
 }
 
 .deals-banner {
-  background-color: #051b35; /* dark blue background */
+  background-color: #051b35; 
   color: white;
   padding: 30px;
   text-align: center;
@@ -95,9 +95,6 @@
   color: black;
 }
 
-
-
- 
   .hero-section .content {
     max-width: 1280px;
     margin: 0 auto 40px;
@@ -459,11 +456,11 @@
   display: none;
 }
 hr {
-  border: none;          /* Remove default border */
-  height: 1px;           /* Set thickness of the line */
-  background-color:black;  /* Set the color you want */
-  margin: 20px 0;        /* Optional: Add space above and below */
-  opacity: 0.2;          /* Optional: Make it semi-transparent */
+  border: none;       
+  height: 1px;         
+  background-color:black;  
+  margin: 20px 0;       
+  opacity: 0.2;         
 }
 
 .image-gallery {
@@ -481,19 +478,17 @@ hr {
   display: none;
 }
 
-/* Date Picker Style */
-/* Date Picker Container */
+
 .date-filter-container {
   position: absolute;
-  margin-top: 0.5cm;
+  margin: 20px 2.5cm 20px 0;
   right: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 5px;
+  padding: 5px 10px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
+  width: 290px;
 }
 
 /* Date Input Wrapper */
@@ -511,11 +506,43 @@ hr {
   font-size: 14px;
   width: auto;
   transition: border-color 0.3s ease;
+  background-color: transparent;
+  width: 40px;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  visibility: hidden;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  color: transparent;
+}
+
+input[type="date"]::placeholder {
+  color: transparent; 
+}
+
+input[type="date"] {
+  font-size: 17px; 
+  padding: 4px; 
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  font-size: inherit; 
+  padding: 0; 
 }
 
 /* Focus State */
 .date-filter-container input[type="date"]:focus {
   border-color: #0056b3;
+}
+
+.date-filter-container label{
+  margin-top: 10px;
+}
+
+.date-filter-container i{
+  margin-top: 10px;
 }
 
 /* Clear Date Button Style */
@@ -540,4 +567,12 @@ hr {
   font-size: 14px;
   color: #333;
   margin-bottom: 5px;
+}
+
+.space{
+  margin: 2cm 0;
+}
+
+.buy{
+  color: white;
 }

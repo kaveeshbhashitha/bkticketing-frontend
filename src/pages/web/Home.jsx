@@ -148,22 +148,23 @@ export default function Home() {
           </div>
         )}
       </div>
-      {/* Conditionally render the date filter */}
       {hasEvents && (
         <div className="date-filter-container">
+          <i className="fa-solid fa-sliders"></i>
           <label htmlFor="date-filter">
-            Filter by Date:&nbsp;
-            <input
-              type="date"
-              id="date-filter"
-              value={selectedDate}
-              onChange={handleDateChange}
-            />
+            Filter by events by date here
           </label>
+          <input
+            type="date"
+            id="date-filter"
+            value={selectedDate}
+            onChange={handleDateChange}
+          />
         </div>
-      )}{" "}
-      <br /> <br />
-      <br />
+      )} {" "}
+
+      <div className="space"></div>
+
       {generalEvents.length > 0 ? (
         <div className="event-container">
           {filteredGeneralEvents.map((event) => (
@@ -175,7 +176,11 @@ export default function Home() {
                   className="display-image"
                 />
                 <div className="textforimg">
-                  <h4 className="mt-3">{event.eventName}</h4>
+                  <h4 className="mt-3" title={event.eventName}>
+                    {event.eventName.length > 20
+                      ? `${event.eventName.substring(0, 26)}...`
+                      : event.eventName}
+                  </h4>
                   <span>
                     <i className="fa-regular fa-calendar rightgap"></i>
                     {event.eventDate} • {event.eventTime} IST
@@ -192,6 +197,7 @@ export default function Home() {
                   <Link
                     className="buytickets"
                     to={`/selectTicket/${event.eventId}`}
+                    style={{ color: "white" }}
                   >
                     <span className="buy">Buy Tickets</span>
                   </Link>
@@ -209,7 +215,11 @@ export default function Home() {
                   className="display-image"
                 />
                 <div className="textforimg">
-                  <h4 className="mt-3">{event.eventName}</h4>
+                  <h4 className="mt-3" title={event.eventName}>
+                    {event.eventName.length > 20
+                      ? `${event.eventName.substring(0, 26)}...`
+                      : event.eventName}
+                  </h4>
                   <span>
                     <i className="fa-regular fa-calendar rightgap"></i>
                     {event.matchDate} • {event.matchTime} IST
@@ -226,6 +236,7 @@ export default function Home() {
                   <Link
                     className="buytickets"
                     to={`/selectTicket/${event.eventId}`}
+                    style={{ color: "white" }}
                   >
                     <span className="buy">Buy Tickets</span>
                   </Link>
@@ -243,7 +254,11 @@ export default function Home() {
                   className="display-image"
                 />
                 <div className="textforimg">
-                  <h4 className="mt-3">{event.eventName}</h4>
+                  <h4 className="mt-3" title={event.eventName}>
+                    {event.eventName.length > 20
+                      ? `${event.eventName.substring(0, 26)}...`
+                      : event.eventName}
+                  </h4>
                   <span>
                     <i className="fa-regular fa-calendar rightgap"></i>
                     {event.theaterDate} • {event.theaterTime1} IST
@@ -260,6 +275,7 @@ export default function Home() {
                   <Link
                     className="buytickets"
                     to={`/selectTicket/${event.eventId}`}
+                    style={{ color: "white" }}
                   >
                     Buy Tickets
                   </Link>
@@ -273,6 +289,7 @@ export default function Home() {
           No events to display.
         </div>
       )}
+    
       <div className="midsection">
         <div className="content-info">
           <div>

@@ -61,10 +61,11 @@ export default function Other() {
             <div className='event-title'>
                 What’s happening <span>this month</span>
             </div>
-
+            {error &&
             <div className='error-msg'>
-                {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
+                 (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)
             </div>
+            }
             {generalEvents.length > 0 ? (
             <div className='event-container'>
                 {generalEvents.map((event) => (
@@ -72,13 +73,17 @@ export default function Other() {
                     <div className='image-container'>
                         <img src={event.eventImagePath} alt="travel" className='display-image'/>
                         <div className='textforimg'>
-                            <h4 className='mt-3'>{event.eventName}</h4>
+                        <h4 className="mt-3" title={event.eventName}>
+                    {event.eventName.length > 20
+                      ? `${event.eventName.substring(0, 26)}...`
+                      : event.eventName}
+                  </h4>
                             <span><i class="fa-regular fa-calendar rightgap"></i>{event.eventDate} • {event.eventTime} IST</span><br/>
                             <span><i class="fa-solid fa-location-dot rightgap"></i>  At {event.eventVenue}</span><br/>
                             <span>{event.oneTicketPrice}.00 LKR upwards</span>
                         </div>
                         <div className='buybtn'>
-                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}>Buy Tickets</Link>
+                            <Link className='buytickets' to={`/selectTicket/${event.eventId}`}> <span className="buy">Buy Tickets</span></Link>
                         </div>
                     </div>
                 </div>
