@@ -148,22 +148,22 @@ export default function Home() {
           </div>
         )}
       </div>
-      {/* Conditionally render the date filter */}
       {hasEvents && (
         <div className="date-filter-container">
+          <i class="fa-solid fa-sliders"></i>
           <label htmlFor="date-filter">
-            Filter by Date:&nbsp;
+            Filter by events by date here </label>
             <input
               type="date"
               id="date-filter"
               value={selectedDate}
               onChange={handleDateChange}
             />
-          </label>
         </div>
       )}{" "}
-      <br /> <br />
-      <br />
+
+      <div className="space"></div>
+
       {generalEvents.length > 0 ? (
         <div className="event-container">
           {filteredGeneralEvents.map((event) => (
@@ -192,6 +192,7 @@ export default function Home() {
                   <Link
                     className="buytickets"
                     to={`/selectTicket/${event.eventId}`}
+                    style={{ color: "white" }}
                   >
                     <span className="buy">Buy Tickets</span>
                   </Link>
@@ -226,6 +227,7 @@ export default function Home() {
                   <Link
                     className="buytickets"
                     to={`/selectTicket/${event.eventId}`}
+                    style={{ color: "white" }}
                   >
                     <span className="buy">Buy Tickets</span>
                   </Link>
@@ -260,6 +262,7 @@ export default function Home() {
                   <Link
                     className="buytickets"
                     to={`/selectTicket/${event.eventId}`}
+                    style={{ color: "white" }}
                   >
                     Buy Tickets
                   </Link>

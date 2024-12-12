@@ -61,10 +61,11 @@ export default function Other() {
             <div className='event-title'>
                 What’s happening <span>this month</span>
             </div>
-
+            {error &&
             <div className='error-msg'>
-                {error && (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)}
+                 (<div className="alert alert-warning d-flex justify-content-between">{error} <i class="fa-solid fa-circle-exclamation pt-1"></i></div>)
             </div>
+            }
             {generalEvents.length > 0 ? (
             <div className='event-container'>
                 {generalEvents.map((event) => (
