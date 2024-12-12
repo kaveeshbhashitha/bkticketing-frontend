@@ -76,7 +76,11 @@ export default function Other() {
                   className="display-image"
                 />
                 <div className="textforimg">
-                  <h4 className="mt-3">{event.eventName}</h4>
+                <h4 className="mt-3" title={event.eventName}>
+                    {event.eventName.length > 20
+                      ? `${event.eventName.substring(0, 26)}...`
+                      : event.eventName}
+                  </h4>
                   <span>
                     <i class="fa-regular fa-calendar rightgap"></i>
                     {event.theaterDate} • {event.theaterTime1} IST
@@ -94,7 +98,7 @@ export default function Other() {
                     className="buytickets"
                     to={`/selectTicket/${event.eventId}`}
                   >
-                    Buy Tickets
+                     <span className="buy">Buy Tickets</span>
                   </Link>
                 </div>
               </div>

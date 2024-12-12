@@ -150,17 +150,18 @@ export default function Home() {
       </div>
       {hasEvents && (
         <div className="date-filter-container">
-          <i class="fa-solid fa-sliders"></i>
+          <i className="fa-solid fa-sliders"></i>
           <label htmlFor="date-filter">
-            Filter by events by date here </label>
-            <input
-              type="date"
-              id="date-filter"
-              value={selectedDate}
-              onChange={handleDateChange}
-            />
+            Filter by events by date here
+          </label>
+          <input
+            type="date"
+            id="date-filter"
+            value={selectedDate}
+            onChange={handleDateChange}
+          />
         </div>
-      )}{" "}
+      )} {" "}
 
       <div className="space"></div>
 
@@ -175,7 +176,11 @@ export default function Home() {
                   className="display-image"
                 />
                 <div className="textforimg">
-                  <h4 className="mt-3">{event.eventName}</h4>
+                  <h4 className="mt-3" title={event.eventName}>
+                    {event.eventName.length > 20
+                      ? `${event.eventName.substring(0, 26)}...`
+                      : event.eventName}
+                  </h4>
                   <span>
                     <i className="fa-regular fa-calendar rightgap"></i>
                     {event.eventDate} • {event.eventTime} IST
@@ -210,7 +215,11 @@ export default function Home() {
                   className="display-image"
                 />
                 <div className="textforimg">
-                  <h4 className="mt-3">{event.eventName}</h4>
+                  <h4 className="mt-3" title={event.eventName}>
+                    {event.eventName.length > 20
+                      ? `${event.eventName.substring(0, 26)}...`
+                      : event.eventName}
+                  </h4>
                   <span>
                     <i className="fa-regular fa-calendar rightgap"></i>
                     {event.matchDate} • {event.matchTime} IST
@@ -245,7 +254,11 @@ export default function Home() {
                   className="display-image"
                 />
                 <div className="textforimg">
-                  <h4 className="mt-3">{event.eventName}</h4>
+                  <h4 className="mt-3" title={event.eventName}>
+                    {event.eventName.length > 20
+                      ? `${event.eventName.substring(0, 26)}...`
+                      : event.eventName}
+                  </h4>
                   <span>
                     <i className="fa-regular fa-calendar rightgap"></i>
                     {event.theaterDate} • {event.theaterTime1} IST
@@ -276,6 +289,7 @@ export default function Home() {
           No events to display.
         </div>
       )}
+    
       <div className="midsection">
         <div className="content-info">
           <div>
