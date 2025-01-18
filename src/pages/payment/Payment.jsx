@@ -55,7 +55,7 @@ const Payment = () => {
           console.error('Unable to fetch event details.');
         });
     }
-  }, [eventId]);
+  }, [eventId]);//update the event details when the eventId changes
 
   return (
       <div>
