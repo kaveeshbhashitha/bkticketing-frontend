@@ -26,8 +26,7 @@ export default function Other() {
             setError("Error fetching event data.");
           });
       }, []);
-      const hasEvents =
-    generalEvents.length > 0 ;
+      
 
   return (
     <div>
