@@ -10,7 +10,7 @@ export default function Reservation() {
   useEffect(() => {
     // Fetch all reservations from the backend
     axios
-      .get("http://localhost:8080/reservation/getAllReservations")
+      .get("http://localhost:8080/reservation/getAllReservations","https://bkticketing-backend-production.up.railway.app/reservation/getAllReservations")
       .then((response) => {
         if (response.data && response.data.length > 0) {
           setReservations(response.data);

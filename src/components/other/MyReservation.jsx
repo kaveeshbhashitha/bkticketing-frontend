@@ -13,18 +13,18 @@ export default function MyReservation() {
     const userEmail = sessionStorage.getItem('user');
 
     if (userEmail) {
-      axios.get(`http://localhost:8080/user/getUserByEmail/${userEmail}`)
+      axios.get(`http://localhost:8080/user/getUserByEmail/${userEmail}`,`https://bkticketing-backend-production.up.railway.app/getUserByEmail/${userEmail}`)
         .then((response) => {
           const userId = response.data.userId;
           setUserId(userId);
-          return axios.get(`http://localhost:8080/reservation/getReservationByUserId/${userId}`);
+          return axios.get(`http://localhost:8080/reservation/getReservationByUserId/${userId}`,`https://bkticketing-backend-production.up.railway.app/reservation/getReservationByUserId/${userId}`);
         })
         .then(async (reservationResponse) => {
           const reservationData = reservationResponse.data;
 
           // Step 3: Fetch event details for each reservation based on eventId
           const eventDetailsPromises = reservationData.map((reservation) => 
-            axios.get(`http://localhost:8080/generalEvent/getEventById/${reservation.eventId}`)
+            axios.get(`http://localhost:8080/generalEvent/getEventById/${reservation.eventId}`,`https://bkticketing-backend-production.up.railway.app/generalEvent/getEventById/${reservation.eventId}`)
           );
 
           const eventsData = await Promise.all(eventDetailsPromises);
@@ -50,7 +50,7 @@ export default function MyReservation() {
 
 const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this reservation?")) {
-        axios.delete(`http://localhost:8080/reservation/deleteReservation/${id}`)
+        axios.delete(`http://localhost:8080/reservation/deleteReservation/${id}`,`https://bkticketing-backend-production.up.railway.app/reservation/deleteReservation/${id}`)
             .then(() => {
                 setReservations(reservations.filter(reservation => reservation.id !== id));
                 setError("Reservation cancelled successfully");

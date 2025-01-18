@@ -22,17 +22,17 @@ export default function Update() {
             }
         };
 
-        fetchData("http://localhost:8080/generalEvent/getAllEvents", setGeneralEvents);
-        fetchData("http://localhost:8080/sport/getAllSport", setSportsEvents);
-        fetchData("http://localhost:8080/theater/getAllTheater", setTheaterEvents);
+        fetchData("http://localhost:8080/generalEvent/getAllEvents","https://bkticketing-backend-production.up.railway.app/generalEvent/getAllEvents", setGeneralEvents);
+        fetchData("http://localhost:8080/sport/getAllSport","https://bkticketing-backend-production.up.railway.app/sport/getAllSport", setSportsEvents);
+        fetchData("http://localhost:8080/theater/getAllTheater","https://bkticketing-backend-production.up.railway.app/theater/getAllTheater", setTheaterEvents);
     }, []);
 
     // Function to handle updating an event
     const updateEvent = async (updatedEvent, type) => {
         const urlMap = {
-            general: `http://localhost:8080/generalEvent/updateEvent/${updatedEvent.eventId}`,
-            sports: `http://localhost:8080/sport/updateSport/${updatedEvent.eventId}`,
-            theater: `http://localhost:8080/theater/updateTheater/${updatedEvent.eventId}`
+            general: [`http://localhost:8080/generalEvent/updateEvent/${updatedEvent.eventId}`,`https://bkticketing-backend-production.up.railway.app/generalEvent/updateEvent/${updatedEvent.eventId}`],
+            sports: [`http://localhost:8080/sport/updateSport/${updatedEvent.eventId}`,`https://bkticketing-backend-production.up.railway.app/sport/updateSport/${updatedEvent.eventId}`],
+            theater: [`http://localhost:8080/theater/updateTheater/${updatedEvent.eventId}`,`https://bkticketing-backend-production.up.railway.app/theater/updateTheater/${updatedEvent.eventId}`],
         };
 
         try {

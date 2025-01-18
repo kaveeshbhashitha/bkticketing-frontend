@@ -23,7 +23,7 @@ export default function Header() {
 
     const handleLogout = async () => {
         try {
-          const response = await axios.post('http://localhost:8080/user/logout');
+          const response = await axios.post('http://localhost:8080/user/logout','https://bkticketing-backend-production.up.railway.app/user/logout');
           if (response) {
             sessionStorage.removeItem('user');
             navigate('/login');

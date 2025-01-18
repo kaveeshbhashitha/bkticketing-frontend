@@ -17,7 +17,7 @@ export default function Other() {
   useEffect(() => {
     // Fetch event data from backend
     axios
-      .get("http://localhost:8080/sport/getAllSport")
+      .get("http://localhost:8080/sport/getAllSport","https://bkticketing-backend-production.up.railway.app/sport/getAllSport")
       .then((response) => {
         if (response.data && response.data.length > 0) {
           setSportsEvents(response.data);

@@ -38,7 +38,7 @@ export default function RecoverPassword() {
 
         try {
             // Call the backend API
-            const response = await axios.post('http://localhost:8080/user/update-password', null, {
+            const response = await axios.post('http://localhost:8080/user/update-password','https://bkticketing-backend-production.up.railway.app/user/update-password', null, {
                 params: {
                     userEmail,
                     newPassword,

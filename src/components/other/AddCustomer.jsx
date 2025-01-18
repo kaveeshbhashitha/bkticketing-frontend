@@ -9,7 +9,7 @@ export default function AddCustomer() {
   useEffect(() => {
     // Fetch user data from the backend
     axios
-      .get("http://localhost:8080/user/allUsers")
+      .get("http://localhost:8080/user/allUsers","https://bkticketing-backend-production.up.railway.app/user/allUsers")
       .then((response) => {
         if (response.data && response.data.length > 0) {
           setUsers(response.data);

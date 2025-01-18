@@ -30,7 +30,7 @@ export default function ForgotPassword() {
         }
 
         try {
-            const response = await axios.post('http://localhost:8080/user/send-code', {
+            const response = await axios.post('http://localhost:8080/user/send-code','https://bkticketing-backend-production.up.railway.app/user/send-code', {
                 userEmail, // Send the email field as JSON
             });
             setCls('none');

@@ -14,7 +14,7 @@ export default function Other() {
 
     useEffect(() => {
         // Fetch event data from backend
-        axios.get("http://localhost:8080/generalEvent/getEventByType/Other")
+        axios.get("http://localhost:8080/generalEvent/getEventByType/Other","https://bkticketing-backend-production.up.railway.app/generalEvent/getEventByType/Other")
           .then(response => {
             if (response.data && response.data.length > 0) {
                 setGeneralEvents(response.data);

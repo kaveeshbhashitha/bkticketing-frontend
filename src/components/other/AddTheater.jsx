@@ -35,14 +35,14 @@ export default function AddTheater() {
             if (file) {
                 const formData = new FormData();
                 formData.append("file", file);
-                const uploadResponse = await axios.post("http://localhost:8080/theater/uploadImage", formData, {
+                const uploadResponse = await axios.post("http://localhost:8080/theater/uploadImage","https://bkticketing-backend-production.up.railway.app/theater/uploadImage", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 imagePath = uploadResponse.data; // Get the returned image path
             }
 
             // Step 2: Submit event data, including the image path
-            const response = await axios.post("http://localhost:8080/theater/addTheater", {
+            const response = await axios.post("http://localhost:8080/theater/addTheater","https://bkticketing-backend-production.up.railway.app/theater/addTheater", {
                 ...eventData,
                 theaterImagePath: imagePath,
             });

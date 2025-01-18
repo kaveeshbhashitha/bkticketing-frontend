@@ -35,7 +35,7 @@ const CheckoutForm = ({ reservationId, userId, userEmail, amount }) => {
 
         // Send payment data to backend
         try {
-          await axios.post('http://localhost:8080/payment/process', {
+          await axios.post('http://localhost:8080/payment/process','https://bkticketing-backend-production.up.railway.app/payment/process', {
             reservationId,
             userId,
             userEmail,

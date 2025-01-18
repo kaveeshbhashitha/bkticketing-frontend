@@ -13,7 +13,7 @@ export default function Deals() {
 
     useEffect(() => {
         // Fetch event data from backend
-        axios.get("http://localhost:8080/generalEvent/getEventByType/Deals")
+        axios.get("http://localhost:8080/generalEvent/getEventByType/Deals","https://bkticketing-backend-production.up.railway.app/generalEvent/getEventByType/Deals")
           .then(response => {
             if (response.data && response.data.length > 0) {
                 setGeneralEvents(response.data);

@@ -25,6 +25,10 @@ export default function SelectTicket() {
     `http://localhost:8080/theater/getTheaterById/${eventId}`,
     `http://localhost:8080/activity/getActivityById/${eventId}`,
     `http://localhost:8080/sport/getSportById/${eventId}`,
+    `https://bkticketing-backend-production.up.railway.app/generalEvent/getEventById/${eventId}`,
+    `https://bkticketing-backend-production.up.railway.app/getTheaterById/${eventId}`,
+    `https://bkticketing-backend-production.up.railway.app/getActivityById/${eventId}`,
+    `https://bkticketing-backend-production.up.railway.app/getSportById/${eventId}`,
   ];
 
   // Fetch event details from the appropriate category

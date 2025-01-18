@@ -21,7 +21,7 @@ const DailyIncomeChart = ({height, width}) => {
   useEffect(() => {
     const fetchDailyIncome = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/payment/dailyIncome");
+        const response = await axios.get("http://localhost:8080/payment/dailyIncome", "https://bkticketing-backend-production.up.railway.app/payment/dailyIncome");
 
         // Format data for the chart
         const labels = response.data.map((item) => item.date); // Dates as labels

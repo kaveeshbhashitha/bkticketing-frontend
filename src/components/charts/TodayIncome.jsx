@@ -7,7 +7,7 @@ export default function TodayIncome() {
 
     useEffect(() => {
         // Fetch event data from backend
-        axios.get("http://localhost:8080/reservation/totalCharge/today")
+        axios.get("http://localhost:8080/reservation/totalCharge/today","https://bkticketing-backend-production.up.railway.app/reservation/totalCharge/today")
           .then(response => {
             setDailyIncome(response.data);
           })

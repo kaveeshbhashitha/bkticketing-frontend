@@ -7,7 +7,7 @@ export default function TotolIncome() {
 
     useEffect(() => {
         // Fetch event data from backend
-        axios.get("http://localhost:8080/reservation/totalCharge")
+        axios.get("http://localhost:8080/reservation/totalCharge","https://bkticketing-backend-production.up.railway.app/reservation/totalCharge")
           .then(response => {
             setIncome(response.data);
           })

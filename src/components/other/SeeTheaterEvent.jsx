@@ -7,7 +7,7 @@ export default function SeeGeneralEvent() {
 
     useEffect(() => {
         // Fetch event data from backend
-        axios.get("http://localhost:8080/theater/getAllTheater")
+        axios.get("http://localhost:8080/theater/getAllTheater","https://bkticketing-backend-production.up.railway.app/theater/getAllTheater")
           .then(response => {
             if (response.data && response.data.length > 0) {
               setEvents(response.data);
@@ -21,7 +21,7 @@ export default function SeeGeneralEvent() {
       }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:8080/theater/deleteEvent/${id}`)
+        axios.delete(`http://localhost:8080/theater/deleteEvent/${id}`,`https://bkticketing-backend-production.up.railway.app/theater/deleteEvent/${id}`)
             .then(() => {
                 setEvents(events.filter(event => event.eventId !== id));
             })

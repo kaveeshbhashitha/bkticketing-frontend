@@ -10,9 +10,9 @@ export default function Delete() {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        const generalEventUrls = ["http://localhost:8080/generalEvent/getAllEvents"];
-        const sportEventUrls = ["http://localhost:8080/sport/getAllSport"];
-        const theaterEventUrls = ["http://localhost:8080/theater/getAllTheater"];
+        const generalEventUrls = ["http://localhost:8080/generalEvent/getAllEvents", "https://bkticketing-backend-production.up.railway.app/generalEvent/getAllEvents"];
+        const sportEventUrls = ["http://localhost:8080/sport/getAllSport", "https://bkticketing-backend-production.up.railway.app/sport/getAllSport"];
+        const theaterEventUrls = ["http://localhost:8080/theater/getAllTheater", "https://bkticketing-backend-production.up.railway.app/theater/getAllTheater"];
         
         const fetchData = async (urls, setData) => {
             for (let i = 0; i < urls.length; i++) {

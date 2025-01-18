@@ -22,7 +22,7 @@ export default function Register() {
       e.preventDefault();
       if (firstName !== "" || lastName !== "" || userEmail !== "" || password !== "") {
         try {
-            const response = await axios.post('http://localhost:8080/user/register', { firstName, lastName, userEmail, password });
+            const response = await axios.post('http://localhost:8080/user/register' ,'https://bkticketing-backend-production.up.railway.app/register' ,{ firstName, lastName, userEmail, password });
             if (response.data === "User already registered as a user") {
                 setMessage({text: response.data, class: 'alert alert-danger'});
             }else{

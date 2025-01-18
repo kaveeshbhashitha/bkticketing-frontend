@@ -13,7 +13,7 @@ export default function Other() {
 
   useEffect(() => {
     // Fetch event data from backend
-    axios.get("http://localhost:8080/theater/getAllTheater")
+    axios.get("http://localhost:8080/theater/getAllTheater","https://bkticketing-backend-production.up.railway.app/theater/getAllTheater")
       .then(response => {
         if (response.data && response.data.length > 0) {
             setTheater(response.data);

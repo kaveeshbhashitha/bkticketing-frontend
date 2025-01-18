@@ -17,7 +17,7 @@ export default function Dashboard() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:8080/recordCount/reservation")
+    axios.get("http://localhost:8080/recordCount/reservation","https://bkticketing-backend-production.up.railway.app/recordCount/reservation")
       .then(response => {
         setTotalReservations(response.data);
       })

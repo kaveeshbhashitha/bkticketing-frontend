@@ -22,7 +22,7 @@ const Payment = () => {
   const [userId, setUserId] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/reservation/getReservationById/${reservationId}`)
+    axios.get(`http://localhost:8080/reservation/getReservationById/${reservationId}`,`https://bkticketing-backend-production.up.railway.app/reservation/getReservationById/${reservationId}`)
       .then((response) => {
         setReservationData(response.data);
         setEventId(response.data.eventId);
@@ -35,7 +35,7 @@ const Payment = () => {
 
   useEffect(() => {
     if (userId) {
-      axios.get(`http://localhost:8080/user/getUserById/${userId}`)
+      axios.get(`http://localhost:8080/user/getUserById/${userId}`,`https://bkticketing-backend-production.up.railway.app/user/getUserById/${userId}`)
         .then((response) => {
           setUserData(response.data);
         })
@@ -47,7 +47,7 @@ const Payment = () => {
 
   useEffect(() => {
     if (eventId) {
-      axios.get(`http://localhost:8080/generalEvent/getEventById/${eventId}`)
+      axios.get(`http://localhost:8080/generalEvent/getEventById/${eventId}`,`https://bkticketing-backend-production.up.railway.app/generalEvent/getEventById/${eventId}`)
         .then((response) => {
           setEventData(response.data);
         })
@@ -65,7 +65,7 @@ const Payment = () => {
                 {reservationData && eventData && userData ? (
                 <div className="payment-layout">
                     <div className="paymentfinal">
-                    <img src={`http://localhost:8080${eventData.eventImagePath}`} alt="event" className='event-image' />
+                    <img src={process.env.NODE_ENV === 'development' ? `http://localhost:8080${eventData.eventImagePath}` : `https://bkticketing-backend-production.up.railway.app${eventData.eventImagePath}`} alt="event" className='event-image' />
                     <div className="title">{eventData.eventName}</div>
                     <div className="organizer">Organized by <span className='undeline'>{eventData.eventOrganizer}</span></div>
                     <div className="date">Will be held on <span className='blue'>{eventData.eventDate}</span> at <span className='blue'>{eventData.eventTime}</span></div>

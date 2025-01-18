@@ -7,7 +7,7 @@ export default function TodayTickets() {
 
     useEffect(() => {
         // Fetch event data from backend
-        axios.get("http://localhost:8080/reservation/totalTickets/today")
+        axios.get("http://localhost:8080/reservation/totalTickets/today","https://bkticketing-backend-production.up.railway.app/reservation/totalTickets/today")
           .then(response => {
             setTotalTickets(response.data);
           })

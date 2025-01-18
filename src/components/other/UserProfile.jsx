@@ -19,7 +19,7 @@ export default function UserProfile() {
             const userEmail = sessionStorage.getItem('user');
             if (userEmail) {
                 try {
-                    const response = await axios.get(`http://localhost:8080/user/getUserByEmail/${userEmail}`);
+                    const response = await axios.get(`http://localhost:8080/user/getUserByEmail/${userEmail}`,`https://bkticketing-backend-production.up.railway.app/getUserByEmail/${userEmail}`);
                     if (response.data) {
                         setUser(response.data);
                     } else {

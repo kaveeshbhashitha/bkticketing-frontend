@@ -10,7 +10,7 @@ export default function Notification() {
     useEffect(() => {
         // Fetch notifications from the backend
         axios
-        .get("http://localhost:8080/notification/getAllNotification")
+        .get("http://localhost:8080/notification/getAllNotification","https://bkticketing-backend-production.up.railway.app/notification/getAllNotification")
         .then((response) => {
             if (response.data && response.data.length > 0) {
             setNotifications(response.data);

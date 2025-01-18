@@ -12,7 +12,7 @@ export default function EventCalendar({height}) {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/unifiedEvent/getAllUnifiedEvents');
+        const response = await axios.get('http://localhost:8080/unifiedEvent/getAllUnifiedEvents','https://bkticketing-backend-production.up.railway.app/unifiedEvent/getAllUnifiedEvents');
 
         // Map data from backend to calendar format
         const calendarEvents = response.data.map((event) => ({

@@ -7,7 +7,7 @@ export default function SeeAllUnifiedEvents() {
 
     useEffect(() => {
         // Fetch event data from backend
-        axios.get("http://localhost:8080/unifiedEvent/getAllUnifiedEvents")
+        axios.get("http://localhost:8080/unifiedEvent/getAllUnifiedEvents","https://bkticketing-backend-production.up.railway.app/unifiedEvent/getAllUnifiedEvents")
           .then(response => {
             if (response.data && response.data.length > 0) {
               setEvents(response.data);

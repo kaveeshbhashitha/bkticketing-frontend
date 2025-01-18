@@ -26,12 +26,12 @@ export default function Home() {
   useEffect(() => {
     // URLs for general events and sports events
     const generalEventUrls = [
-      "http://localhost:8080/generalEvent/getAllEvents",
+      "http://localhost:8080/generalEvent/getAllEvents","https://bkticketing-backend-production.up.railway.app/generalEvent/getAllEvents"
     ];
 
-    const sportEventUrls = ["http://localhost:8080/sport/getAllSport"];
+    const sportEventUrls = ["http://localhost:8080/sport/getAllSport","https://bkticketing-backend-production.up.railway.app/sport/getAllSport"];
 
-    const TheaterEventUrls = ["http://localhost:8080/theater/getAllTheater"];
+    const TheaterEventUrls = ["http://localhost:8080/theater/getAllTheater","https://bkticketing-backend-production.up.railway.app/theater/getAllTheater"];
 
     // Function to fetch data from a list of URLs
     const fetchData = async (urls, setData) => {

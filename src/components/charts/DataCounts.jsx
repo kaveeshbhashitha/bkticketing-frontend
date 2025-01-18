@@ -16,13 +16,13 @@ export default function DataCounts() {
       const fetchCounts = async () => {
         try {
           const endpoints = {
-            generalEvents: "http://localhost:8080/recordCount/generalEvents",
-            theaters: "http://localhost:8080/recordCount/theaters",
-            sports: "http://localhost:8080/recordCount/sports",
-            activity: "http://localhost:8080/recordCount/activity",
-            notification: "http://localhost:8080/recordCount/notification",
-            reservation: "http://localhost:8080/recordCount/reservation",
-            user: "http://localhost:8080/recordCount/user",
+            generalEvents: ["http://localhost:8080/recordCount/generalEvents","https://bkticketing-backend-production.up.railway.app/recordCount/generalEvents"],
+            theaters: ["http://localhost:8080/recordCount/theaters","https://bkticketing-backend-production.up.railway.app/recordCount/theaters"],
+            sports: ["http://localhost:8080/recordCount/sports","https://bkticketing-backend-production.up.railway.app/recordCount/sports"],
+            activity: ["http://localhost:8080/recordCount/activity","https://bkticketing-backend-production.up.railway.app/recordCount/activity"],
+            notification: ["http://localhost:8080/recordCount/notification","https://bkticketing-backend-production.up.railway.app/recordCount/notification"],
+            reservation: ["http://localhost:8080/recordCount/reservation","https://bkticketing-backend-production.up.railway.app/recordCount/reservation"],
+            user: ["http://localhost:8080/recordCount/user","https://bkticketing-backend-production.up.railway.app/recordCount/user"],
           };
     
           const responses = await Promise.all(

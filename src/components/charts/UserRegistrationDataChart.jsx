@@ -12,7 +12,7 @@ export default function UserRegistrationDataChart() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/user/allUsers');
+        const response = await axios.get('http://localhost:8080/user/allUsers', 'https://bkticketing-backend-production.up.railway.app/user/allUsers');
 
         // Check if response.data is an array and is not empty
         if (Array.isArray(response.data) && response.data.length > 0) {
